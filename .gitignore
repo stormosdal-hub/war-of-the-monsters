@@ -1,0 +1,5 @@
+.mcp/node_modules/
+
+# Vendored third-party library — not part of the project's own code graph.
+# 8 MB minified Babylon.js was contributing 98% of graph nodes as noise.
+lib/babylon.js

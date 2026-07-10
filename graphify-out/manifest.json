@@ -1,0 +1,102 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1783683295.659191,
+    "ast_hash": "c23b79cbb5b3db4ddaa3b280d08f24af",
+    "semantic_hash": ""
+  },
+  ".mcp.json": {
+    "mtime": 1783683295.632191,
+    "ast_hash": "67faebc92cb1a22f735d65917d53cddd",
+    "semantic_hash": ""
+  },
+  ".mcp/package.json": {
+    "mtime": 1783683289.4001966,
+    "ast_hash": "40b32afa3ea5ac244d0e82520042ca5b",
+    "semantic_hash": ""
+  },
+  ".mcp/server.js": {
+    "mtime": 1783683289.3981965,
+    "ast_hash": "04e12d47e4e384888b941f65aad2ac70",
+    "semantic_hash": ""
+  },
+  "serve.sh": {
+    "mtime": 1783678845.9906712,
+    "ast_hash": "31ef6fefe8efad37699f830d4c1856ec",
+    "semantic_hash": ""
+  },
+  "src/ai.js": {
+    "mtime": 1783679497.5463457,
+    "ast_hash": "7cf1242bf6474939ef3cb761e9d8e561",
+    "semantic_hash": ""
+  },
+  "src/audio.js": {
+    "mtime": 1783678230.7229626,
+    "ast_hash": "6449ea71a5953c2d2cf0a9b8fc918da6",
+    "semantic_hash": ""
+  },
+  "src/camera.js": {
+    "mtime": 1783678744.323721,
+    "ast_hash": "143c266d24e0c7d3de7735ee77d0d04d",
+    "semantic_hash": ""
+  },
+  "src/city.js": {
+    "mtime": 1783678382.8978932,
+    "ast_hash": "60acc098fbbb22e7baa0ed0866603a75",
+    "semantic_hash": ""
+  },
+  "src/effects.js": {
+    "mtime": 1783678276.0269423,
+    "ast_hash": "4c248b03e4c764dba93892cb3e9fd512",
+    "semantic_hash": ""
+  },
+  "src/hud.js": {
+    "mtime": 1783678764.9167109,
+    "ast_hash": "112e31e0fdccc31da1c6b88c5e47f11d",
+    "semantic_hash": ""
+  },
+  "src/main.js": {
+    "mtime": 1783679178.1405063,
+    "ast_hash": "5909173be229c55d5061d38d9ba278d7",
+    "semantic_hash": ""
+  },
+  "src/monster.js": {
+    "mtime": 1783679479.7553546,
+    "ast_hash": "c1e75cd28cca45906681af1c43a58fb9",
+    "semantic_hash": ""
+  },
+  "src/monsters.js": {
+    "mtime": 1783678473.7248507,
+    "ast_hash": "20e6e945189bbacf5a463f28a05a41d4",
+    "semantic_hash": ""
+  },
+  "src/pickups.js": {
+    "mtime": 1783678530.8248236,
+    "ast_hash": "783604c89080b4daec394ec135453780",
+    "semantic_hash": ""
+  },
+  "src/player.js": {
+    "mtime": 1783679476.1233566,
+    "ast_hash": "3983d9a6b308458f8cf394cb9473aaf4",
+    "semantic_hash": ""
+  },
+  "src/projectiles.js": {
+    "mtime": 1783678508.765834,
+    "ast_hash": "c1eb0ecbc20f997d6cb473ad6261d906",
+    "semantic_hash": ""
+  },
+  "src/util.js": {
+    "mtime": 1783678194.067979,
+    "ast_hash": "be745b54842139f989a97c4cf2efa761",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783679676.744255,
+    "ast_hash": "987d9daeaac4afd391c096ee0b8f40f8",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1783679008.311591,
+    "ast_hash": "0c8380a63e2c2cd8773f565e37dc8cab",
+    "semantic_hash": ""
+  }
+}

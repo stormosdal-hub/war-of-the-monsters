@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/root/games/war-of-the-monsters/.mcp/server.js"
+      ]
+    }
+  }
+}

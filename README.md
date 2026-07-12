@@ -31,15 +31,16 @@ vendored in `lib/`, so it runs fully offline.)
   cars explode on impact; getting launched into a building damages both you and it.
 - **Climbing**: jump toward any wall and hold toward it to latch on, W/S to climb,
   A/D to strafe, Space to leap off — punch while hanging to wreck the facade.
-- **Signature duel camera** that frames both monsters and zooms with separation —
-  and you can grab the mouse to orbit and tilt the angle yourself.
+- **FPS-style follow camera**: the mouse turns your monster and the camera rides
+  directly behind it, so you aim melee, specials, grabs and throws by facing —
+  click the arena to capture the pointer, Esc to release.
 
 ## Controls
 
 | Key | Action |
 |---|---|
-| WASD | move (camera-relative) |
-| Mouse | steer the camera — click the arena to capture the pointer, move to orbit/tilt, Esc to release |
+| Mouse | turn & aim your monster (FPS-style) — click the arena to capture the pointer, move X to turn, Y to tilt the view, Esc to release |
+| WASD | move relative to facing (W = forward) |
 | Space | jump / double-jump / leap off wall |
 | J | light attack (chains ×3) |
 | K | heavy attack (launcher); in air: dive slam |

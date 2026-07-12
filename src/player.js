@@ -39,6 +39,7 @@ export class PlayerInput {
 
     return {
       mx, mz,
+      aimYaw: camYaw, // FPS-style: the monster faces where the camera (mouse) points
       rx: ix, rz: iz, // raw axes (used for climbing so controls don't drift with the camera)
       jump: this.consume('Space'),
       jumpHeld: !!this.keys['Space'],

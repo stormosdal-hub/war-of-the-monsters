@@ -29,6 +29,7 @@ export class Monster {
     this.vel = V3();
     this.yaw = yaw;
     this.visYaw = yaw;
+    this.aimYaw = null; // when a number (player mouse-look), facing is manual and auto-aim is off
     this.height = def.height;
     this.radius = def.radius;
     this.maxHp = def.hp;
@@ -140,6 +141,14 @@ export class Monster {
 
     const i = intents || {};
 
+    // FPS-style mouse look: the character's facing is driven by the camera aim.
+    // Snap yaw to it up front so melee/special/grab all fire where you point;
+    // auto-facing and auto-aim (below) are gated off while aimYaw is set.
+    this.aimYaw = (typeof i.aimYaw === 'number') ? i.aimYaw : null;
+    if (this.aimYaw !== null && this.state !== 'climb' && this.state !== 'grabbed') {
+      this.yaw = this.aimYaw;
+    }
+
     switch (this.state) {
       case 'idle': case 'run': case 'air': case 'block':
         this.updateLocomotion(dt, i);
@@ -180,8 +189,8 @@ export class Monster {
       if (this.state !== 'block') this.setState('block');
       this.vel.x = lerp(this.vel.x, 0, damp(12, dt));
       this.vel.z = lerp(this.vel.z, 0, damp(12, dt));
-      // face the enemy while blocking
-      if (this.target && this.target.alive) this.yaw = angleLerp(this.yaw, yawTo(this.pos, this.target.pos), damp(10, dt));
+      // face the enemy while blocking (unless the player is aiming manually)
+      if (this.aimYaw === null && this.target && this.target.alive) this.yaw = angleLerp(this.yaw, yawTo(this.pos, this.target.pos), damp(10, dt));
       if (!i.block) this.setState('idle');
       return;
     } else if (this.state === 'block') this.setState('idle');
@@ -213,7 +222,7 @@ export class Monster {
       this.vel.x *= maxSpd / hsp;
       this.vel.z *= maxSpd / hsp;
     }
-    if (mag > 0.05) this.yaw = angleLerp(this.yaw, wantYaw, damp(11, dt));
+    if (this.aimYaw === null && mag > 0.05) this.yaw = angleLerp(this.yaw, wantYaw, damp(11, dt));
 
     // --- jump / glide ---
     if (i.jump) {
@@ -403,8 +412,8 @@ export class Monster {
     this.chainQueued = false;
     this.setState('attack');
     this.playAnim(mv.anim);
-    // face target if close
-    if (this.target && this.target.alive && distXZ(this.pos, this.target.pos) < mv.range + 14) {
+    // face target if close (unless the player is aiming manually)
+    if (this.aimYaw === null && this.target && this.target.alive && distXZ(this.pos, this.target.pos) < mv.range + 14) {
       this.yaw = yawTo(this.pos, this.target.pos);
     }
     if (this.onGround) { this.vel.x *= 0.3; this.vel.z *= 0.3; }
@@ -506,7 +515,7 @@ export class Monster {
     this.playAnim('special');
     this.specialFired = 0;
     this.specialTimer = 0.34; // windup
-    if (this.target && this.target.alive) this.yaw = yawTo(this.pos, this.target.pos);
+    if (this.aimYaw === null && this.target && this.target.alive) this.yaw = yawTo(this.pos, this.target.pos);
     this.G.audio.roar(this.def.roarPitch * 1.4);
   }
 
@@ -519,7 +528,7 @@ export class Monster {
       this.specialTimer = sp.interval;
       const world = this.rig.muzzle.getAbsolutePosition();
       let aim;
-      if (this.target && this.target.alive) {
+      if (this.aimYaw === null && this.target && this.target.alive) {
         aim = this.target.center.subtract(world);
         // lead the shot slightly and lob for gravity arcs
         if (sp.gravity) {
@@ -626,7 +635,7 @@ export class Monster {
     this.heldProp = null;
     const world = p.mesh.getAbsolutePosition().clone();
     let dir;
-    if (this.target && this.target.alive) {
+    if (this.aimYaw === null && this.target && this.target.alive) {
       this.yaw = yawTo(this.pos, this.target.pos);
       const to = this.target.center.subtract(world);
       const d = to.length();

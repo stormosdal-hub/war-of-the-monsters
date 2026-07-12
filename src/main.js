@@ -242,13 +242,13 @@ scene.onBeforeRenderObservable.add(() => {
     G.camera.update(dt, G);
     if (introT > 2.6) {
       gameState = 'fight';
-      G.camera.enterDuel();
+      G.camera.enterFollow(G.monsters[0].yaw);
       G.hud.announce('DESTROY!', 1.1);
       input.clearEdges();
     }
   } else if (gameState === 'fight' || gameState === 'ko') {
     const [p, e] = G.monsters;
-    const pIntents = gameState === 'fight' && p.alive ? input.intents(G.camera.yaw) : {};
+    const pIntents = gameState === 'fight' && p.alive ? input.intents(G.camera.camYaw) : {};
     p.lastIntent = pIntents;
     const eIntents = gameState === 'fight' && e.alive ? ai.intents(dt) : {};
     e.lastIntent = eIntents;

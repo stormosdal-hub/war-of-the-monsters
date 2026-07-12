@@ -1,5 +1,7 @@
-// Duel camera: sits behind the player, keeps both monsters framed,
-// zooms with separation, avoids clipping through buildings.
+// Follow camera: FPS-style third-person rig that sits directly behind the player
+// and is aimed by the mouse. The player's monster faces camYaw, so moving the
+// mouse turns the character; WASD is relative to that facing. Still raycasts to
+// avoid clipping through buildings. (Intro/victory use the 'orbit' fly-around.)
 import { V3, clamp, lerp, damp, segmentVsAABB } from './util.js';
 
 export class DuelCamera {
@@ -12,13 +14,13 @@ export class DuelCamera {
     this.scene = scene;
     this.pos = this.cam.position.clone();
     this.look = V3(0, 10, 0);
-    this.mode = 'duel'; // duel | orbit
+    this.mode = 'follow'; // follow | orbit
     this.orbitT = 0;
     this.shakeSeed = 0;
 
-    // mouse look: offsets layered on top of the auto-framed duel angle.
-    this.userYaw = 0;      // azimuth offset (radians)
-    this.userPitch = 0;    // elevation offset (radians)
+    // mouse look: absolute facing (yaw) + camera tilt (pitch), driven by the mouse.
+    this.camYaw = 0;       // character + camera facing (radians)
+    this.camPitch = 0.16;  // camera elevation above the player (radians)
     this.sens = 0.0022;    // mouse sensitivity (radians per pixel)
     this.lookEnabled = false;
     this.pointerLocked = false;
@@ -41,8 +43,8 @@ export class DuelCamera {
     });
     window.addEventListener('mousemove', (e) => {
       if (!this.pointerLocked || !this.lookEnabled) return;
-      this.userYaw += e.movementX * this.sens;
-      this.userPitch = clamp(this.userPitch + e.movementY * this.sens, -0.5, 0.85);
+      this.camYaw += e.movementX * this.sens;                                  // mouse X turns the character
+      this.camPitch = clamp(this.camPitch + e.movementY * this.sens, -0.25, 1.05); // mouse Y tilts the view
     });
   }
 
@@ -54,11 +56,11 @@ export class DuelCamera {
     }
   }
 
-  // Enter combat framing: recenter the mouse offsets and allow steering.
-  enterDuel() {
-    this.mode = 'duel';
-    this.userYaw = 0;
-    this.userPitch = 0;
+  // Enter combat: face the way the player already faces and allow steering.
+  enterFollow(startYaw = 0) {
+    this.mode = 'follow';
+    this.camYaw = startYaw;
+    this.camPitch = 0.16;
     this.setLook(true);
   }
 
@@ -69,7 +71,7 @@ export class DuelCamera {
   }
 
   update(dt, G) {
-    const [p, e] = G.monsters;
+    const [p] = G.monsters;
     let desiredPos, desiredLook;
 
     if (this.mode === 'orbit') {
@@ -81,36 +83,34 @@ export class DuelCamera {
       this.pos = BABYLON.Vector3.Lerp(this.pos, desiredPos, damp(4, dt));
       this.look = BABYLON.Vector3.Lerp(this.look, desiredLook, damp(6, dt));
     } else {
-      const pc = p.pos.add(V3(0, p.height * 0.55, 0));
-      const ec = e && e.alive !== undefined ? e.pos.add(V3(0, e.height * 0.55, 0)) : pc;
-      const mid = BABYLON.Vector3.Lerp(pc, ec, 0.42);
-      const sep = BABYLON.Vector3.Distance(pc, ec);
-
-      let axis = pc.subtract(ec); axis.y = 0;
-      if (axis.length() < 0.5) axis = V3(0, 0, -1);
-      else axis.normalize();
-
-      const dist = clamp(15 + sep * 0.42, 17, 68);
-      // Orbit the look-point: auto-framed azimuth + mouse yaw; base elevation + mouse pitch.
-      const az = Math.atan2(axis.x, axis.z) + this.userYaw;
-      const el = clamp(0.30 + clamp(sep * 0.004, 0, 0.28) + this.userPitch, 0.05, 1.28);
-      desiredLook = mid.add(V3(0, 2 + sep * 0.05, 0));
+      // third-person behind the player, aimed by camYaw / camPitch
+      const h = p.height;
+      const head = p.pos.add(V3(0, h * 0.72, 0));
+      const az = this.camYaw;
+      const el = clamp(this.camPitch, -0.25, 1.05);
+      const dist = h * 1.5 + 11;
+      const fwd = V3(Math.sin(az), 0, Math.cos(az));
       const horiz = Math.cos(el) * dist;
-      desiredPos = desiredLook.add(V3(Math.sin(az) * horiz, Math.sin(el) * dist, Math.cos(az) * horiz));
 
-      // keep the camera out of buildings: walk back along the ray from look → pos
+      // sit behind (opposite facing) and above; look slightly ahead so the
+      // monster sits low-center and you can see where you're heading
+      desiredPos = head.add(fwd.scale(-horiz)).add(V3(0, Math.sin(el) * dist + h * 0.15, 0));
+      desiredLook = head.add(fwd.scale(h * 0.5)).add(V3(0, h * 0.05, 0));
+
+      // keep the camera out of buildings: pull in along look → pos if blocked
       const hit = this.raycastCity(G, desiredLook, desiredPos);
       if (hit !== null) {
-        const t = Math.max(0.15, hit - 0.04);
+        const t = Math.max(0.12, hit - 0.05);
         desiredPos = BABYLON.Vector3.Lerp(desiredLook, desiredPos, t);
-        desiredPos.y += (1 - t) * 14; // rise over the obstacle a bit
+        desiredPos.y += (1 - t) * 10; // rise over the obstacle a bit
       }
       // never below rooftops we're standing near, never underground
       const gy = G.city.groundHeightAt(desiredPos.x, desiredPos.z, desiredPos.y);
-      desiredPos.y = Math.max(desiredPos.y, gy + 4, 4);
+      desiredPos.y = Math.max(desiredPos.y, gy + 3, 3);
 
-      this.pos = BABYLON.Vector3.Lerp(this.pos, desiredPos, damp(6.5, dt));
-      this.look = BABYLON.Vector3.Lerp(this.look, desiredLook, damp(9, dt));
+      // snappy follow so turning tracks the mouse without feeling glued
+      this.pos = BABYLON.Vector3.Lerp(this.pos, desiredPos, damp(13, dt));
+      this.look = BABYLON.Vector3.Lerp(this.look, desiredLook, damp(20, dt));
     }
 
     // screen shake

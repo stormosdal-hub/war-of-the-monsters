@@ -1,18 +1,13 @@
-# Graph Report - war-of-the-monsters  (2026-07-12)
+# Graph Report - war-of-the-monsters  (2026-07-10)
 
 ## Corpus Check
-- 19 files · ~16,941 words
+- 19 files · ~16,703 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 218 nodes · 517 edges · 15 communities (8 shown, 7 thin omitted)
+- 215 nodes · 512 edges · 15 communities (8 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-
-## Graph Freshness
-- Built from commit: `c20650fc`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]
@@ -40,8 +35,8 @@
 6. `City` - 17 edges
 7. `clamp()` - 16 edges
 8. `Effects` - 11 edges
-9. `DuelCamera` - 10 edges
-10. `Building` - 9 edges
+9. `Building` - 9 edges
+10. `HUD` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `buildWorld()` --calls--> `V3()`  [EXTRACTED]
@@ -65,16 +60,16 @@ Cohesion: 0.07
 Nodes (22): HUD, screens, buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), engine (+14 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.18
-Nodes (14): AIController, makeGroundTexture(), MOVES, angleLerp(), clamp(), damp(), distXZ(), fwdOf() (+6 more)
+Cohesion: 0.14
+Nodes (15): AIController, DuelCamera, makeGroundTexture(), MOVES, clamp(), damp(), distXZ(), fwdOf() (+7 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.20
+Nodes (3): Monster, angleLerp(), yawTo()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.17
-Nodes (4): City, makeWindowTexture(), Prop, C3()
-
-### Community 5 - "Community 5"
-Cohesion: 0.16
-Nodes (3): Building, Effects, V3()
+Cohesion: 0.28
+Nodes (3): City, makeWindowTexture(), C3()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.56
@@ -101,12 +96,14 @@ Nodes (4): __dirname, server, transport, VAULT
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AudioSys` connect `Community 3` to `Community 0`?**
-  _High betweenness centrality (0.167) - this node is a cross-community bridge._
-- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 1`, `Community 5`?**
-  _High betweenness centrality (0.143) - this node is a cross-community bridge._
-- **Why does `V3()` connect `Community 5` to `Community 0`, `Community 1`, `Community 2`, `Community 6`, `Community 7`, `Community 8`, `Community 11`?**
-  _High betweenness centrality (0.132) - this node is a cross-community bridge._
+  _High betweenness centrality (0.168) - this node is a cross-community bridge._
+- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 1`?**
+  _High betweenness centrality (0.145) - this node is a cross-community bridge._
+- **Why does `V3()` connect `Community 1` to `Community 0`, `Community 2`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 11`?**
+  _High betweenness centrality (0.133) - this node is a cross-community bridge._
 - **What connects `node`, `name`, `version` to the rest of the system?**
   _25 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.07112375533428165 - nodes in this community are weakly interconnected._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.13903743315508021 - nodes in this community are weakly interconnected._

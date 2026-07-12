@@ -15,11 +15,51 @@ export class DuelCamera {
     this.mode = 'duel'; // duel | orbit
     this.orbitT = 0;
     this.shakeSeed = 0;
+
+    // mouse look: offsets layered on top of the auto-framed duel angle.
+    this.userYaw = 0;      // azimuth offset (radians)
+    this.userPitch = 0;    // elevation offset (radians)
+    this.sens = 0.0022;    // mouse sensitivity (radians per pixel)
+    this.lookEnabled = false;
+    this.pointerLocked = false;
+    this.bindMouse(canvas);
   }
 
   get yaw() {
     const f = this.cam.getForwardRay().direction;
     return Math.atan2(f.x, f.z);
+  }
+
+  // Click the canvas during a fight to capture the mouse; move to steer, Esc to release.
+  bindMouse(canvas) {
+    if (!canvas || typeof document === 'undefined') return;
+    canvas.addEventListener('click', () => {
+      if (this.lookEnabled && !this.pointerLocked && canvas.requestPointerLock) canvas.requestPointerLock();
+    });
+    document.addEventListener('pointerlockchange', () => {
+      this.pointerLocked = (document.pointerLockElement === canvas);
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!this.pointerLocked || !this.lookEnabled) return;
+      this.userYaw += e.movementX * this.sens;
+      this.userPitch = clamp(this.userPitch + e.movementY * this.sens, -0.5, 0.85);
+    });
+  }
+
+  // Enable/disable mouse steering; releases the pointer when turned off.
+  setLook(on) {
+    this.lookEnabled = on;
+    if (!on && this.pointerLocked && typeof document !== 'undefined' && document.exitPointerLock) {
+      document.exitPointerLock();
+    }
+  }
+
+  // Enter combat framing: recenter the mouse offsets and allow steering.
+  enterDuel() {
+    this.mode = 'duel';
+    this.userYaw = 0;
+    this.userPitch = 0;
+    this.setLook(true);
   }
 
   startOrbit(center) {
@@ -51,10 +91,12 @@ export class DuelCamera {
       else axis.normalize();
 
       const dist = clamp(15 + sep * 0.42, 17, 68);
-      const height = 7 + sep * 0.16 + Math.max(0, (pc.y + ec.y) * 0.25);
-      desiredPos = pc.add(axis.scale(dist));
-      desiredPos.y = Math.max(pc.y + height * 0.4, mid.y + height * 0.5, 6);
+      // Orbit the look-point: auto-framed azimuth + mouse yaw; base elevation + mouse pitch.
+      const az = Math.atan2(axis.x, axis.z) + this.userYaw;
+      const el = clamp(0.30 + clamp(sep * 0.004, 0, 0.28) + this.userPitch, 0.05, 1.28);
       desiredLook = mid.add(V3(0, 2 + sep * 0.05, 0));
+      const horiz = Math.cos(el) * dist;
+      desiredPos = desiredLook.add(V3(Math.sin(az) * horiz, Math.sin(el) * dist, Math.cos(az) * horiz));
 
       // keep the camera out of buildings: walk back along the ray from look → pos
       const hit = this.raycastCity(G, desiredLook, desiredPos);

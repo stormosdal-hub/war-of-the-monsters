@@ -119,6 +119,7 @@ let introT = 0;
 
 function endToVictory(winnerName, playerWon) {
   gameState = 'victory';
+  G.camera.setLook(false);
   document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : 'YOU ARE EXTINCT';
   document.getElementById('victoryText').style.color = playerWon ? 'var(--marquee)' : 'var(--hot)';
   screens.show('victoryScreen');
@@ -194,7 +195,7 @@ document.querySelectorAll('.opt').forEach(opt => {
     if (act === 'rematch') startMatch(selection.p1, selection.p2);
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); gameState = 'title'; screens.show('titleScreen'); }
-    else if (act === 'resume') { gameState = 'fight'; screens.hideAll(); }
+    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); screens.hideAll(); }
   });
 });
 
@@ -210,9 +211,11 @@ window.addEventListener('keydown', (e) => {
     if (e.code === 'Escape') { gameState = 'title'; clearPreview(); screens.show('titleScreen'); }
   } else if (gameState === 'fight' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'paused';
+    G.camera.setLook(false);
     screens.show('pauseScreen');
   } else if (gameState === 'paused' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'fight';
+    G.camera.setLook(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
     startMatch(selection.p1, selection.p2);
@@ -239,7 +242,7 @@ scene.onBeforeRenderObservable.add(() => {
     G.camera.update(dt, G);
     if (introT > 2.6) {
       gameState = 'fight';
-      G.camera.mode = 'duel';
+      G.camera.enterDuel();
       G.hud.announce('DESTROY!', 1.1);
       input.clearEdges();
     }

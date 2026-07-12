@@ -497,7 +497,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_camera_duelcamera",
-      "community": 7,
+      "community": 1,
       "norm_label": "duelcamera"
     },
     {
@@ -507,64 +507,34 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_camera_duelcamera_constructor",
-      "community": 7,
+      "community": 1,
       "norm_label": ".constructor()"
     },
     {
       "label": ".yaw()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L28",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "src_camera_duelcamera_yaw",
-      "community": 7,
+      "community": 1,
       "norm_label": ".yaw()"
-    },
-    {
-      "label": ".bindMouse()",
-      "file_type": "code",
-      "source_file": "src/camera.js",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "src_camera_duelcamera_bindmouse",
-      "community": 7,
-      "norm_label": ".bindmouse()"
-    },
-    {
-      "label": ".setLook()",
-      "file_type": "code",
-      "source_file": "src/camera.js",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "src_camera_duelcamera_setlook",
-      "community": 7,
-      "norm_label": ".setlook()"
-    },
-    {
-      "label": ".enterDuel()",
-      "file_type": "code",
-      "source_file": "src/camera.js",
-      "source_location": "L58",
-      "_origin": "ast",
-      "id": "src_camera_duelcamera_enterduel",
-      "community": 7,
-      "norm_label": ".enterduel()"
     },
     {
       "label": ".startOrbit()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L65",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "src_camera_duelcamera_startorbit",
-      "community": 7,
+      "community": 1,
       "norm_label": ".startorbit()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L71",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_camera_duelcamera_update",
       "community": 1,
@@ -574,7 +544,7 @@
       "label": ".raycastCity()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L126",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "src_camera_duelcamera_raycastcity",
       "community": 1,
@@ -657,7 +627,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_city_building_containsxz",
-      "community": 4,
+      "community": 5,
       "norm_label": ".containsxz()"
     },
     {
@@ -707,7 +677,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "src_city_prop",
-      "community": 4,
+      "community": 5,
       "norm_label": "prop"
     },
     {
@@ -717,7 +687,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "src_city_prop_constructor",
-      "community": 4,
+      "community": 5,
       "norm_label": ".constructor()"
     },
     {
@@ -727,7 +697,7 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "src_city_prop_pos",
-      "community": 4,
+      "community": 5,
       "norm_label": ".pos()"
     },
     {
@@ -737,7 +707,7 @@
       "source_location": "L194",
       "_origin": "ast",
       "id": "src_city_prop_destroy",
-      "community": 4,
+      "community": 5,
       "norm_label": ".destroy()"
     },
     {
@@ -847,7 +817,7 @@
       "source_location": "L463",
       "_origin": "ast",
       "id": "src_city_city_groundheightat",
-      "community": 4,
+      "community": 5,
       "norm_label": ".groundheightat()"
     },
     {
@@ -917,7 +887,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_effects_effects",
-      "community": 5,
+      "community": 7,
       "norm_label": "effects"
     },
     {
@@ -927,7 +897,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_effects_effects_constructor",
-      "community": 5,
+      "community": 7,
       "norm_label": ".constructor()"
     },
     {
@@ -937,7 +907,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_effects_effects_shake",
-      "community": 5,
+      "community": 7,
       "norm_label": ".shake()"
     },
     {
@@ -947,7 +917,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_effects_effects_burst",
-      "community": 5,
+      "community": 7,
       "norm_label": ".burst()"
     },
     {
@@ -957,7 +927,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_effects_effects_explosion",
-      "community": 5,
+      "community": 7,
       "norm_label": ".explosion()"
     },
     {
@@ -967,7 +937,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_effects_effects_dust",
-      "community": 5,
+      "community": 7,
       "norm_label": ".dust()"
     },
     {
@@ -977,7 +947,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_effects_effects_hitspark",
-      "community": 5,
+      "community": 7,
       "norm_label": ".hitspark()"
     },
     {
@@ -987,7 +957,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_effects_effects_spawnchunks",
-      "community": 5,
+      "community": 1,
       "norm_label": ".spawnchunks()"
     },
     {
@@ -997,7 +967,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "src_effects_effects_flashmesh",
-      "community": 5,
+      "community": 7,
       "norm_label": ".flashmesh()"
     },
     {
@@ -1007,7 +977,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_effects_effects_update",
-      "community": 5,
+      "community": 7,
       "norm_label": ".update()"
     },
     {
@@ -1254,7 +1224,7 @@
       "label": "buildSelectUI()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L129",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "src_main_buildselectui",
       "community": 0,
@@ -1264,7 +1234,7 @@
       "label": "refreshSelectFocus()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L146",
+      "source_location": "L145",
       "_origin": "ast",
       "id": "src_main_refreshselectfocus",
       "community": 0,
@@ -1274,7 +1244,7 @@
       "label": "showPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L152",
+      "source_location": "L151",
       "_origin": "ast",
       "id": "src_main_showpreview",
       "community": 0,
@@ -1284,7 +1254,7 @@
       "label": "clearPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L159",
+      "source_location": "L158",
       "_origin": "ast",
       "id": "src_main_clearpreview",
       "community": 0,
@@ -1294,7 +1264,7 @@
       "label": "enterSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L163",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "src_main_enterselect",
       "community": 0,
@@ -1304,7 +1274,7 @@
       "label": "confirmSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L172",
+      "source_location": "L171",
       "_origin": "ast",
       "id": "src_main_confirmselect",
       "community": 0,
@@ -1347,7 +1317,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_monster_monster_constructor",
-      "community": 5,
+      "community": 1,
       "norm_label": ".constructor()"
     },
     {
@@ -1357,7 +1327,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "src_monster_monster_center",
-      "community": 5,
+      "community": 1,
       "norm_label": ".center()"
     },
     {
@@ -1367,7 +1337,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_monster_monster_fwd",
-      "community": 2,
+      "community": 1,
       "norm_label": ".fwd()"
     },
     {
@@ -1997,7 +1967,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_util_v3",
-      "community": 5,
+      "community": 1,
       "norm_label": "v3()"
     },
     {
@@ -2087,7 +2057,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_util_anglelerp",
-      "community": 1,
+      "community": 2,
       "norm_label": "anglelerp()"
     },
     {
@@ -2184,7 +2154,7 @@
       "label": "Controls",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L37",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "readme_controls",
       "community": 10,
@@ -2194,7 +2164,7 @@
       "label": "Code layout",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L55",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "readme_code_layout",
       "community": 10,
@@ -2229,9 +2199,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package",
-      "target": "mcp_package_dependencies"
+      "target": "mcp_package_dependencies",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2239,9 +2209,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package",
-      "target": "mcp_package_main"
+      "target": "mcp_package_main",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2249,9 +2219,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package",
-      "target": "mcp_package_name"
+      "target": "mcp_package_name",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2259,9 +2229,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package",
-      "target": "mcp_package_type"
+      "target": "mcp_package_type",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2269,9 +2239,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package",
-      "target": "mcp_package_version"
+      "target": "mcp_package_version",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2279,9 +2249,9 @@
       "source_file": ".mcp/package.json",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_package_dependencies",
-      "target": "mcp_package_dependencies_modelcontextprotocol_sdk"
+      "target": "mcp_package_dependencies_modelcontextprotocol_sdk",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2289,9 +2259,9 @@
       "source_file": ".mcp/server.js",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_server",
-      "target": "mcp_server_dirname"
+      "target": "mcp_server_dirname",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2299,9 +2269,9 @@
       "source_file": ".mcp/server.js",
       "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_server",
-      "target": "mcp_server_server"
+      "target": "mcp_server_server",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2309,9 +2279,9 @@
       "source_file": ".mcp/server.js",
       "source_location": "L97",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_server",
-      "target": "mcp_server_transport"
+      "target": "mcp_server_transport",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2319,9 +2289,9 @@
       "source_file": ".mcp/server.js",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mcp_server",
-      "target": "mcp_server_vault"
+      "target": "mcp_server_vault",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2329,9 +2299,9 @@
       "source_file": "serve.sh",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "serve",
-      "target": "root_games_war_of_the_monsters_serve_sh__entry"
+      "target": "root_games_war_of_the_monsters_serve_sh__entry",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2339,9 +2309,9 @@
       "source_file": "src/ai.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_ai_aicontroller"
+      "target": "src_ai_aicontroller",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -2350,9 +2320,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2361,9 +2331,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2372,9 +2342,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_distxz"
+      "target": "src_util_distxz",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2383,9 +2353,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_pick"
+      "target": "src_util_pick",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2394,9 +2364,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2405,9 +2375,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2416,9 +2386,9 @@
       "source_file": "src/ai.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai",
-      "target": "src_util_yawto"
+      "target": "src_util_yawto",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -2427,9 +2397,9 @@
       "source_file": "src/main.js",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_ai"
+      "target": "src_ai",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2437,9 +2407,9 @@
       "source_file": "src/ai.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai_aicontroller",
-      "target": "src_ai_aicontroller_constructor"
+      "target": "src_ai_aicontroller_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2447,9 +2417,9 @@
       "source_file": "src/ai.js",
       "source_location": "L66",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai_aicontroller",
-      "target": "src_ai_aicontroller_intents"
+      "target": "src_ai_aicontroller_intents",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2457,9 +2427,9 @@
       "source_file": "src/ai.js",
       "source_location": "L30",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai_aicontroller",
-      "target": "src_ai_aicontroller_think"
+      "target": "src_ai_aicontroller_think",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2468,9 +2438,9 @@
       "source_file": "src/main.js",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_ai_aicontroller"
+      "target": "src_ai_aicontroller",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2479,9 +2449,9 @@
       "source_file": "src/ai.js",
       "source_location": "L75",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_ai_aicontroller_intents",
-      "target": "src_ai_aicontroller_think"
+      "target": "src_ai_aicontroller_think",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2533,9 +2503,9 @@
       "source_file": "src/audio.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio",
-      "target": "src_audio_audiosys"
+      "target": "src_audio_audiosys",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -2544,9 +2514,9 @@
       "source_file": "src/main.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_audio"
+      "target": "src_audio",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2554,9 +2524,9 @@
       "source_file": "src/audio.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_block"
+      "target": "src_audio_audiosys_block",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2564,9 +2534,9 @@
       "source_file": "src/audio.js",
       "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_collapse"
+      "target": "src_audio_audiosys_collapse",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2574,9 +2544,9 @@
       "source_file": "src/audio.js",
       "source_location": "L73",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_confirm"
+      "target": "src_audio_audiosys_confirm",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2584,9 +2554,9 @@
       "source_file": "src/audio.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_constructor"
+      "target": "src_audio_audiosys_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2594,9 +2564,9 @@
       "source_file": "src/audio.js",
       "source_location": "L85",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_crumble"
+      "target": "src_audio_audiosys_crumble",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2604,9 +2574,9 @@
       "source_file": "src/audio.js",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_ensure"
+      "target": "src_audio_audiosys_ensure",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2614,9 +2584,9 @@
       "source_file": "src/audio.js",
       "source_location": "L34",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_env"
+      "target": "src_audio_audiosys_env",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2624,9 +2594,9 @@
       "source_file": "src/audio.js",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_explosion"
+      "target": "src_audio_audiosys_explosion",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2634,9 +2604,9 @@
       "source_file": "src/audio.js",
       "source_location": "L74",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_footstep"
+      "target": "src_audio_audiosys_footstep",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2644,9 +2614,9 @@
       "source_file": "src/audio.js",
       "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_grab"
+      "target": "src_audio_audiosys_grab",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2654,9 +2624,9 @@
       "source_file": "src/audio.js",
       "source_location": "L76",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_hit"
+      "target": "src_audio_audiosys_hit",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2664,9 +2634,9 @@
       "source_file": "src/audio.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_jump"
+      "target": "src_audio_audiosys_jump",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2674,9 +2644,9 @@
       "source_file": "src/audio.js",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_ko"
+      "target": "src_audio_audiosys_ko",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2684,9 +2654,9 @@
       "source_file": "src/audio.js",
       "source_location": "L41",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2694,9 +2664,9 @@
       "source_file": "src/audio.js",
       "source_location": "L26",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_noisebuf"
+      "target": "src_audio_audiosys_noisebuf",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2704,9 +2674,9 @@
       "source_file": "src/audio.js",
       "source_location": "L119",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_pickup"
+      "target": "src_audio_audiosys_pickup",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2714,9 +2684,9 @@
       "source_file": "src/audio.js",
       "source_location": "L87",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_roar"
+      "target": "src_audio_audiosys_roar",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2724,9 +2694,9 @@
       "source_file": "src/audio.js",
       "source_location": "L114",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_shoot"
+      "target": "src_audio_audiosys_shoot",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2734,9 +2704,9 @@
       "source_file": "src/audio.js",
       "source_location": "L75",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_swing"
+      "target": "src_audio_audiosys_swing",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2744,9 +2714,9 @@
       "source_file": "src/audio.js",
       "source_location": "L121",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_throwwhoosh"
+      "target": "src_audio_audiosys_throwwhoosh",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2754,9 +2724,9 @@
       "source_file": "src/audio.js",
       "source_location": "L57",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2764,9 +2734,9 @@
       "source_file": "src/audio.js",
       "source_location": "L72",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys",
-      "target": "src_audio_audiosys_ui"
+      "target": "src_audio_audiosys_ui",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -2775,9 +2745,9 @@
       "source_file": "src/main.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_audio_audiosys"
+      "target": "src_audio_audiosys",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2786,9 +2756,9 @@
       "source_file": "src/audio.js",
       "source_location": "L42",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_noise",
-      "target": "src_audio_audiosys_ensure"
+      "target": "src_audio_audiosys_ensure",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2797,9 +2767,9 @@
       "source_file": "src/audio.js",
       "source_location": "L88",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_roar",
-      "target": "src_audio_audiosys_ensure"
+      "target": "src_audio_audiosys_ensure",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2808,9 +2778,9 @@
       "source_file": "src/audio.js",
       "source_location": "L58",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_tone",
-      "target": "src_audio_audiosys_ensure"
+      "target": "src_audio_audiosys_ensure",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2819,9 +2789,9 @@
       "source_file": "src/audio.js",
       "source_location": "L45",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_noise",
-      "target": "src_audio_audiosys_noisebuf"
+      "target": "src_audio_audiosys_noisebuf",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2830,9 +2800,9 @@
       "source_file": "src/audio.js",
       "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_noise",
-      "target": "src_audio_audiosys_env"
+      "target": "src_audio_audiosys_env",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2841,9 +2811,9 @@
       "source_file": "src/audio.js",
       "source_location": "L108",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_roar",
-      "target": "src_audio_audiosys_env"
+      "target": "src_audio_audiosys_env",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2852,9 +2822,9 @@
       "source_file": "src/audio.js",
       "source_location": "L65",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_tone",
-      "target": "src_audio_audiosys_env"
+      "target": "src_audio_audiosys_env",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2863,9 +2833,9 @@
       "source_file": "src/audio.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_block",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2874,9 +2844,9 @@
       "source_file": "src/audio.js",
       "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_collapse",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2885,9 +2855,9 @@
       "source_file": "src/audio.js",
       "source_location": "L85",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_crumble",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2896,9 +2866,9 @@
       "source_file": "src/audio.js",
       "source_location": "L82",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_explosion",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2907,9 +2877,9 @@
       "source_file": "src/audio.js",
       "source_location": "L74",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_footstep",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2918,9 +2888,9 @@
       "source_file": "src/audio.js",
       "source_location": "L77",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_hit",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2929,9 +2899,9 @@
       "source_file": "src/audio.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_jump",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2940,9 +2910,9 @@
       "source_file": "src/audio.js",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_ko",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2951,9 +2921,9 @@
       "source_file": "src/audio.js",
       "source_location": "L112",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_roar",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2962,9 +2932,9 @@
       "source_file": "src/audio.js",
       "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_shoot",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2973,9 +2943,9 @@
       "source_file": "src/audio.js",
       "source_location": "L75",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_swing",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2984,9 +2954,9 @@
       "source_file": "src/audio.js",
       "source_location": "L121",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_throwwhoosh",
-      "target": "src_audio_audiosys_noise"
+      "target": "src_audio_audiosys_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2995,9 +2965,9 @@
       "source_file": "src/audio.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_block",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3006,9 +2976,9 @@
       "source_file": "src/audio.js",
       "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_collapse",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3017,9 +2987,9 @@
       "source_file": "src/audio.js",
       "source_location": "L73",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_confirm",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3028,9 +2998,9 @@
       "source_file": "src/audio.js",
       "source_location": "L83",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_explosion",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3039,9 +3009,9 @@
       "source_file": "src/audio.js",
       "source_location": "L74",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_footstep",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3050,9 +3020,9 @@
       "source_file": "src/audio.js",
       "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_grab",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3061,9 +3031,9 @@
       "source_file": "src/audio.js",
       "source_location": "L78",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_hit",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3072,9 +3042,9 @@
       "source_file": "src/audio.js",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_ko",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3083,9 +3053,9 @@
       "source_file": "src/audio.js",
       "source_location": "L119",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_pickup",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3094,9 +3064,9 @@
       "source_file": "src/audio.js",
       "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_shoot",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3105,9 +3075,9 @@
       "source_file": "src/audio.js",
       "source_location": "L72",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_audio_audiosys_ui",
-      "target": "src_audio_audiosys_tone"
+      "target": "src_audio_audiosys_tone",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3115,9 +3085,9 @@
       "source_file": "src/camera.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_camera_duelcamera"
+      "target": "src_camera_duelcamera",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -3126,9 +3096,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3137,9 +3107,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3148,9 +3118,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util_damp"
+      "target": "src_util_damp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3159,9 +3129,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util_lerp"
+      "target": "src_util_lerp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3170,9 +3140,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util_segmentvsaabb"
+      "target": "src_util_segmentvsaabb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3181,9 +3151,9 @@
       "source_file": "src/camera.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -3192,18 +3162,8 @@
       "source_file": "src/main.js",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_camera"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/camera.js",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_bindmouse",
+      "target": "src_camera",
       "confidence_score": 1.0
     },
     {
@@ -3212,18 +3172,8 @@
       "source_file": "src/camera.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_constructor"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/camera.js",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_enterduel",
+      "target": "src_camera_duelcamera_constructor",
       "confidence_score": 1.0
     },
     {
@@ -3232,18 +3182,8 @@
       "source_file": "src/camera.js",
       "source_location": "L84",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_raycastcity"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/camera.js",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_setlook",
+      "target": "src_camera_duelcamera_raycastcity",
       "confidence_score": 1.0
     },
     {
@@ -3252,9 +3192,9 @@
       "source_file": "src/camera.js",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_startorbit"
+      "target": "src_camera_duelcamera_startorbit",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3262,9 +3202,9 @@
       "source_file": "src/camera.js",
       "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_update"
+      "target": "src_camera_duelcamera_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3272,9 +3212,9 @@
       "source_file": "src/camera.js",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_yaw"
+      "target": "src_camera_duelcamera_yaw",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3283,19 +3223,8 @@
       "source_file": "src/main.js",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_camera_duelcamera"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/camera.js",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "src_camera_duelcamera_constructor",
-      "target": "src_camera_duelcamera_bindmouse",
+      "target": "src_camera_duelcamera",
       "confidence_score": 1.0
     },
     {
@@ -3314,22 +3243,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/camera.js",
-      "source_location": "L62",
-      "weight": 1.0,
-      "source": "src_camera_duelcamera_enterduel",
-      "target": "src_camera_duelcamera_setlook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/camera.js",
       "source_location": "L60",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_camera_duelcamera_update",
-      "target": "src_camera_duelcamera_raycastcity"
+      "target": "src_camera_duelcamera_raycastcity",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3381,9 +3299,9 @@
       "source_file": "src/city.js",
       "source_location": "L77",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_city_building"
+      "target": "src_city_building",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3391,9 +3309,9 @@
       "source_file": "src/city.js",
       "source_location": "L208",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_city_city"
+      "target": "src_city_city",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3401,9 +3319,9 @@
       "source_file": "src/city.js",
       "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_city_makegroundtexture"
+      "target": "src_city_makegroundtexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3411,9 +3329,9 @@
       "source_file": "src/city.js",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_city_makewindowtexture"
+      "target": "src_city_makewindowtexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3421,9 +3339,9 @@
       "source_file": "src/city.js",
       "source_location": "L187",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_city_prop"
+      "target": "src_city_prop",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -3432,9 +3350,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3443,9 +3361,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3454,9 +3372,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3465,9 +3383,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_pick"
+      "target": "src_util_pick",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3476,9 +3394,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3487,9 +3405,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_randi"
+      "target": "src_util_randi",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3498,9 +3416,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_segmentvsaabb"
+      "target": "src_util_segmentvsaabb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3509,9 +3427,9 @@
       "source_file": "src/city.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -3520,9 +3438,9 @@
       "source_file": "src/main.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_city"
+      "target": "src_city",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3531,9 +3449,9 @@
       "source_file": "src/city.js",
       "source_location": "L314",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildblocks",
-      "target": "src_city_makewindowtexture"
+      "target": "src_city_makewindowtexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3542,9 +3460,9 @@
       "source_file": "src/city.js",
       "source_location": "L27",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_makewindowtexture",
-      "target": "src_city_city_update"
+      "target": "src_city_city_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3553,9 +3471,9 @@
       "source_file": "src/city.js",
       "source_location": "L241",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildground",
-      "target": "src_city_makegroundtexture"
+      "target": "src_city_makegroundtexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3564,9 +3482,9 @@
       "source_file": "src/city.js",
       "source_location": "L71",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_makegroundtexture",
-      "target": "src_city_city_update"
+      "target": "src_city_city_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3575,9 +3493,9 @@
       "source_file": "src/city.js",
       "source_location": "L66",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_makegroundtexture",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3586,9 +3504,9 @@
       "source_file": "src/city.js",
       "source_location": "L66",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_makegroundtexture",
-      "target": "src_util_randi"
+      "target": "src_util_randi",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3596,9 +3514,9 @@
       "source_file": "src/city.js",
       "source_location": "L117",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_applydamage"
+      "target": "src_city_building_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3606,9 +3524,9 @@
       "source_file": "src/city.js",
       "source_location": "L161",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_collapse"
+      "target": "src_city_building_collapse",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3616,9 +3534,9 @@
       "source_file": "src/city.js",
       "source_location": "L78",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_constructor"
+      "target": "src_city_building_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3626,9 +3544,9 @@
       "source_file": "src/city.js",
       "source_location": "L105",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_containsxz"
+      "target": "src_city_building_containsxz",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3636,9 +3554,9 @@
       "source_file": "src/city.js",
       "source_location": "L134",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_destroyfrom"
+      "target": "src_city_building_destroyfrom",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3646,9 +3564,9 @@
       "source_file": "src/city.js",
       "source_location": "L103",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_max"
+      "target": "src_city_building_max",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3656,9 +3574,9 @@
       "source_file": "src/city.js",
       "source_location": "L102",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_min"
+      "target": "src_city_building_min",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3666,9 +3584,9 @@
       "source_file": "src/city.js",
       "source_location": "L110",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building",
-      "target": "src_city_building_segat"
+      "target": "src_city_building_segat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3710,9 +3628,9 @@
       "source_file": "src/city.js",
       "source_location": "L467",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_groundheightat",
-      "target": "src_city_building_containsxz"
+      "target": "src_city_building_containsxz",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3721,9 +3639,9 @@
       "source_file": "src/city.js",
       "source_location": "L119",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building_applydamage",
-      "target": "src_city_building_segat"
+      "target": "src_city_building_segat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3732,9 +3650,9 @@
       "source_file": "src/city.js",
       "source_location": "L124",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building_applydamage",
-      "target": "src_city_building_destroyfrom"
+      "target": "src_city_building_destroyfrom",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3765,9 +3683,9 @@
       "source_file": "src/city.js",
       "source_location": "L154",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building_destroyfrom",
-      "target": "src_city_building_collapse"
+      "target": "src_city_building_collapse",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3776,9 +3694,9 @@
       "source_file": "src/city.js",
       "source_location": "L145",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building_destroyfrom",
-      "target": "src_city_city_dispose"
+      "target": "src_city_city_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3809,9 +3727,9 @@
       "source_file": "src/city.js",
       "source_location": "L165",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_building_collapse",
-      "target": "src_city_city_dispose"
+      "target": "src_city_city_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3841,9 +3759,9 @@
       "source_file": "src/city.js",
       "source_location": "L188",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_prop",
-      "target": "src_city_prop_constructor"
+      "target": "src_city_prop_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3851,9 +3769,9 @@
       "source_file": "src/city.js",
       "source_location": "L194",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_prop",
-      "target": "src_city_prop_destroy"
+      "target": "src_city_prop_destroy",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3861,9 +3779,9 @@
       "source_file": "src/city.js",
       "source_location": "L193",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_prop",
-      "target": "src_city_prop_pos"
+      "target": "src_city_prop_pos",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3872,9 +3790,9 @@
       "source_file": "src/city.js",
       "source_location": "L533",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_update",
-      "target": "src_city_prop_destroy"
+      "target": "src_city_prop_destroy",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3883,9 +3801,9 @@
       "source_file": "src/city.js",
       "source_location": "L203",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_prop_destroy",
-      "target": "src_city_city_dispose"
+      "target": "src_city_city_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3893,9 +3811,9 @@
       "source_file": "src/city.js",
       "source_location": "L307",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildblocks"
+      "target": "src_city_city_buildblocks",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3903,9 +3821,9 @@
       "source_file": "src/city.js",
       "source_location": "L272",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildboundary"
+      "target": "src_city_city_buildboundary",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3913,9 +3831,9 @@
       "source_file": "src/city.js",
       "source_location": "L412",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildcars"
+      "target": "src_city_city_buildcars",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3923,9 +3841,9 @@
       "source_file": "src/city.js",
       "source_location": "L229",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildground"
+      "target": "src_city_city_buildground",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3933,9 +3851,9 @@
       "source_file": "src/city.js",
       "source_location": "L369",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildpark"
+      "target": "src_city_city_buildpark",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3943,9 +3861,9 @@
       "source_file": "src/city.js",
       "source_location": "L248",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_buildsky"
+      "target": "src_city_city_buildsky",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3953,9 +3871,9 @@
       "source_file": "src/city.js",
       "source_location": "L209",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_constructor"
+      "target": "src_city_city_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3963,9 +3881,9 @@
       "source_file": "src/city.js",
       "source_location": "L539",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_dispose"
+      "target": "src_city_city_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3973,9 +3891,9 @@
       "source_file": "src/city.js",
       "source_location": "L463",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_groundheightat"
+      "target": "src_city_city_groundheightat",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3983,9 +3901,9 @@
       "source_file": "src/city.js",
       "source_location": "L516",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_nearestprop"
+      "target": "src_city_city_nearestprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3993,9 +3911,9 @@
       "source_file": "src/city.js",
       "source_location": "L506",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_raycast"
+      "target": "src_city_city_raycast",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4003,9 +3921,9 @@
       "source_file": "src/city.js",
       "source_location": "L477",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_resolvecollision"
+      "target": "src_city_city_resolvecollision",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4013,9 +3931,9 @@
       "source_file": "src/city.js",
       "source_location": "L350",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_splitlots"
+      "target": "src_city_city_splitlots",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4023,9 +3941,9 @@
       "source_file": "src/city.js",
       "source_location": "L227",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_track"
+      "target": "src_city_city_track",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4033,9 +3951,9 @@
       "source_file": "src/city.js",
       "source_location": "L526",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city",
-      "target": "src_city_city_update"
+      "target": "src_city_city_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4044,9 +3962,9 @@
       "source_file": "src/main.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_city_city"
+      "target": "src_city_city",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4055,9 +3973,9 @@
       "source_file": "src/city.js",
       "source_location": "L223",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_constructor",
-      "target": "src_city_city_buildblocks"
+      "target": "src_city_city_buildblocks",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4066,9 +3984,9 @@
       "source_file": "src/city.js",
       "source_location": "L222",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_constructor",
-      "target": "src_city_city_buildboundary"
+      "target": "src_city_city_buildboundary",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4077,9 +3995,9 @@
       "source_file": "src/city.js",
       "source_location": "L224",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_constructor",
-      "target": "src_city_city_buildcars"
+      "target": "src_city_city_buildcars",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4088,9 +4006,9 @@
       "source_file": "src/city.js",
       "source_location": "L220",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_constructor",
-      "target": "src_city_city_buildground"
+      "target": "src_city_city_buildground",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4099,9 +4017,9 @@
       "source_file": "src/city.js",
       "source_location": "L221",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_constructor",
-      "target": "src_city_city_buildsky"
+      "target": "src_city_city_buildsky",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4121,9 +4039,9 @@
       "source_file": "src/city.js",
       "source_location": "L303",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildboundary",
-      "target": "src_city_city_track"
+      "target": "src_city_city_track",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4132,9 +4050,9 @@
       "source_file": "src/city.js",
       "source_location": "L236",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildground",
-      "target": "src_city_city_track"
+      "target": "src_city_city_track",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4143,9 +4061,9 @@
       "source_file": "src/city.js",
       "source_location": "L380",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildpark",
-      "target": "src_city_city_track"
+      "target": "src_city_city_track",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4154,9 +4072,9 @@
       "source_file": "src/city.js",
       "source_location": "L269",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildsky",
-      "target": "src_city_city_track"
+      "target": "src_city_city_track",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4176,9 +4094,9 @@
       "source_file": "src/city.js",
       "source_location": "L262",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildsky",
-      "target": "src_city_city_update"
+      "target": "src_city_city_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4220,9 +4138,9 @@
       "source_file": "src/city.js",
       "source_location": "L327",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildblocks",
-      "target": "src_city_city_buildpark"
+      "target": "src_city_city_buildpark",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4231,9 +4149,9 @@
       "source_file": "src/city.js",
       "source_location": "L331",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_city_city_buildblocks",
-      "target": "src_city_city_splitlots"
+      "target": "src_city_city_splitlots",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4351,9 +4269,9 @@
       "source_file": "src/effects.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_effects_effects"
+      "target": "src_effects_effects",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4362,9 +4280,9 @@
       "source_file": "src/effects.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4373,9 +4291,9 @@
       "source_file": "src/effects.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4384,9 +4302,9 @@
       "source_file": "src/effects.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4395,9 +4313,9 @@
       "source_file": "src/effects.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4406,9 +4324,9 @@
       "source_file": "src/effects.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4417,9 +4335,9 @@
       "source_file": "src/main.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_effects"
+      "target": "src_effects",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4427,9 +4345,9 @@
       "source_file": "src/effects.js",
       "source_location": "L40",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_burst"
+      "target": "src_effects_effects_burst",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4437,9 +4355,9 @@
       "source_file": "src/effects.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_constructor"
+      "target": "src_effects_effects_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4447,9 +4365,9 @@
       "source_file": "src/effects.js",
       "source_location": "L76",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_dust"
+      "target": "src_effects_effects_dust",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4457,9 +4375,9 @@
       "source_file": "src/effects.js",
       "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_explosion"
+      "target": "src_effects_effects_explosion",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4467,9 +4385,9 @@
       "source_file": "src/effects.js",
       "source_location": "L111",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_flashmesh"
+      "target": "src_effects_effects_flashmesh",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4477,9 +4395,9 @@
       "source_file": "src/effects.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_hitspark"
+      "target": "src_effects_effects_hitspark",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4487,9 +4405,9 @@
       "source_file": "src/effects.js",
       "source_location": "L37",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_shake"
+      "target": "src_effects_effects_shake",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4497,9 +4415,9 @@
       "source_file": "src/effects.js",
       "source_location": "L85",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_spawnchunks"
+      "target": "src_effects_effects_spawnchunks",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4507,9 +4425,9 @@
       "source_file": "src/effects.js",
       "source_location": "L116",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects",
-      "target": "src_effects_effects_update"
+      "target": "src_effects_effects_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4518,9 +4436,9 @@
       "source_file": "src/main.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_effects_effects"
+      "target": "src_effects_effects",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4529,9 +4447,9 @@
       "source_file": "src/effects.js",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects_constructor",
-      "target": "src_effects_effects_update"
+      "target": "src_effects_effects_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4551,9 +4469,9 @@
       "source_file": "src/effects.js",
       "source_location": "L73",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects_explosion",
-      "target": "src_effects_effects_shake"
+      "target": "src_effects_effects_shake",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4573,9 +4491,9 @@
       "source_file": "src/effects.js",
       "source_location": "L77",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects_dust",
-      "target": "src_effects_effects_burst"
+      "target": "src_effects_effects_burst",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4584,9 +4502,9 @@
       "source_file": "src/effects.js",
       "source_location": "L70",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects_explosion",
-      "target": "src_effects_effects_burst"
+      "target": "src_effects_effects_burst",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4595,9 +4513,9 @@
       "source_file": "src/effects.js",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_effects_effects_hitspark",
-      "target": "src_effects_effects_burst"
+      "target": "src_effects_effects_burst",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4671,9 +4589,9 @@
       "source_file": "src/hud.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud",
-      "target": "src_hud_hud"
+      "target": "src_hud_hud",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4681,9 +4599,9 @@
       "source_file": "src/hud.js",
       "source_location": "L62",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud",
-      "target": "src_hud_screens"
+      "target": "src_hud_screens",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4692,9 +4610,9 @@
       "source_file": "src/main.js",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_hud"
+      "target": "src_hud",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4702,9 +4620,9 @@
       "source_file": "src/hud.js",
       "source_location": "L50",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_announce"
+      "target": "src_hud_hud_announce",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4712,9 +4630,9 @@
       "source_file": "src/hud.js",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_bind"
+      "target": "src_hud_hud_bind",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4722,9 +4640,9 @@
       "source_file": "src/hud.js",
       "source_location": "L58",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_clearannounce"
+      "target": "src_hud_hud_clearannounce",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4732,9 +4650,9 @@
       "source_file": "src/hud.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_constructor"
+      "target": "src_hud_hud_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4742,9 +4660,9 @@
       "source_file": "src/hud.js",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_poke"
+      "target": "src_hud_hud_poke",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -4752,9 +4670,9 @@
       "source_file": "src/hud.js",
       "source_location": "L44",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud",
-      "target": "src_hud_hud_update"
+      "target": "src_hud_hud_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4763,9 +4681,9 @@
       "source_file": "src/main.js",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_hud_hud"
+      "target": "src_hud_hud",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4774,9 +4692,9 @@
       "source_file": "src/hud.js",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_hud_hud_bind",
-      "target": "src_hud_hud_poke"
+      "target": "src_hud_hud_poke",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4785,9 +4703,9 @@
       "source_file": "src/main.js",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_hud_screens"
+      "target": "src_hud_screens",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4795,9 +4713,9 @@
       "source_file": "src/main.js",
       "source_location": "L128",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_buildselectui"
+      "target": "src_main_buildselectui",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4805,9 +4723,9 @@
       "source_file": "src/main.js",
       "source_location": "L70",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_buildworld"
+      "target": "src_main_buildworld",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4815,9 +4733,9 @@
       "source_file": "src/main.js",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_canvas"
+      "target": "src_main_canvas",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4825,9 +4743,9 @@
       "source_file": "src/main.js",
       "source_location": "L158",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_clearpreview"
+      "target": "src_main_clearpreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4835,9 +4753,9 @@
       "source_file": "src/main.js",
       "source_location": "L171",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_confirmselect"
+      "target": "src_main_confirmselect",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4845,9 +4763,9 @@
       "source_file": "src/main.js",
       "source_location": "L82",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_disposeworld"
+      "target": "src_main_disposeworld",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4855,9 +4773,9 @@
       "source_file": "src/main.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_endtovictory"
+      "target": "src_main_endtovictory",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4865,9 +4783,9 @@
       "source_file": "src/main.js",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_engine"
+      "target": "src_main_engine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4875,9 +4793,9 @@
       "source_file": "src/main.js",
       "source_location": "L162",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_enterselect"
+      "target": "src_main_enterselect",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4885,9 +4803,9 @@
       "source_file": "src/main.js",
       "source_location": "L40",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_g"
+      "target": "src_main_g",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4895,9 +4813,9 @@
       "source_file": "src/main.js",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_glow"
+      "target": "src_main_glow",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4905,9 +4823,9 @@
       "source_file": "src/main.js",
       "source_location": "L27",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_hemi"
+      "target": "src_main_hemi",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4915,9 +4833,9 @@
       "source_file": "src/main.js",
       "source_location": "L52",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_input"
+      "target": "src_main_input",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4925,9 +4843,9 @@
       "source_file": "src/main.js",
       "source_location": "L145",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_refreshselectfocus"
+      "target": "src_main_refreshselectfocus",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4935,9 +4853,9 @@
       "source_file": "src/main.js",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_scene"
+      "target": "src_main_scene",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4945,9 +4863,9 @@
       "source_file": "src/main.js",
       "source_location": "L56",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_selection"
+      "target": "src_main_selection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4955,9 +4873,9 @@
       "source_file": "src/main.js",
       "source_location": "L61",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_setupshadows"
+      "target": "src_main_setupshadows",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4965,9 +4883,9 @@
       "source_file": "src/main.js",
       "source_location": "L151",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_showpreview"
+      "target": "src_main_showpreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4975,9 +4893,9 @@
       "source_file": "src/main.js",
       "source_location": "L90",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_startmatch"
+      "target": "src_main_startmatch",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4985,9 +4903,9 @@
       "source_file": "src/main.js",
       "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_sun"
+      "target": "src_main_sun",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4996,9 +4914,9 @@
       "source_file": "src/main.js",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_monster"
+      "target": "src_monster",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5007,9 +4925,9 @@
       "source_file": "src/main.js",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_monster_monster"
+      "target": "src_monster_monster",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5018,9 +4936,9 @@
       "source_file": "src/main.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_monsters"
+      "target": "src_monsters",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5029,9 +4947,9 @@
       "source_file": "src/main.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_monsters_roster"
+      "target": "src_monsters_roster",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5040,9 +4958,9 @@
       "source_file": "src/main.js",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_pickups"
+      "target": "src_pickups",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5051,9 +4969,9 @@
       "source_file": "src/main.js",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_pickups_pickupmanager"
+      "target": "src_pickups_pickupmanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5062,9 +4980,9 @@
       "source_file": "src/main.js",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_player"
+      "target": "src_player",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5073,9 +4991,9 @@
       "source_file": "src/main.js",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_player_playerinput"
+      "target": "src_player_playerinput",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5084,9 +5002,9 @@
       "source_file": "src/main.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_projectiles"
+      "target": "src_projectiles",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5095,9 +5013,9 @@
       "source_file": "src/main.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_projectiles_projectilemanager"
+      "target": "src_projectiles_projectilemanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5106,9 +5024,9 @@
       "source_file": "src/main.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5117,9 +5035,9 @@
       "source_file": "src/main.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5128,9 +5046,9 @@
       "source_file": "src/main.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5139,9 +5057,9 @@
       "source_file": "src/main.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5150,9 +5068,9 @@
       "source_file": "src/main.js",
       "source_location": "L79",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_buildworld",
-      "target": "src_main_setupshadows"
+      "target": "src_main_setupshadows",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5161,9 +5079,9 @@
       "source_file": "src/main.js",
       "source_location": "L71",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_buildworld",
-      "target": "src_main_disposeworld"
+      "target": "src_main_disposeworld",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5172,9 +5090,9 @@
       "source_file": "src/main.js",
       "source_location": "L76",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_buildworld",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5183,9 +5101,9 @@
       "source_file": "src/main.js",
       "source_location": "L92",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_startmatch",
-      "target": "src_main_buildworld"
+      "target": "src_main_buildworld",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5194,9 +5112,9 @@
       "source_file": "src/main.js",
       "source_location": "L91",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_startmatch",
-      "target": "src_main_clearpreview"
+      "target": "src_main_clearpreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5205,9 +5123,9 @@
       "source_file": "src/main.js",
       "source_location": "L93",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_startmatch",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5216,9 +5134,9 @@
       "source_file": "src/main.js",
       "source_location": "L168",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_enterselect",
-      "target": "src_main_refreshselectfocus"
+      "target": "src_main_refreshselectfocus",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5227,9 +5145,9 @@
       "source_file": "src/main.js",
       "source_location": "L147",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_refreshselectfocus",
-      "target": "src_main_showpreview"
+      "target": "src_main_showpreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5238,9 +5156,9 @@
       "source_file": "src/main.js",
       "source_location": "L152",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_showpreview",
-      "target": "src_main_clearpreview"
+      "target": "src_main_clearpreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5249,9 +5167,9 @@
       "source_file": "src/main.js",
       "source_location": "L176",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_main_confirmselect",
-      "target": "src_main_enterselect"
+      "target": "src_main_enterselect",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5259,9 +5177,9 @@
       "source_file": "src/monster.js",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_monster_monster"
+      "target": "src_monster_monster",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5269,9 +5187,9 @@
       "source_file": "src/monster.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_monster_moves"
+      "target": "src_monster_moves",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5280,9 +5198,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5291,9 +5209,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_anglelerp"
+      "target": "src_util_anglelerp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5302,9 +5220,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5313,9 +5231,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_damp"
+      "target": "src_util_damp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5324,9 +5242,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_distxz"
+      "target": "src_util_distxz",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5335,9 +5253,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_fwdof"
+      "target": "src_util_fwdof",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5346,9 +5264,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_lerp"
+      "target": "src_util_lerp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5357,9 +5275,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_smoothstep"
+      "target": "src_util_smoothstep",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5368,9 +5286,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5379,9 +5297,9 @@
       "source_file": "src/monster.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster",
-      "target": "src_util_yawto"
+      "target": "src_util_yawto",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5389,9 +5307,9 @@
       "source_file": "src/monster.js",
       "source_location": "L68",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5399,9 +5317,9 @@
       "source_file": "src/monster.js",
       "source_location": "L65",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_busy"
+      "target": "src_monster_monster_busy",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5409,9 +5327,9 @@
       "source_file": "src/monster.js",
       "source_location": "L63",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_center"
+      "target": "src_monster_monster_center",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5419,9 +5337,9 @@
       "source_file": "src/monster.js",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_constructor"
+      "target": "src_monster_monster_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5429,9 +5347,9 @@
       "source_file": "src/monster.js",
       "source_location": "L111",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_die"
+      "target": "src_monster_monster_die",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5439,9 +5357,9 @@
       "source_file": "src/monster.js",
       "source_location": "L771",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_dispose"
+      "target": "src_monster_monster_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5449,9 +5367,9 @@
       "source_file": "src/monster.js",
       "source_location": "L614",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_dropprop"
+      "target": "src_monster_monster_dropprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5459,9 +5377,9 @@
       "source_file": "src/monster.js",
       "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_fwd"
+      "target": "src_monster_monster_fwd",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5469,9 +5387,9 @@
       "source_file": "src/monster.js",
       "source_location": "L109",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_gainenergy"
+      "target": "src_monster_monster_gainenergy",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5479,9 +5397,9 @@
       "source_file": "src/monster.js",
       "source_location": "L108",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_heal"
+      "target": "src_monster_monster_heal",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5489,9 +5407,9 @@
       "source_file": "src/monster.js",
       "source_location": "L325",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_intenttowardwall"
+      "target": "src_monster_monster_intenttowardwall",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5499,9 +5417,9 @@
       "source_file": "src/monster.js",
       "source_location": "L436",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_meleesweep"
+      "target": "src_monster_monster_meleesweep",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5509,9 +5427,9 @@
       "source_file": "src/monster.js",
       "source_location": "L127",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5519,9 +5437,9 @@
       "source_file": "src/monster.js",
       "source_location": "L605",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_releasegrab"
+      "target": "src_monster_monster_releasegrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5529,9 +5447,9 @@
       "source_file": "src/monster.js",
       "source_location": "L482",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_resolveairslam"
+      "target": "src_monster_monster_resolveairslam",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5539,9 +5457,9 @@
       "source_file": "src/monster.js",
       "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5549,9 +5467,9 @@
       "source_file": "src/monster.js",
       "source_location": "L398",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_startmove"
+      "target": "src_monster_monster_startmove",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5559,9 +5477,9 @@
       "source_file": "src/monster.js",
       "source_location": "L502",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_startspecial"
+      "target": "src_monster_monster_startspecial",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5569,9 +5487,9 @@
       "source_file": "src/monster.js",
       "source_location": "L757",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_syncmesh"
+      "target": "src_monster_monster_syncmesh",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5579,9 +5497,9 @@
       "source_file": "src/monster.js",
       "source_location": "L623",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_throwprop"
+      "target": "src_monster_monster_throwprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5589,9 +5507,9 @@
       "source_file": "src/monster.js",
       "source_location": "L588",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_throwvictim"
+      "target": "src_monster_monster_throwvictim",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5599,9 +5517,9 @@
       "source_file": "src/monster.js",
       "source_location": "L543",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_trygrab"
+      "target": "src_monster_monster_trygrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5609,9 +5527,9 @@
       "source_file": "src/monster.js",
       "source_location": "L130",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_update"
+      "target": "src_monster_monster_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5619,9 +5537,9 @@
       "source_file": "src/monster.js",
       "source_location": "L656",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updateanimation"
+      "target": "src_monster_monster_updateanimation",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5629,9 +5547,9 @@
       "source_file": "src/monster.js",
       "source_location": "L414",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updateattack"
+      "target": "src_monster_monster_updateattack",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5639,9 +5557,9 @@
       "source_file": "src/monster.js",
       "source_location": "L332",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updateclimb"
+      "target": "src_monster_monster_updateclimb",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5649,9 +5567,9 @@
       "source_file": "src/monster.js",
       "source_location": "L647",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updatedead"
+      "target": "src_monster_monster_updatedead",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5659,9 +5577,9 @@
       "source_file": "src/monster.js",
       "source_location": "L577",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updategrabhold"
+      "target": "src_monster_monster_updategrabhold",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5669,9 +5587,9 @@
       "source_file": "src/monster.js",
       "source_location": "L172",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updatelocomotion"
+      "target": "src_monster_monster_updatelocomotion",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5679,9 +5597,9 @@
       "source_file": "src/monster.js",
       "source_location": "L252",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updatephysics"
+      "target": "src_monster_monster_updatephysics",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -5689,9 +5607,9 @@
       "source_file": "src/monster.js",
       "source_location": "L513",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_updatespecial"
+      "target": "src_monster_monster_updatespecial",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5733,9 +5651,9 @@
       "source_file": "src/monster.js",
       "source_location": "L94",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_applydamage",
-      "target": "src_monster_monster_die"
+      "target": "src_monster_monster_die",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5744,9 +5662,9 @@
       "source_file": "src/monster.js",
       "source_location": "L93",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_applydamage",
-      "target": "src_monster_monster_dropprop"
+      "target": "src_monster_monster_dropprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5755,9 +5673,9 @@
       "source_file": "src/monster.js",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_applydamage",
-      "target": "src_monster_monster_gainenergy"
+      "target": "src_monster_monster_gainenergy",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5766,9 +5684,9 @@
       "source_file": "src/monster.js",
       "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_applydamage",
-      "target": "src_monster_monster_releasegrab"
+      "target": "src_monster_monster_releasegrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5777,9 +5695,9 @@
       "source_file": "src/monster.js",
       "source_location": "L96",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_applydamage",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5788,9 +5706,9 @@
       "source_file": "src/monster.js",
       "source_location": "L451",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_meleesweep",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5799,9 +5717,9 @@
       "source_file": "src/monster.js",
       "source_location": "L494",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_resolveairslam",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5810,9 +5728,9 @@
       "source_file": "src/monster.js",
       "source_location": "L594",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwvictim",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5821,9 +5739,9 @@
       "source_file": "src/monster.js",
       "source_location": "L391",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateclimb",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5832,9 +5750,9 @@
       "source_file": "src/monster.js",
       "source_location": "L266",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_applydamage"
+      "target": "src_monster_monster_applydamage",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5854,9 +5772,9 @@
       "source_file": "src/monster.js",
       "source_location": "L136",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_gainenergy"
+      "target": "src_monster_monster_gainenergy",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5865,9 +5783,9 @@
       "source_file": "src/monster.js",
       "source_location": "L117",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_die",
-      "target": "src_monster_monster_dropprop"
+      "target": "src_monster_monster_dropprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5876,9 +5794,9 @@
       "source_file": "src/monster.js",
       "source_location": "L118",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_die",
-      "target": "src_monster_monster_releasegrab"
+      "target": "src_monster_monster_releasegrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5887,9 +5805,9 @@
       "source_file": "src/monster.js",
       "source_location": "L113",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_die",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5898,9 +5816,9 @@
       "source_file": "src/monster.js",
       "source_location": "L272",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_die"
+      "target": "src_monster_monster_die",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5909,9 +5827,9 @@
       "source_file": "src/monster.js",
       "source_location": "L609",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_releasegrab",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5920,9 +5838,9 @@
       "source_file": "src/monster.js",
       "source_location": "L486",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_resolveairslam",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5931,9 +5849,9 @@
       "source_file": "src/monster.js",
       "source_location": "L404",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_startmove",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5942,9 +5860,9 @@
       "source_file": "src/monster.js",
       "source_location": "L505",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_startspecial",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5953,9 +5871,9 @@
       "source_file": "src/monster.js",
       "source_location": "L641",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwprop",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5964,9 +5882,9 @@
       "source_file": "src/monster.js",
       "source_location": "L596",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwvictim",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5975,9 +5893,9 @@
       "source_file": "src/monster.js",
       "source_location": "L565",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_trygrab",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5986,9 +5904,9 @@
       "source_file": "src/monster.js",
       "source_location": "L149",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -5997,9 +5915,9 @@
       "source_file": "src/monster.js",
       "source_location": "L416",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateattack",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6008,9 +5926,9 @@
       "source_file": "src/monster.js",
       "source_location": "L334",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateclimb",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6019,9 +5937,9 @@
       "source_file": "src/monster.js",
       "source_location": "L579",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updategrabhold",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6030,9 +5948,9 @@
       "source_file": "src/monster.js",
       "source_location": "L180",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6041,9 +5959,9 @@
       "source_file": "src/monster.js",
       "source_location": "L277",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6052,9 +5970,9 @@
       "source_file": "src/monster.js",
       "source_location": "L539",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatespecial",
-      "target": "src_monster_monster_setstate"
+      "target": "src_monster_monster_setstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6063,9 +5981,9 @@
       "source_file": "src/monster.js",
       "source_location": "L405",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_startmove",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6074,9 +5992,9 @@
       "source_file": "src/monster.js",
       "source_location": "L506",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_startspecial",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6085,9 +6003,9 @@
       "source_file": "src/monster.js",
       "source_location": "L642",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwprop",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6096,9 +6014,9 @@
       "source_file": "src/monster.js",
       "source_location": "L601",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwvictim",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6107,9 +6025,9 @@
       "source_file": "src/monster.js",
       "source_location": "L555",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_trygrab",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6118,9 +6036,9 @@
       "source_file": "src/monster.js",
       "source_location": "L393",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateclimb",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6129,9 +6047,9 @@
       "source_file": "src/monster.js",
       "source_location": "L198",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6140,9 +6058,9 @@
       "source_file": "src/monster.js",
       "source_location": "L279",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_playanim"
+      "target": "src_monster_monster_playanim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6151,9 +6069,9 @@
       "source_file": "src/monster.js",
       "source_location": "L138",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_syncmesh"
+      "target": "src_monster_monster_syncmesh",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6162,9 +6080,9 @@
       "source_file": "src/monster.js",
       "source_location": "L167",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updateanimation"
+      "target": "src_monster_monster_updateanimation",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6173,9 +6091,9 @@
       "source_file": "src/monster.js",
       "source_location": "L151",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updateattack"
+      "target": "src_monster_monster_updateattack",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6184,9 +6102,9 @@
       "source_file": "src/monster.js",
       "source_location": "L147",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updateclimb"
+      "target": "src_monster_monster_updateclimb",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6195,9 +6113,9 @@
       "source_file": "src/monster.js",
       "source_location": "L138",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updatedead"
+      "target": "src_monster_monster_updatedead",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6206,9 +6124,9 @@
       "source_file": "src/monster.js",
       "source_location": "L155",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updategrabhold"
+      "target": "src_monster_monster_updategrabhold",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6217,9 +6135,9 @@
       "source_file": "src/monster.js",
       "source_location": "L145",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updatelocomotion"
+      "target": "src_monster_monster_updatelocomotion",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6228,9 +6146,9 @@
       "source_file": "src/monster.js",
       "source_location": "L166",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_update",
-      "target": "src_monster_monster_updatephysics"
+      "target": "src_monster_monster_updatephysics",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6239,9 +6157,9 @@
       "source_file": "src/monster.js",
       "source_location": "L238",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_startmove"
+      "target": "src_monster_monster_startmove",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6250,9 +6168,9 @@
       "source_file": "src/monster.js",
       "source_location": "L235",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_startspecial"
+      "target": "src_monster_monster_startspecial",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6261,9 +6179,9 @@
       "source_file": "src/monster.js",
       "source_location": "L237",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_throwprop"
+      "target": "src_monster_monster_throwprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6272,9 +6190,9 @@
       "source_file": "src/monster.js",
       "source_location": "L244",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatelocomotion",
-      "target": "src_monster_monster_trygrab"
+      "target": "src_monster_monster_trygrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6338,9 +6256,9 @@
       "source_file": "src/monster.js",
       "source_location": "L274",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_intenttowardwall"
+      "target": "src_monster_monster_intenttowardwall",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6349,9 +6267,9 @@
       "source_file": "src/monster.js",
       "source_location": "L307",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updatephysics",
-      "target": "src_monster_monster_resolveairslam"
+      "target": "src_monster_monster_resolveairslam",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6404,9 +6322,9 @@
       "source_file": "src/monster.js",
       "source_location": "L431",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateattack",
-      "target": "src_monster_monster_startmove"
+      "target": "src_monster_monster_startmove",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6415,9 +6333,9 @@
       "source_file": "src/monster.js",
       "source_location": "L428",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateattack",
-      "target": "src_monster_monster_meleesweep"
+      "target": "src_monster_monster_meleesweep",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6426,9 +6344,9 @@
       "source_file": "src/monster.js",
       "source_location": "L423",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateattack",
-      "target": "src_monster_monster_resolveairslam"
+      "target": "src_monster_monster_resolveairslam",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6437,9 +6355,9 @@
       "source_file": "src/monster.js",
       "source_location": "L417",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updateattack",
-      "target": "src_monster_monster_updatespecial"
+      "target": "src_monster_monster_updatespecial",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6503,9 +6421,9 @@
       "source_file": "src/monster.js",
       "source_location": "L579",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updategrabhold",
-      "target": "src_monster_monster_releasegrab"
+      "target": "src_monster_monster_releasegrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6514,9 +6432,9 @@
       "source_file": "src/monster.js",
       "source_location": "L585",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_updategrabhold",
-      "target": "src_monster_monster_throwvictim"
+      "target": "src_monster_monster_throwvictim",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6536,9 +6454,9 @@
       "source_file": "src/monster.js",
       "source_location": "L591",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monster_monster_throwvictim",
-      "target": "src_monster_monster_releasegrab"
+      "target": "src_monster_monster_releasegrab",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6612,9 +6530,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_box"
+      "target": "src_monsters_box",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6622,9 +6540,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L160",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_buildkragmor"
+      "target": "src_monsters_buildkragmor",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6632,9 +6550,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L111",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_buildmegaton"
+      "target": "src_monsters_buildmegaton",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6642,9 +6560,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L50",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_buildryzor"
+      "target": "src_monsters_buildryzor",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6652,9 +6570,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L204",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_buildvespera"
+      "target": "src_monsters_buildvespera",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6662,9 +6580,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_cyl"
+      "target": "src_monsters_cyl",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6672,9 +6590,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L39",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_finishrig"
+      "target": "src_monsters_finishrig",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6682,9 +6600,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_mat"
+      "target": "src_monsters_mat",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6692,9 +6610,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_node"
+      "target": "src_monsters_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6702,9 +6620,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L267",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_roster"
+      "target": "src_monsters_roster",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6712,9 +6630,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L26",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_monsters_sph"
+      "target": "src_monsters_sph",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -6723,9 +6641,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -6734,9 +6652,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -6745,9 +6663,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -6756,9 +6674,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6767,9 +6685,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L162",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_monsters_mat"
+      "target": "src_monsters_mat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6778,9 +6696,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L113",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_mat"
+      "target": "src_monsters_mat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6789,9 +6707,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L52",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildryzor",
-      "target": "src_monsters_mat"
+      "target": "src_monsters_mat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6800,9 +6718,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L206",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildvespera",
-      "target": "src_monsters_mat"
+      "target": "src_monsters_mat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6811,9 +6729,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_mat",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6822,9 +6740,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L166",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_monsters_node"
+      "target": "src_monsters_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6833,9 +6751,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L118",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_node"
+      "target": "src_monsters_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6844,9 +6762,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L57",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildryzor",
-      "target": "src_monsters_node"
+      "target": "src_monsters_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6855,9 +6773,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L212",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildvespera",
-      "target": "src_monsters_node"
+      "target": "src_monsters_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6866,9 +6784,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L178",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_monsters_box"
+      "target": "src_monsters_box",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6877,9 +6795,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_box"
+      "target": "src_monsters_box",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6888,9 +6806,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L168",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_monsters_sph"
+      "target": "src_monsters_sph",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6899,9 +6817,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_sph"
+      "target": "src_monsters_sph",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6910,9 +6828,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L59",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildryzor",
-      "target": "src_monsters_sph"
+      "target": "src_monsters_sph",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6921,9 +6839,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L214",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildvespera",
-      "target": "src_monsters_sph"
+      "target": "src_monsters_sph",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6932,9 +6850,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_cyl"
+      "target": "src_monsters_cyl",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6943,9 +6861,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildryzor",
-      "target": "src_monsters_cyl"
+      "target": "src_monsters_cyl",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6954,9 +6872,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L220",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildvespera",
-      "target": "src_monsters_cyl"
+      "target": "src_monsters_cyl",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6965,9 +6883,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L200",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_monsters_finishrig"
+      "target": "src_monsters_finishrig",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6976,9 +6894,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L156",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildmegaton",
-      "target": "src_monsters_finishrig"
+      "target": "src_monsters_finishrig",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6987,9 +6905,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L107",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildryzor",
-      "target": "src_monsters_finishrig"
+      "target": "src_monsters_finishrig",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6998,9 +6916,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L263",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildvespera",
-      "target": "src_monsters_finishrig"
+      "target": "src_monsters_finishrig",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7009,9 +6927,9 @@
       "source_file": "src/monsters.js",
       "source_location": "L174",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_monsters_buildkragmor",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7019,9 +6937,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_pickups_pickupmanager"
+      "target": "src_pickups_pickupmanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -7030,9 +6948,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7041,9 +6959,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7052,9 +6970,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_util_pick"
+      "target": "src_util_pick",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7063,9 +6981,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7074,9 +6992,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7084,9 +7002,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager",
-      "target": "src_pickups_pickupmanager_addspawnpoints"
+      "target": "src_pickups_pickupmanager_addspawnpoints",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7094,9 +7012,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager",
-      "target": "src_pickups_pickupmanager_constructor"
+      "target": "src_pickups_pickupmanager_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7104,9 +7022,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager",
-      "target": "src_pickups_pickupmanager_dispose"
+      "target": "src_pickups_pickupmanager_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7114,9 +7032,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L26",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager",
-      "target": "src_pickups_pickupmanager_spawn"
+      "target": "src_pickups_pickupmanager_spawn",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7124,9 +7042,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L38",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager",
-      "target": "src_pickups_pickupmanager_update"
+      "target": "src_pickups_pickupmanager_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7168,9 +7086,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L45",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager_update",
-      "target": "src_pickups_pickupmanager_spawn"
+      "target": "src_pickups_pickupmanager_spawn",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7179,9 +7097,9 @@
       "source_file": "src/pickups.js",
       "source_location": "L73",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_pickups_pickupmanager_update",
-      "target": "src_pickups_pickupmanager_dispose"
+      "target": "src_pickups_pickupmanager_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7200,9 +7118,9 @@
       "source_file": "src/player.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player",
-      "target": "src_player_playerinput"
+      "target": "src_player_playerinput",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7210,9 +7128,9 @@
       "source_file": "src/player.js",
       "source_location": "L54",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_clearedges"
+      "target": "src_player_playerinput_clearedges",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7220,9 +7138,9 @@
       "source_file": "src/player.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_constructor"
+      "target": "src_player_playerinput_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7230,9 +7148,9 @@
       "source_file": "src/player.js",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_consume"
+      "target": "src_player_playerinput_consume",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7240,9 +7158,9 @@
       "source_file": "src/player.js",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_intents"
+      "target": "src_player_playerinput_intents",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7251,9 +7169,9 @@
       "source_file": "src/player.js",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_player_playerinput_intents",
-      "target": "src_player_playerinput_consume"
+      "target": "src_player_playerinput_consume",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7261,9 +7179,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles",
-      "target": "src_projectiles_projectilemanager"
+      "target": "src_projectiles_projectilemanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -7272,9 +7190,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles",
-      "target": "src_util"
+      "target": "src_util",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7283,9 +7201,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7294,9 +7212,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles",
-      "target": "src_util_disttocapsule"
+      "target": "src_util_disttocapsule",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7305,9 +7223,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7315,9 +7233,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_constructor"
+      "target": "src_projectiles_projectilemanager_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7325,9 +7243,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_dispose"
+      "target": "src_projectiles_projectilemanager_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7335,9 +7253,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_impact"
+      "target": "src_projectiles_projectilemanager_impact",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7345,9 +7263,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_spawn"
+      "target": "src_projectiles_projectilemanager_spawn",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7355,9 +7273,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_spawnprop"
+      "target": "src_projectiles_projectilemanager_spawnprop",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7365,9 +7283,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L60",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager",
-      "target": "src_projectiles_projectilemanager_update"
+      "target": "src_projectiles_projectilemanager_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7398,9 +7316,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L37",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager_impact",
-      "target": "src_projectiles_projectilemanager_dispose"
+      "target": "src_projectiles_projectilemanager_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7431,9 +7349,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager_update",
-      "target": "src_projectiles_projectilemanager_impact"
+      "target": "src_projectiles_projectilemanager_impact",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7442,9 +7360,9 @@
       "source_file": "src/projectiles.js",
       "source_location": "L95",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_projectiles_projectilemanager_update",
-      "target": "src_projectiles_projectilemanager_dispose"
+      "target": "src_projectiles_projectilemanager_dispose",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7463,9 +7381,9 @@
       "source_file": "src/util.js",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_anglelerp"
+      "target": "src_util_anglelerp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7473,9 +7391,9 @@
       "source_file": "src/util.js",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_c3"
+      "target": "src_util_c3",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7483,9 +7401,9 @@
       "source_file": "src/util.js",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7493,9 +7411,9 @@
       "source_file": "src/util.js",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_damp"
+      "target": "src_util_damp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7503,9 +7421,9 @@
       "source_file": "src/util.js",
       "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_disttocapsule"
+      "target": "src_util_disttocapsule",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7513,9 +7431,9 @@
       "source_file": "src/util.js",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_distxz"
+      "target": "src_util_distxz",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7523,9 +7441,9 @@
       "source_file": "src/util.js",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_fwdof"
+      "target": "src_util_fwdof",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7533,9 +7451,9 @@
       "source_file": "src/util.js",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_lerp"
+      "target": "src_util_lerp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7543,9 +7461,9 @@
       "source_file": "src/util.js",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_pick"
+      "target": "src_util_pick",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7553,9 +7471,9 @@
       "source_file": "src/util.js",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7563,9 +7481,9 @@
       "source_file": "src/util.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_randi"
+      "target": "src_util_randi",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7573,9 +7491,9 @@
       "source_file": "src/util.js",
       "source_location": "L38",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_segmentvsaabb"
+      "target": "src_util_segmentvsaabb",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7583,9 +7501,9 @@
       "source_file": "src/util.js",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_smoothstep"
+      "target": "src_util_smoothstep",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7593,9 +7511,9 @@
       "source_file": "src/util.js",
       "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7603,9 +7521,9 @@
       "source_file": "src/util.js",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util",
-      "target": "src_util_yawto"
+      "target": "src_util_yawto",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7614,9 +7532,9 @@
       "source_file": "src/util.js",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util_fwdof",
-      "target": "src_util_v3"
+      "target": "src_util_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7625,9 +7543,9 @@
       "source_file": "src/util.js",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util_disttocapsule",
-      "target": "src_util_clamp"
+      "target": "src_util_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7636,9 +7554,9 @@
       "source_file": "src/util.js",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_util_randi",
-      "target": "src_util_rand"
+      "target": "src_util_rand",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7646,9 +7564,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_colossal_fury"
+      "target": "readme_colossal_fury",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7656,9 +7574,9 @@
       "source_file": "README.md",
       "source_location": "L53",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme_colossal_fury",
-      "target": "readme_code_layout"
+      "target": "readme_code_layout",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7666,9 +7584,9 @@
       "source_file": "README.md",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme_colossal_fury",
-      "target": "readme_controls"
+      "target": "readme_controls",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7676,9 +7594,9 @@
       "source_file": "README.md",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme_colossal_fury",
-      "target": "readme_run_it"
+      "target": "readme_run_it",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7686,11 +7604,10 @@
       "source_file": "README.md",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme_colossal_fury",
-      "target": "readme_the_game"
+      "target": "readme_the_game",
+      "confidence_score": 1.0
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "c20650fcc20bb40fe1f47994be7a31895288b012"
+  "hyperedges": []
 }

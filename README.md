@@ -52,13 +52,16 @@ vendored in `lib/`, so it runs fully offline.)
 **Settings** (⚙ on the title screen, or SETTINGS in the pause menu) let you adjust
 **turn sensitivity** (mouse *and* touch drag-to-aim, up to 6×), **invert look (Y)**,
 **volume**, and — under GAMEPLAY — **movement speed** and **jump height** (these
-tune your monster only, not the AI). Choices are saved on the device (localStorage)
-and reapplied next time.
+tune your monster only, not the AI). Under **PHYSICS** (global — both fighters):
+**gravity** in m/s² (default 9.81 = the original tuning; raise it for a heavier,
+less-floaty fall), **throw speed** for hurled props (cars/trees/monument), and
+**special speed** for energy-attack projectiles. Choices are saved on the device
+(localStorage) and reapplied next time. A center **crosshair** marks where you aim.
 
 On phones there's also **gyro steering**: turn on *TILT TO TURN* and lean the phone
 left/right to rotate your monster, and *TILT TO LOOK* to tilt it forward/back to aim
 up/down. Both axes share one *gyro sensitivity* and each has its own invert (INVERT
-HORIZONTAL / VERTICAL). Tilt maps to a *rate* so you can spin a full 360°; "level"
+HORIZONTAL / VERTICAL), and a *gyro sensitivity* up to 8×. Tilt maps to a *rate* so you can spin a full 360°; "level"
 recalibrates each time a fight starts or resumes. iOS asks for motion permission the
 first time you enable it, and it needs HTTPS (the live GitHub Pages URL works; some
 in-app browsers block the sensor).

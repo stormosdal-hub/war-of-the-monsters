@@ -51,6 +51,8 @@ const G = {
   camera: new DuelCamera(scene, canvas),
   monsters: [],
   onKO: null,
+  // physics scales driven by Settings (1 = current tuning)
+  gravityScale: 1, throwScale: 1, specialScale: 1,
 };
 const input = new PlayerInput(canvas);
 const touch = new TouchControls(input, G.camera);
@@ -60,6 +62,8 @@ const gyro = new GyroSteer(G.camera);
 G.gyro = gyro;
 const settings = new Settings(G);
 G.settings = settings;
+// center aiming crosshair — visible only while actively fighting
+const setReticle = (on) => document.getElementById('reticle').classList.toggle('hidden', !on);
 
 // Open the settings overlay from whatever menu we're on; BACK returns there.
 let settingsReturn = 'titleScreen';
@@ -139,6 +143,7 @@ function endToVictory(winnerName, playerWon) {
   gameState = 'victory';
   G.camera.setLook(false);
   touch.setVisible(false);
+  setReticle(false);
   document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : 'YOU ARE EXTINCT';
   document.getElementById('victoryText').style.color = playerWon ? 'var(--marquee)' : 'var(--hot)';
   screens.show('victoryScreen');
@@ -212,9 +217,9 @@ document.querySelectorAll('.opt').forEach(opt => {
     const act = opt.dataset.act;
     G.audio.confirm();
     if (act === 'rematch') startMatch(selection.p1, selection.p2);
-    else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); enterSelect('p1'); }
-    else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); gameState = 'title'; screens.show('titleScreen'); }
-    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); screens.hideAll(); }
+    else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); enterSelect('p1'); }
+    else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
+    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); setReticle(true); screens.hideAll(); }
     else if (act === 'settings') openSettings();
     else if (act === 'settings-back') screens.show(settingsReturn);
   });
@@ -239,12 +244,14 @@ window.addEventListener('keydown', (e) => {
     gameState = 'paused';
     G.camera.setLook(false);
     touch.setVisible(false);
+    setReticle(false);
     screens.show('pauseScreen');
   } else if (gameState === 'paused' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'fight';
     G.camera.setLook(true);
     gyro.recenter();
     touch.setVisible(true);
+    setReticle(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
     startMatch(selection.p1, selection.p2);
@@ -274,6 +281,7 @@ scene.onBeforeRenderObservable.add(() => {
       G.camera.enterFollow(G.monsters[0].yaw);
       gyro.recenter();
       touch.setVisible(true);
+      setReticle(true);
       G.hud.announce('DESTROY!', 1.1);
       input.clearEdges();
     }

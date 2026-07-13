@@ -7,9 +7,11 @@ const BASE_SENS = 0.0022;              // camera.sens at sensitivity multiplier 
 const DEFAULTS = {
   sensitivity: 1, invertY: false, volume: 0.5,
   moveSpeed: 1, jumpHeight: 1,
+  gravity: 9.81, throwSpeed: 1, specialSpeed: 1,
   gyro: false, gyroSens: 1, gyroInvert: false,
   gyroPitch: true, gyroPitchInvert: false,
 };
+const G_REF = 9.81; // m/s² at which the game keeps its original tuning (scale = 1)
 
 function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } }
 function save(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch { /* private mode */ } }
@@ -30,6 +32,11 @@ export class Settings {
     this.G.camera.invertY = d.invertY;
     this.G.audio.setVolume(d.volume);
     // moveSpeed / jumpHeight are read live by the player monster via getters.
+    // Physics scales are read live by monster/projectile/effects (1 = original tuning).
+    this.G.gravityScale = d.gravity / G_REF;
+    this.G.throwScale = d.throwSpeed;
+    this.G.specialScale = d.specialSpeed;
+    if (this.G.effects) this.G.effects.gravityScale = this.G.gravityScale;
     if (this.G.gyro) {
       this.G.gyro.sens = d.gyroSens;
       this.G.gyro.invert = d.gyroInvert;
@@ -51,12 +58,14 @@ export class Settings {
     this.ui = {
       sens: $('setSens'), invert: $('setInvert'), vol: $('setVol'),
       move: $('setMove'), jump: $('setJump'),
+      gravity: $('setGravity'), throw: $('setThrow'), special: $('setSpecial'),
       gyro: $('setGyro'), gyroSens: $('setGyroSens'), gyroInvert: $('setGyroInvert'),
       gyroPitch: $('setGyroPitch'), gyroPitchInvert: $('setGyroPitchInvert'),
     };
     this.labels = {
       sens: $('setSensVal'), vol: $('setVolVal'), move: $('setMoveVal'),
       jump: $('setJumpVal'), gyroSens: $('setGyroSensVal'),
+      gravity: $('setGravityVal'), throw: $('setThrowVal'), special: $('setSpecialVal'),
     };
     if (!this.ui.sens) return;
     const range = (el, key) => el.addEventListener('input', () => this.set(key, parseFloat(el.value)));
@@ -65,6 +74,9 @@ export class Settings {
     range(this.ui.vol, 'volume');
     range(this.ui.move, 'moveSpeed');
     range(this.ui.jump, 'jumpHeight');
+    range(this.ui.gravity, 'gravity');
+    range(this.ui.throw, 'throwSpeed');
+    range(this.ui.special, 'specialSpeed');
     range(this.ui.gyroSens, 'gyroSens');
     check(this.ui.invert, 'invertY');
     check(this.ui.gyro, 'gyro');
@@ -82,6 +94,9 @@ export class Settings {
     this.ui.vol.value = d.volume;
     this.ui.move.value = d.moveSpeed;
     this.ui.jump.value = d.jumpHeight;
+    this.ui.gravity.value = d.gravity;
+    this.ui.throw.value = d.throwSpeed;
+    this.ui.special.value = d.specialSpeed;
     this.ui.gyroSens.value = d.gyroSens;
     this.ui.invert.checked = d.invertY;
     this.ui.gyro.checked = d.gyro;
@@ -98,6 +113,9 @@ export class Settings {
     L.vol.textContent = Math.round(d.volume * 100) + '%';
     L.move.textContent = d.moveSpeed.toFixed(2) + '×';
     L.jump.textContent = d.jumpHeight.toFixed(2) + '×';
+    L.gravity.textContent = d.gravity.toFixed(1) + ' m/s²';
+    L.throw.textContent = d.throwSpeed.toFixed(2) + '×';
+    L.special.textContent = d.specialSpeed.toFixed(2) + '×';
     L.gyroSens.textContent = d.gyroSens.toFixed(2) + '×';
   }
 }

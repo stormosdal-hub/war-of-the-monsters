@@ -25,7 +25,7 @@ export class ProjectileManager {
     const mesh = prop.mesh;
     mesh.setParent(null);
     mesh.position.copyFrom(pos);
-    this.list.push({ type: 'prop', prop, mesh, vel: vel.clone(), owner, dmg: prop.dmg, radius: 2.2, aoe: prop.explosive ? 7 : 3, gravity: -50, hue: 'fire', bDmg: prop.dmg * 1.4, life: 5, prev: pos.clone(), spin: V3(Math.random() * 6 - 3, Math.random() * 6 - 3, Math.random() * 6 - 3) });
+    this.list.push({ type: 'prop', prop, mesh, vel: vel.clone(), owner, dmg: prop.dmg, radius: 2.2, aoe: prop.explosive ? 7 : 3, gravity: -50 * this.G.gravityScale, hue: 'fire', bDmg: prop.dmg * 1.4, life: 5, prev: pos.clone(), spin: V3(Math.random() * 6 - 3, Math.random() * 6 - 3, Math.random() * 6 - 3) });
   }
 
   impact(p, at) {

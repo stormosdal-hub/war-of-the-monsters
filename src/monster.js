@@ -263,7 +263,7 @@ export class Monster {
   // ============================== physics ==============================
   updatePhysics(dt) {
     const G = this.G;
-    if (!this.onGround) this.vel.y += GRAV * dt;
+    if (!this.onGround) this.vel.y += GRAV * this.G.gravityScale * dt;
 
     this.pos.x += this.vel.x * dt;
     this.pos.y += this.vel.y * dt;
@@ -527,6 +527,7 @@ export class Monster {
 
   updateSpecial(dt) {
     const sp = this.def.special;
+    const projSpeed = sp.speed * this.G.specialScale;
     this.specialTimer -= dt;
     this.vel.x *= 0.9; this.vel.z *= 0.9;
     if (this.specialTimer <= 0 && this.specialFired < sp.count) {
@@ -539,7 +540,7 @@ export class Monster {
         // lead the shot slightly and lob for gravity arcs
         if (sp.gravity) {
           const d = aim.length();
-          aim.y += -sp.gravity * d / sp.speed * 0.5 * (d / sp.speed);
+          aim.y += -sp.gravity * d / projSpeed * 0.5 * (d / projSpeed);
         }
         aim.normalize();
       } else aim = this.fwd;
@@ -548,7 +549,7 @@ export class Monster {
       aim.y += (Math.random() - 0.5) * spread;
       aim.z += (Math.random() - 0.5) * spread * 2;
       aim.normalize();
-      this.G.projectiles.spawn({ pos: world, vel: aim.scale(sp.speed), owner: this, dmg: sp.dmg * this.def.dmgMul, radius: sp.radius, aoe: sp.aoe, gravity: sp.gravity, hue: sp.hue, color: sp.color, bDmg: sp.bDmg });
+      this.G.projectiles.spawn({ pos: world, vel: aim.scale(projSpeed), owner: this, dmg: sp.dmg * this.def.dmgMul, radius: sp.radius, aoe: sp.aoe, gravity: sp.gravity, hue: sp.hue, color: sp.color, bDmg: sp.bDmg });
       this.G.audio.shoot(sp.kind);
     }
     if (this.specialFired >= sp.count && this.specialTimer <= -0.3) this.setState('idle');
@@ -652,7 +653,7 @@ export class Monster {
     } else {
       dir = this.fwd.add(V3(0, 0.25, 0)).normalize();
     }
-    this.G.projectiles.spawnProp(p, world, dir.scale(52), this);
+    this.G.projectiles.spawnProp(p, world, dir.scale(52 * this.G.throwScale), this);
     this.setState('throw');
     this.playAnim('throw');
     this.G.audio.throwWhoosh();
@@ -661,7 +662,7 @@ export class Monster {
   // ============================== death ==============================
   updateDead(dt) {
     if (this.pos.y > 0.05) {
-      this.vel.y += GRAV * dt;
+      this.vel.y += GRAV * this.G.gravityScale * dt;
       this.pos.y = Math.max(0, this.pos.y + this.vel.y * dt);
     }
     if (this.stateT > 2.2) this.pos.y = Math.max(-this.height, this.pos.y - dt * 1.2); // sink

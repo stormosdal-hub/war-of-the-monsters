@@ -130,7 +130,7 @@ export class Effects {
     for (let i = this.chunks.length - 1; i >= 0; i--) {
       const c = this.chunks[i];
       c.life -= dt;
-      c.vel.y -= 55 * dt;
+      c.vel.y -= 55 * (this.gravityScale ?? 1) * dt;
       c.mesh.position.addInPlace(c.vel.scale(dt));
       c.mesh.rotation.x += c.spin.x * dt;
       c.mesh.rotation.y += c.spin.y * dt;

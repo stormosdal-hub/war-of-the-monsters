@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "src/effects.js": {
-    "mtime": 1783678276.0269423,
-    "ast_hash": "4c248b03e4c764dba93892cb3e9fd512",
+    "mtime": 1783944351.8613424,
+    "ast_hash": "fbf0eaed823562765ee14757b30b2037",
     "semantic_hash": ""
   },
   "src/hud.js": {
@@ -55,13 +55,13 @@
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1783940340.0811493,
-    "ast_hash": "0ada57fbca989577462f53103eda9068",
+    "mtime": 1783944388.7613113,
+    "ast_hash": "d862d8737a407ffe89256b85ff2a3f60",
     "semantic_hash": ""
   },
   "src/monster.js": {
-    "mtime": 1783940238.9582238,
-    "ast_hash": "dd51fa9318f4aae3534e47434d83a473",
+    "mtime": 1783944331.8233593,
+    "ast_hash": "8590a7e3b4a33dd427c2a609406ac063",
     "semantic_hash": ""
   },
   "src/monsters.js": {
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "src/projectiles.js": {
-    "mtime": 1783678508.765834,
-    "ast_hash": "c1eb0ecbc20f997d6cb473ad6261d906",
+    "mtime": 1783944339.0173533,
+    "ast_hash": "178cd66ed36885b40f31ae13a1d610bf",
     "semantic_hash": ""
   },
   "src/util.js": {
@@ -90,13 +90,13 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783942023.8877058,
-    "ast_hash": "53aabe95ce26172c2ba986276e542d71",
+    "mtime": 1783944719.4272118,
+    "ast_hash": "5782b300493119994f1bcb31504943c5",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783941885.1157813,
-    "ast_hash": "3229d63ce4066ac599ff156dc0914410",
+    "mtime": 1783944463.293249,
+    "ast_hash": "647efd7a56ba78c6677be4d0e18d2f71",
     "semantic_hash": ""
   },
   "src/touch.js": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "src/settings.js": {
-    "mtime": 1783941870.1247892,
-    "ast_hash": "225fa201a1d0c31d789f55858b87a74d",
+    "mtime": 1783944427.415279,
+    "ast_hash": "2001176622847a40761b833ec231ea3d",
     "semantic_hash": ""
   },
   "icons/icon-180.png": {

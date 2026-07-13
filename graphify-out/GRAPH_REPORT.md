@@ -1,16 +1,16 @@
 # Graph Report - war-of-the-monsters  (2026-07-13)
 
 ## Corpus Check
-- 23 files · ~26,591 words
+- 23 files · ~26,898 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 275 nodes · 598 edges · 16 communities (9 shown, 7 thin omitted)
+- 276 nodes · 600 edges · 16 communities (10 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b9286944`
+- Built from commit: `a752a804`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,15 +59,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (16 total, 7 thin omitted)
+## Communities (16 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
-Nodes (24): HUD, screens, buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), engine (+16 more)
+Nodes (26): HUD, screens, buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), endToVictory() (+18 more)
 
 ### Community 4 - "Community 4"
+Cohesion: 0.15
+Nodes (9): City, makeGroundTexture(), makeWindowTexture(), Prop, PickupManager, C3(), pick(), rand() (+1 more)
+
+### Community 5 - "Community 5"
 Cohesion: 0.10
-Nodes (10): Building, City, makeGroundTexture(), makeWindowTexture(), Prop, PickupManager, C3(), pick() (+2 more)
+Nodes (5): Building, Effects, ProjectileManager, distToCapsule(), V3()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.48
@@ -75,7 +79,7 @@ Nodes (11): box(), buildKragmor(), buildMegaton(), buildRyzor(), buildVespera(),
 
 ### Community 8 - "Community 8"
 Cohesion: 0.11
-Nodes (14): AIController, DuelCamera, MOVES, ProjectileManager, angleLerp(), clamp(), damp(), distToCapsule() (+6 more)
+Nodes (11): AIController, DuelCamera, MOVES, angleLerp(), clamp(), damp(), distXZ(), fwdOf() (+3 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.29
@@ -100,22 +104,22 @@ Nodes (4): DEFAULTS, load(), save(), Settings
 ## Knowledge Gaps
 - **39 isolated node(s):** `node`, `name`, `version`, `type`, `main` (+34 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AudioSys` connect `Community 3` to `Community 0`?**
-  _High betweenness centrality (0.137) - this node is a cross-community bridge._
-- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 8`?**
+  _High betweenness centrality (0.136) - this node is a cross-community bridge._
+- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 8`, `Community 5`?**
   _High betweenness centrality (0.131) - this node is a cross-community bridge._
-- **Why does `V3()` connect `Community 8` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`?**
+- **Why does `V3()` connect `Community 5` to `Community 0`, `Community 2`, `Community 4`, `Community 6`, `Community 8`?**
   _High betweenness centrality (0.097) - this node is a cross-community bridge._
 - **What connects `node`, `name`, `version` to the rest of the system?**
   _39 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05919661733615222 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.10188261351052048 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05858585858585859 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.10416666666666667 - nodes in this community are weakly interconnected._
 - **Should `Community 8` be split into smaller, more focused modules?**
-  _Cohesion score 0.10512820512820513 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11491935483870967 - nodes in this community are weakly interconnected._

@@ -30,13 +30,13 @@
     "semantic_hash": ""
   },
   "src/audio.js": {
-    "mtime": 1783678230.7229626,
-    "ast_hash": "6449ea71a5953c2d2cf0a9b8fc918da6",
+    "mtime": 1783935812.5946474,
+    "ast_hash": "5985e0badf297200c8373e1d0650c3db",
     "semantic_hash": ""
   },
   "src/camera.js": {
-    "mtime": 1783928718.8569617,
-    "ast_hash": "aeb97ee96a9228bf4288e6eaf5840a9b",
+    "mtime": 1783935805.6056526,
+    "ast_hash": "8ad03f854f116cd1ab68c39f4ed42917",
     "semantic_hash": ""
   },
   "src/city.js": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "src/hud.js": {
-    "mtime": 1783678764.9167109,
-    "ast_hash": "112e31e0fdccc31da1c6b88c5e47f11d",
+    "mtime": 1783935820.3666415,
+    "ast_hash": "ed00dc558af2b6e7682e69b3d6cbc55c",
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1783929056.998789,
-    "ast_hash": "3c2e4441f6e16e9c86f6d441ef99dde4",
+    "mtime": 1783935885.0085933,
+    "ast_hash": "791ab36bfc53f7c4db9a03909eb786ff",
     "semantic_hash": ""
   },
   "src/monster.js": {
@@ -90,18 +90,43 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783929202.697708,
-    "ast_hash": "4bc19ee8599098747ac960d974090ab4",
+    "mtime": 1783936035.9234807,
+    "ast_hash": "21041508662ce3d901f0436901d6f392",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783928961.7248404,
-    "ast_hash": "2faf241185a4ccfffbefea153e1f1a6c",
+    "mtime": 1783935856.4366148,
+    "ast_hash": "dfc7a156049d265a6b0ecc38430436ff",
     "semantic_hash": ""
   },
   "src/touch.js": {
     "mtime": 1783928923.9798603,
     "ast_hash": "624cb06ef804471c2251f004eb9d2205",
+    "semantic_hash": ""
+  },
+  "manifest.json": {
+    "mtime": 1783935891.3695886,
+    "ast_hash": "821e7dd1ed970fca1e0fe16463de891a",
+    "semantic_hash": ""
+  },
+  "src/settings.js": {
+    "mtime": 1783935799.6546571,
+    "ast_hash": "3d6eb08a3d458035b4af3f22a8635546",
+    "semantic_hash": ""
+  },
+  "icons/icon-180.png": {
+    "mtime": 1783935922.793565,
+    "ast_hash": "acd749c9e9f943ac4b5229a3efccb9e6",
+    "semantic_hash": ""
+  },
+  "icons/icon-192.png": {
+    "mtime": 1783935922.6415653,
+    "ast_hash": "088ef4622e0c7959f62ed875e28c14a4",
+    "semantic_hash": ""
+  },
+  "icons/icon-512.png": {
+    "mtime": 1783935922.4815655,
+    "ast_hash": "db11172e3a728b32fab52d60ad5cb167",
     "semantic_hash": ""
   }
 }

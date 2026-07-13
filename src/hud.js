@@ -60,7 +60,7 @@ export class HUD {
 
 // Screen manager for the HTML menu overlays.
 export const screens = {
-  all: ['titleScreen', 'selectScreen', 'vsScreen', 'victoryScreen', 'pauseScreen'],
+  all: ['titleScreen', 'selectScreen', 'vsScreen', 'victoryScreen', 'pauseScreen', 'settingsScreen'],
   show(id) {
     for (const s of this.all) document.getElementById(s).classList.toggle('hidden', s !== id);
   },

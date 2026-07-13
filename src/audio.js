@@ -4,6 +4,7 @@ export class AudioSys {
     this.ctx = null;
     this.master = null;
     this.enabled = true;
+    this.volume = 0.5; // master gain, adjustable via Settings
   }
 
   ensure() {
@@ -14,13 +15,20 @@ export class AudioSys {
     try {
       this.ctx = new (window.AudioContext || window.webkitAudioContext)();
       this.master = this.ctx.createGain();
-      this.master.gain.value = 0.5;
+      this.master.gain.value = this.volume;
       this.master.connect(this.ctx.destination);
       return true;
     } catch (e) {
       this.enabled = false;
       return false;
     }
+  }
+
+  // Set master volume 0..1; applies immediately if the context already exists,
+  // otherwise it's picked up when ensure() first builds the master gain.
+  setVolume(v) {
+    this.volume = v;
+    if (this.master) this.master.gain.value = v;
   }
 
   _noiseBuf(dur = 1) {

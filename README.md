@@ -49,6 +49,10 @@ vendored in `lib/`, so it runs fully offline.)
 | Shift (hold) | block · Shift+direction: dodge (i-frames) |
 | P / Esc | pause |
 
+**Settings** (⚙ on the title screen, or SETTINGS in the pause menu) let you adjust
+**turn sensitivity** (mouse *and* touch drag-to-aim), **invert look (Y)**, and
+**volume**. Choices are saved on the device (localStorage) and reapplied next time.
+
 Energy (blue bar) regenerates, builds by dealing/taking damage, and refills from
 blue orbs. Green orbs heal. Both spawn at street corners and burst out of
 collapsing buildings.
@@ -60,6 +64,11 @@ move, drag the right half of the screen to turn/aim (FPS-style), and a button
 cluster for jump, light, heavy, grab, special and block — hold **BLOCK** while
 pushing a direction to dodge. Tap to start, tap a monster to pick it. Best played
 in landscape (a prompt nudges you to rotate).
+
+For a full-screen experience without the browser's address bar, **add the page to
+your home screen** and launch it from there — a web app manifest + iOS meta tags
+make it open like a native app. (If you added it before this was in place, remove
+the old icon and re-add it so the new settings take effect.)
 
 ## Code layout
 
@@ -74,6 +83,7 @@ src/ai.js           AI opponent (utility state machine → same intents as playe
 src/player.js       keyboard/touch → camera-relative intents
 src/camera.js       FPS-style follow camera (mouse/touch aim), building avoidance
 src/touch.js        on-screen touch controls for phones/tablets
+src/settings.js     player settings (sensitivity/invert/volume) + localStorage
 src/projectiles.js  specials + thrown props
 src/pickups.js      health/energy orbs
 src/effects.js      particles, debris chunks, screen shake

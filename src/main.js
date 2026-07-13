@@ -11,6 +11,7 @@ import { PlayerInput } from './player.js';
 import { AIController } from './ai.js';
 import { DuelCamera } from './camera.js';
 import { TouchControls } from './touch.js';
+import { Settings } from './settings.js';
 import { HUD, screens } from './hud.js';
 
 const canvas = document.getElementById('renderCanvas');
@@ -54,6 +55,16 @@ const input = new PlayerInput(canvas);
 const touch = new TouchControls(input, G.camera);
 G.touch = touch;
 G.input = input;
+const settings = new Settings(G);
+G.settings = settings;
+
+// Open the settings overlay from whatever menu we're on; BACK returns there.
+let settingsReturn = 'titleScreen';
+function openSettings() {
+  settingsReturn = screens.all.find(s => s !== 'settingsScreen' && !document.getElementById(s).classList.contains('hidden')) || 'titleScreen';
+  settings.syncUI();
+  screens.show('settingsScreen');
+}
 
 let gameState = 'title'; // title | select | vs | intro | fight | ko | victory | paused
 let ai = null;
@@ -201,11 +212,18 @@ document.querySelectorAll('.opt').forEach(opt => {
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); gameState = 'title'; screens.show('titleScreen'); }
     else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); touch.setVisible(true); screens.hideAll(); }
+    else if (act === 'settings') openSettings();
+    else if (act === 'settings-back') screens.show(settingsReturn);
   });
 });
 
 window.addEventListener('keydown', (e) => {
   G.audio.ensure();
+  // Settings overlay is modal: Esc/Enter close it, everything else is ignored.
+  if (!document.getElementById('settingsScreen').classList.contains('hidden')) {
+    if (e.code === 'Escape' || e.code === 'Enter') { G.audio.ui(); screens.show(settingsReturn); }
+    return;
+  }
   if (gameState === 'title' && (e.code === 'Enter' || e.code === 'Space')) {
     G.audio.confirm();
     enterSelect('p1');
@@ -294,6 +312,12 @@ document.getElementById('titleScreen').addEventListener('click', () => {
   if (gameState !== 'title') return;
   G.audio.ensure(); G.audio.confirm();
   enterSelect('p1');
+});
+// gear opens settings; stopPropagation keeps the title's tap-to-start from firing
+document.getElementById('titleSettings').addEventListener('click', (e) => {
+  e.stopPropagation();
+  G.audio.ensure(); G.audio.ui();
+  openSettings();
 });
 if (touch.isTouch) document.querySelector('.title-press').textContent = 'TAP TO START';
 

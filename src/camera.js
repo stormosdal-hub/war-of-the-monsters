@@ -21,7 +21,8 @@ export class DuelCamera {
     // mouse look: absolute facing (yaw) + camera tilt (pitch), driven by the mouse.
     this.camYaw = 0;       // character + camera facing (radians)
     this.camPitch = 0.16;  // camera elevation above the player (radians)
-    this.sens = 0.0022;    // mouse sensitivity (radians per pixel)
+    this.sens = 0.0022;    // look sensitivity (radians per pixel); tuned via Settings
+    this.invertY = false;  // flip vertical look (Settings)
     this.lookEnabled = false;
     this.pointerLocked = false;
     this.bindMouse(canvas);
@@ -52,7 +53,8 @@ export class DuelCamera {
   steer(dx, dy) {
     if (!this.lookEnabled) return;
     this.camYaw += dx * this.sens;
-    this.camPitch = clamp(this.camPitch + dy * this.sens, -0.25, 1.05);
+    const dyy = this.invertY ? -dy : dy;
+    this.camPitch = clamp(this.camPitch + dyy * this.sens, -0.25, 1.05);
   }
 
   // Enable/disable mouse steering; releases the pointer when turned off.

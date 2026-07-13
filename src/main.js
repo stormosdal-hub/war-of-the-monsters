@@ -10,6 +10,7 @@ import { PickupManager } from './pickups.js';
 import { PlayerInput } from './player.js';
 import { AIController } from './ai.js';
 import { DuelCamera } from './camera.js';
+import { TouchControls } from './touch.js';
 import { HUD, screens } from './hud.js';
 
 const canvas = document.getElementById('renderCanvas');
@@ -50,6 +51,9 @@ const G = {
   onKO: null,
 };
 const input = new PlayerInput(canvas);
+const touch = new TouchControls(input, G.camera);
+G.touch = touch;
+G.input = input;
 
 let gameState = 'title'; // title | select | vs | intro | fight | ko | victory | paused
 let ai = null;
@@ -120,6 +124,7 @@ let introT = 0;
 function endToVictory(winnerName, playerWon) {
   gameState = 'victory';
   G.camera.setLook(false);
+  touch.setVisible(false);
   document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : 'YOU ARE EXTINCT';
   document.getElementById('victoryText').style.color = playerWon ? 'var(--marquee)' : 'var(--hot)';
   screens.show('victoryScreen');
@@ -195,7 +200,7 @@ document.querySelectorAll('.opt').forEach(opt => {
     if (act === 'rematch') startMatch(selection.p1, selection.p2);
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); gameState = 'title'; screens.show('titleScreen'); }
-    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); screens.hideAll(); }
+    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); touch.setVisible(true); screens.hideAll(); }
   });
 });
 
@@ -212,10 +217,12 @@ window.addEventListener('keydown', (e) => {
   } else if (gameState === 'fight' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'paused';
     G.camera.setLook(false);
+    touch.setVisible(false);
     screens.show('pauseScreen');
   } else if (gameState === 'paused' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'fight';
     G.camera.setLook(true);
+    touch.setVisible(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
     startMatch(selection.p1, selection.p2);
@@ -243,6 +250,7 @@ scene.onBeforeRenderObservable.add(() => {
     if (introT > 2.6) {
       gameState = 'fight';
       G.camera.enterFollow(G.monsters[0].yaw);
+      touch.setVisible(true);
       G.hud.announce('DESTROY!', 1.1);
       input.clearEdges();
     }
@@ -280,6 +288,14 @@ window.addEventListener('resize', () => engine.resize());
 
 // debug/testing handle
 window.__CF = { G, state: () => gameState, setState: (s) => { gameState = s; } };
+
+// tap the title to start (phones have no Enter key)
+document.getElementById('titleScreen').addEventListener('click', () => {
+  if (gameState !== 'title') return;
+  G.audio.ensure(); G.audio.confirm();
+  enterSelect('p1');
+});
+if (touch.isTouch) document.querySelector('.title-press').textContent = 'TAP TO START';
 
 // boot
 document.getElementById('loadNote').classList.add('hidden');

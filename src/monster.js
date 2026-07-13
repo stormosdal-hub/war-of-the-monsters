@@ -421,9 +421,12 @@ export class Monster {
   }
 
   updateAttack(dt, i) {
+    // Specials run their own timeline and don't use this.move, so handle them
+    // first. Otherwise firing a special from a clean idle (move === null) would
+    // hit the guard below and bail after startSpecial already spent the energy.
+    if (this.state === 'special') { this.updateSpecial(dt); return; }
     const mv = this.move;
     if (!mv) { this.setState('idle'); return; }
-    if (this.state === 'special') { this.updateSpecial(dt); return; }
 
     const t = this.stateT;
     if (mv === MOVES.airslam) {

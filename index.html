@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>COLOSSAL FURY — a 1950s creature-feature brawler</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A6%96%3C/text%3E%3C/svg%3E">
 <style>
@@ -80,6 +80,43 @@
   .opt:hover,.opt.focus{color:#fff;border-color:var(--marquee);background:rgba(255,210,63,.08)}
 
   #loadNote{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#cbc3e3;font-family:Georgia,serif;font-style:italic;letter-spacing:.3em;z-index:50;background:#05030a}
+
+  /* ---------- TOUCH CONTROLS ---------- */
+  body.is-touch{touch-action:none;-webkit-tap-highlight-color:transparent}
+  body.is-touch #hint{display:none}
+  #touchControls{position:absolute;inset:0;z-index:6;pointer-events:none}
+  #touchControls.hidden{display:none !important}
+  #moveZone,#lookZone{position:absolute;top:0;bottom:0;pointer-events:auto;touch-action:none}
+  #moveZone{left:0;width:45%}
+  #lookZone{right:0;width:55%}
+  #touchStick{position:absolute;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;
+    border:2px solid rgba(255,255,255,.35);background:rgba(13,11,20,.28);display:none;pointer-events:none;z-index:1}
+  #touchKnob{position:absolute;left:50%;top:50%;width:58px;height:58px;border-radius:50%;
+    background:rgba(255,210,63,.5);border:2px solid rgba(255,255,255,.7);transform:translate(-50%,-50%)}
+  #touchBtns{position:absolute;right:calc(14px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));
+    width:280px;height:240px;pointer-events:none;z-index:2}
+  .tbtn{position:absolute;pointer-events:auto;touch-action:none;color:#fff;cursor:pointer;
+    font-family:Impact,'Arial Black',sans-serif;letter-spacing:.04em;
+    border:2px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(13,11,20,.5);
+    backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;flex-direction:column;line-height:1}
+  .tbtn.active{background:rgba(255,77,46,.72);border-color:var(--marquee);transform:scale(.93)}
+  .tbtn .sub{font-family:Arial,sans-serif;font-size:.5rem;color:#cbc3e3;letter-spacing:.06em;margin-top:2px}
+  .tbtn.jump{width:86px;height:86px;right:4px;bottom:4px;font-size:.82rem}
+  .tbtn.light{width:78px;height:78px;right:98px;bottom:10px;font-size:.72rem}
+  .tbtn.special{width:68px;height:68px;right:16px;bottom:98px;font-size:.66rem;border-color:rgba(255,210,63,.7)}
+  .tbtn.grab{width:64px;height:64px;right:104px;bottom:110px;font-size:.64rem}
+  .tbtn.heavy{width:70px;height:70px;right:170px;bottom:70px;font-size:.68rem}
+  .tbtn.block{width:72px;height:72px;right:188px;bottom:150px;font-size:.66rem}
+  #btnPause{position:absolute;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);
+    width:44px;height:44px;font-size:.9rem;border-radius:50%}
+  #btnPause.active{transform:translateX(-50%) scale(.93)}
+
+  /* rotate hint: this brawler wants landscape */
+  #rotateNote{position:absolute;inset:0;z-index:60;display:none;flex-direction:column;align-items:center;justify-content:center;
+    background:#05030a;color:#cbc3e3;text-align:center;padding:2rem;
+    font-family:Georgia,serif;font-style:italic;letter-spacing:.22em;line-height:1.8}
+  #rotateNote .glyph{font-size:3rem;margin-bottom:1rem;font-style:normal}
+  @media (orientation:portrait){ body.is-touch #rotateNote{display:flex} }
 </style>
 </head>
 <body>
@@ -142,6 +179,26 @@
     <div class="opt" data-act="resume">RESUME</div>
     <div class="opt" data-act="select">QUIT TO SELECT</div>
   </div>
+</div>
+
+<div id="touchControls" class="hidden">
+  <div id="moveZone"></div>
+  <div id="lookZone"></div>
+  <div id="touchStick"><div id="touchKnob"></div></div>
+  <div id="touchBtns">
+    <div class="tbtn jump" data-btn="Space">JUMP</div>
+    <div class="tbtn light" data-btn="KeyJ">LIGHT<span class="sub">J</span></div>
+    <div class="tbtn heavy" data-btn="KeyK">HEAVY<span class="sub">K</span></div>
+    <div class="tbtn grab" data-btn="KeyL">GRAB<span class="sub">L</span></div>
+    <div class="tbtn special" data-btn="KeyI">SPCL<span class="sub">I</span></div>
+    <div class="tbtn block" data-btn="ShiftLeft">BLOCK<span class="sub">+DIR DODGE</span></div>
+  </div>
+  <div id="btnPause" class="tbtn" data-key="Escape">❚❚</div>
+</div>
+
+<div id="rotateNote">
+  <div class="glyph">📱↻</div>
+  ROTATE YOUR DEVICE<br>COLOSSAL FURY PLAYS IN LANDSCAPE
 </div>
 
 <script src="lib/babylon.js"></script>

@@ -53,6 +53,14 @@ Energy (blue bar) regenerates, builds by dealing/taking damage, and refills from
 blue orbs. Green orbs heal. Both spawn at street corners and burst out of
 collapsing buildings.
 
+### On a phone
+
+Touch devices are auto-detected and get on-screen controls: a left thumbstick to
+move, drag the right half of the screen to turn/aim (FPS-style), and a button
+cluster for jump, light, heavy, grab, special and block — hold **BLOCK** while
+pushing a direction to dodge. Tap to start, tap a monster to pick it. Best played
+in landscape (a prompt nudges you to rotate).
+
 ## Code layout
 
 ```
@@ -63,8 +71,9 @@ src/city.js         procedural destructible city, collision queries
 src/monsters.js     roster: stats + procedural mesh rigs
 src/monster.js      entity: physics, combat state machine, animation
 src/ai.js           AI opponent (utility state machine → same intents as player)
-src/player.js       keyboard → camera-relative intents
-src/camera.js       dual-fighter duel camera with building avoidance
+src/player.js       keyboard/touch → camera-relative intents
+src/camera.js       FPS-style follow camera (mouse/touch aim), building avoidance
+src/touch.js        on-screen touch controls for phones/tablets
 src/projectiles.js  specials + thrown props
 src/pickups.js      health/energy orbs
 src/effects.js      particles, debris chunks, screen shake

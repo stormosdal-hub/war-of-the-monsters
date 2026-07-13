@@ -3,6 +3,7 @@ export class PlayerInput {
   constructor(canvas) {
     this.keys = {};
     this.pressed = {};
+    this.moveAxis = { x: 0, z: 0 }; // analog stick from on-screen touch joystick (-1..1)
     window.addEventListener('keydown', (e) => {
       if (e.repeat) return;
       this.keys[e.code] = true;
@@ -19,6 +20,12 @@ export class PlayerInput {
     return v;
   }
 
+  // Touch controls drive the same key maps as the keyboard, so all the combat
+  // logic (chains, block/dodge, edge-consume) works identically on a phone.
+  pressButton(code) { this.keys[code] = true; this.pressed[code] = true; }
+  releaseButton(code) { this.keys[code] = false; }
+  setMoveAxis(x, z) { this.moveAxis.x = x; this.moveAxis.z = z; }
+
   // camYaw: yaw of camera forward, so W pushes away from camera.
   intents(camYaw) {
     let ix = 0, iz = 0;
@@ -26,8 +33,10 @@ export class PlayerInput {
     if (this.keys['KeyS']) iz -= 1;
     if (this.keys['KeyA']) ix -= 1;
     if (this.keys['KeyD']) ix += 1;
-    const mag = Math.hypot(ix, iz) || 1;
-    ix /= mag; iz /= mag;
+    // fold in the analog touch stick (keeps partial magnitudes for a soft walk)
+    ix += this.moveAxis.x; iz += this.moveAxis.z;
+    const mag = Math.hypot(ix, iz);
+    if (mag > 1) { ix /= mag; iz /= mag; }
     const s = Math.sin(camYaw), c = Math.cos(camYaw);
     // rotate input by camera yaw
     const mx = ix * c + iz * s;

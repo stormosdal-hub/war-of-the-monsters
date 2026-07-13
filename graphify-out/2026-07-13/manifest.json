@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "src/camera.js": {
-    "mtime": 1783928718.8569617,
-    "ast_hash": "aeb97ee96a9228bf4288e6eaf5840a9b",
+    "mtime": 1783836403.9126246,
+    "ast_hash": "8094c70b460b94e2235eb610835a407f",
     "semantic_hash": ""
   },
   "src/city.js": {
@@ -55,13 +55,13 @@
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1783929056.998789,
-    "ast_hash": "3c2e4441f6e16e9c86f6d441ef99dde4",
+    "mtime": 1783836424.884622,
+    "ast_hash": "1efbad36de68661891e0dc8b162cd016",
     "semantic_hash": ""
   },
   "src/monster.js": {
-    "mtime": 1783928483.061061,
-    "ast_hash": "5966ca6e07a02f584f6d68d7e20c31b2",
+    "mtime": 1783836342.3046288,
+    "ast_hash": "07591ff0c54e6c1e7124be8bcd48f8d7",
     "semantic_hash": ""
   },
   "src/monsters.js": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "src/player.js": {
-    "mtime": 1783928734.9139543,
-    "ast_hash": "67deb4355d30b97870e7f57c187a3e45",
+    "mtime": 1783836417.756623,
+    "ast_hash": "d753425b5c2091341b0a97bce91fbae7",
     "semantic_hash": ""
   },
   "src/projectiles.js": {
@@ -90,18 +90,13 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783929202.697708,
-    "ast_hash": "4bc19ee8599098747ac960d974090ab4",
+    "mtime": 1783836446.1946192,
+    "ast_hash": "0204ecd9cad0d07ea6be8eddff00d45d",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783928961.7248404,
-    "ast_hash": "2faf241185a4ccfffbefea153e1f1a6c",
-    "semantic_hash": ""
-  },
-  "src/touch.js": {
-    "mtime": 1783928923.9798603,
-    "ast_hash": "624cb06ef804471c2251f004eb9d2205",
+    "mtime": 1783836436.9976206,
+    "ast_hash": "3d266b8dcd89ece14f040db4bab14ce9",
     "semantic_hash": ""
   }
 }

@@ -43,9 +43,16 @@ export class DuelCamera {
     });
     window.addEventListener('mousemove', (e) => {
       if (!this.pointerLocked || !this.lookEnabled) return;
-      this.camYaw += e.movementX * this.sens;                                  // mouse X turns the character
-      this.camPitch = clamp(this.camPitch + e.movementY * this.sens, -0.25, 1.05); // mouse Y tilts the view
+      this.steer(e.movementX, e.movementY);
     });
+  }
+
+  // Apply a look delta in pixels. Shared by mouse-look and touch drag-to-aim.
+  // dx turns the character (yaw); dy tilts the view (pitch).
+  steer(dx, dy) {
+    if (!this.lookEnabled) return;
+    this.camYaw += dx * this.sens;
+    this.camPitch = clamp(this.camPitch + dy * this.sens, -0.25, 1.05);
   }
 
   // Enable/disable mouse steering; releases the pointer when turned off.

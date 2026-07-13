@@ -11,6 +11,7 @@ import { PlayerInput } from './player.js';
 import { AIController } from './ai.js';
 import { DuelCamera } from './camera.js';
 import { TouchControls } from './touch.js';
+import { GyroSteer } from './gyro.js';
 import { Settings } from './settings.js';
 import { HUD, screens } from './hud.js';
 
@@ -55,6 +56,8 @@ const input = new PlayerInput(canvas);
 const touch = new TouchControls(input, G.camera);
 G.touch = touch;
 G.input = input;
+const gyro = new GyroSteer(G.camera);
+G.gyro = gyro;
 const settings = new Settings(G);
 G.settings = settings;
 
@@ -211,7 +214,7 @@ document.querySelectorAll('.opt').forEach(opt => {
     if (act === 'rematch') startMatch(selection.p1, selection.p2);
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); gameState = 'title'; screens.show('titleScreen'); }
-    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); touch.setVisible(true); screens.hideAll(); }
+    else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); screens.hideAll(); }
     else if (act === 'settings') openSettings();
     else if (act === 'settings-back') screens.show(settingsReturn);
   });
@@ -240,6 +243,7 @@ window.addEventListener('keydown', (e) => {
   } else if (gameState === 'paused' && (e.code === 'KeyP' || e.code === 'Escape')) {
     gameState = 'fight';
     G.camera.setLook(true);
+    gyro.recenter();
     touch.setVisible(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
@@ -268,6 +272,7 @@ scene.onBeforeRenderObservable.add(() => {
     if (introT > 2.6) {
       gameState = 'fight';
       G.camera.enterFollow(G.monsters[0].yaw);
+      gyro.recenter();
       touch.setVisible(true);
       G.hud.announce('DESTROY!', 1.1);
       input.clearEdges();
@@ -285,6 +290,7 @@ scene.onBeforeRenderObservable.add(() => {
     G.projectiles.update(dt);
     G.pickups.update(dt);
     G.effects.update(dt, G.monsters);
+    if (gameState === 'fight') gyro.apply(dt); // tilt-to-turn feeds camYaw before the camera reads it
     G.camera.update(dt, G);
     G.hud.update();
 

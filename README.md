@@ -50,8 +50,17 @@ vendored in `lib/`, so it runs fully offline.)
 | P / Esc | pause |
 
 **Settings** (⚙ on the title screen, or SETTINGS in the pause menu) let you adjust
-**turn sensitivity** (mouse *and* touch drag-to-aim), **invert look (Y)**, and
-**volume**. Choices are saved on the device (localStorage) and reapplied next time.
+**turn sensitivity** (mouse *and* touch drag-to-aim, up to 6×), **invert look (Y)**,
+**volume**, and — under GAMEPLAY — **movement speed** and **jump height** (these
+tune your monster only, not the AI). Choices are saved on the device (localStorage)
+and reapplied next time.
+
+On phones there's also **gyro steering**: turn on *TILT TO TURN* and lean the phone
+left/right to rotate your monster (with its own sensitivity + invert). Tilt maps to
+a *turn rate* so you can spin a full 360°; "level" recalibrates each time a fight
+starts or resumes. iOS asks for motion permission the first time you enable it, and
+it needs HTTPS (the live GitHub Pages URL works; some in-app browsers block the
+sensor).
 
 Energy (blue bar) regenerates, builds by dealing/taking damage, and refills from
 blue orbs. Green orbs heal. Both spawn at street corners and burst out of
@@ -83,7 +92,8 @@ src/ai.js           AI opponent (utility state machine → same intents as playe
 src/player.js       keyboard/touch → camera-relative intents
 src/camera.js       FPS-style follow camera (mouse/touch aim), building avoidance
 src/touch.js        on-screen touch controls for phones/tablets
-src/settings.js     player settings (sensitivity/invert/volume) + localStorage
+src/settings.js     player settings (look/audio/gameplay/gyro) + localStorage
+src/gyro.js         optional gyroscope tilt-to-turn steering (phones)
 src/projectiles.js  specials + thrown props
 src/pickups.js      health/energy orbs
 src/effects.js      particles, debris chunks, screen shake

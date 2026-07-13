@@ -163,6 +163,116 @@
       "norm_label": "transport"
     },
     {
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "manifest",
+      "community": 11,
+      "norm_label": "manifest.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "manifest_name",
+      "community": 11,
+      "norm_label": "name"
+    },
+    {
+      "label": "short_name",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "manifest_short_name",
+      "community": 11,
+      "norm_label": "short_name"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "manifest_description",
+      "community": 11,
+      "norm_label": "description"
+    },
+    {
+      "label": "start_url",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "manifest_start_url",
+      "community": 11,
+      "norm_label": "start_url"
+    },
+    {
+      "label": "scope",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "manifest_scope",
+      "community": 11,
+      "norm_label": "scope"
+    },
+    {
+      "label": "display",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "manifest_display",
+      "community": 11,
+      "norm_label": "display"
+    },
+    {
+      "label": "orientation",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "manifest_orientation",
+      "community": 11,
+      "norm_label": "orientation"
+    },
+    {
+      "label": "background_color",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "manifest_background_color",
+      "community": 11,
+      "norm_label": "background_color"
+    },
+    {
+      "label": "theme_color",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "manifest_theme_color",
+      "community": 11,
+      "norm_label": "theme_color"
+    },
+    {
+      "label": "icons",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "manifest_icons",
+      "community": 11,
+      "norm_label": "icons"
+    },
+    {
       "label": "serve.sh",
       "file_type": "code",
       "source_file": "serve.sh",
@@ -274,17 +384,27 @@
       "label": ".ensure()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "src_audio_audiosys_ensure",
       "community": 3,
       "norm_label": ".ensure()"
     },
     {
+      "label": ".setVolume()",
+      "file_type": "code",
+      "source_file": "src/audio.js",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "src_audio_audiosys_setvolume",
+      "community": 3,
+      "norm_label": ".setvolume()"
+    },
+    {
       "label": "._noiseBuf()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L26",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "src_audio_audiosys_noisebuf",
       "community": 3,
@@ -294,7 +414,7 @@
       "label": "._env()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L34",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "src_audio_audiosys_env",
       "community": 3,
@@ -304,7 +424,7 @@
       "label": "._noise()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L41",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "src_audio_audiosys_noise",
       "community": 3,
@@ -314,7 +434,7 @@
       "label": "._tone()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L57",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "src_audio_audiosys_tone",
       "community": 3,
@@ -324,7 +444,7 @@
       "label": ".ui()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L72",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "src_audio_audiosys_ui",
       "community": 3,
@@ -334,7 +454,7 @@
       "label": ".confirm()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L73",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "src_audio_audiosys_confirm",
       "community": 3,
@@ -344,7 +464,7 @@
       "label": ".footstep()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L74",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "src_audio_audiosys_footstep",
       "community": 3,
@@ -354,7 +474,7 @@
       "label": ".swing()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L75",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "src_audio_audiosys_swing",
       "community": 3,
@@ -364,7 +484,7 @@
       "label": ".hit()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L76",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "src_audio_audiosys_hit",
       "community": 3,
@@ -374,7 +494,7 @@
       "label": ".block()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L80",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "src_audio_audiosys_block",
       "community": 3,
@@ -384,7 +504,7 @@
       "label": ".explosion()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L81",
+      "source_location": "L89",
       "_origin": "ast",
       "id": "src_audio_audiosys_explosion",
       "community": 3,
@@ -394,7 +514,7 @@
       "label": ".crumble()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L85",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "src_audio_audiosys_crumble",
       "community": 3,
@@ -404,7 +524,7 @@
       "label": ".collapse()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L86",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "src_audio_audiosys_collapse",
       "community": 3,
@@ -414,7 +534,7 @@
       "label": ".roar()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L87",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "src_audio_audiosys_roar",
       "community": 3,
@@ -424,7 +544,7 @@
       "label": ".shoot()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L114",
+      "source_location": "L122",
       "_origin": "ast",
       "id": "src_audio_audiosys_shoot",
       "community": 3,
@@ -434,7 +554,7 @@
       "label": ".pickup()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L119",
+      "source_location": "L127",
       "_origin": "ast",
       "id": "src_audio_audiosys_pickup",
       "community": 3,
@@ -444,7 +564,7 @@
       "label": ".jump()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L120",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "src_audio_audiosys_jump",
       "community": 3,
@@ -454,7 +574,7 @@
       "label": ".throwWhoosh()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L121",
+      "source_location": "L129",
       "_origin": "ast",
       "id": "src_audio_audiosys_throwwhoosh",
       "community": 3,
@@ -464,7 +584,7 @@
       "label": ".grab()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L122",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "src_audio_audiosys_grab",
       "community": 3,
@@ -474,7 +594,7 @@
       "label": ".ko()",
       "file_type": "code",
       "source_file": "src/audio.js",
-      "source_location": "L123",
+      "source_location": "L131",
       "_origin": "ast",
       "id": "src_audio_audiosys_ko",
       "community": 3,
@@ -514,7 +634,7 @@
       "label": ".yaw()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_camera_duelcamera_yaw",
       "community": 1,
@@ -524,7 +644,7 @@
       "label": ".bindMouse()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "src_camera_duelcamera_bindmouse",
       "community": 1,
@@ -534,7 +654,7 @@
       "label": ".steer()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L52",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "src_camera_duelcamera_steer",
       "community": 1,
@@ -544,7 +664,7 @@
       "label": ".setLook()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L59",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "src_camera_duelcamera_setlook",
       "community": 1,
@@ -554,7 +674,7 @@
       "label": ".enterFollow()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L67",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "src_camera_duelcamera_enterfollow",
       "community": 1,
@@ -564,7 +684,7 @@
       "label": ".startOrbit()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L74",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "src_camera_duelcamera_startorbit",
       "community": 1,
@@ -574,7 +694,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L80",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "src_camera_duelcamera_update",
       "community": 1,
@@ -584,7 +704,7 @@
       "label": ".raycastCity()",
       "file_type": "code",
       "source_file": "src/camera.js",
-      "source_location": "L133",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "src_camera_duelcamera_raycastcity",
       "community": 1,
@@ -877,7 +997,7 @@
       "source_location": "L506",
       "_origin": "ast",
       "id": "src_city_city_raycast",
-      "community": 1,
+      "community": 4,
       "norm_label": ".raycast()"
     },
     {
@@ -1124,7 +1244,7 @@
       "label": "canvas",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "src_main_canvas",
       "community": 0,
@@ -1134,7 +1254,7 @@
       "label": "engine",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "src_main_engine",
       "community": 0,
@@ -1144,7 +1264,7 @@
       "label": "scene",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_main_scene",
       "community": 0,
@@ -1154,7 +1274,7 @@
       "label": "hemi",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "src_main_hemi",
       "community": 0,
@@ -1164,7 +1284,7 @@
       "label": "sun",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "src_main_sun",
       "community": 0,
@@ -1174,7 +1294,7 @@
       "label": "glow",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "src_main_glow",
       "community": 0,
@@ -1184,7 +1304,7 @@
       "label": "G",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L41",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_g",
       "community": 0,
@@ -1194,7 +1314,7 @@
       "label": "input",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L53",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "src_main_input",
       "community": 0,
@@ -1204,17 +1324,37 @@
       "label": "touch",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L54",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_touch",
       "community": 0,
       "norm_label": "touch"
     },
     {
+      "label": "settings",
+      "file_type": "code",
+      "source_file": "src/main.js",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "src_main_settings",
+      "community": 0,
+      "norm_label": "settings"
+    },
+    {
+      "label": "openSettings()",
+      "file_type": "code",
+      "source_file": "src/main.js",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "src_main_opensettings",
+      "community": 0,
+      "norm_label": "opensettings()"
+    },
+    {
       "label": "selection",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L60",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "src_main_selection",
       "community": 0,
@@ -1224,7 +1364,7 @@
       "label": "setupShadows()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L65",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_setupshadows",
       "community": 0,
@@ -1234,7 +1374,7 @@
       "label": "buildWorld()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L74",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "src_main_buildworld",
       "community": 0,
@@ -1244,7 +1384,7 @@
       "label": "disposeWorld()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L86",
+      "source_location": "L97",
       "_origin": "ast",
       "id": "src_main_disposeworld",
       "community": 0,
@@ -1254,7 +1394,7 @@
       "label": "startMatch()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L94",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "src_main_startmatch",
       "community": 0,
@@ -1264,7 +1404,7 @@
       "label": "endToVictory()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L124",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "src_main_endtovictory",
       "community": 0,
@@ -1274,7 +1414,7 @@
       "label": "buildSelectUI()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L134",
+      "source_location": "L145",
       "_origin": "ast",
       "id": "src_main_buildselectui",
       "community": 0,
@@ -1284,7 +1424,7 @@
       "label": "refreshSelectFocus()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L151",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "src_main_refreshselectfocus",
       "community": 0,
@@ -1294,7 +1434,7 @@
       "label": "showPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L157",
+      "source_location": "L168",
       "_origin": "ast",
       "id": "src_main_showpreview",
       "community": 0,
@@ -1304,7 +1444,7 @@
       "label": "clearPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L164",
+      "source_location": "L175",
       "_origin": "ast",
       "id": "src_main_clearpreview",
       "community": 0,
@@ -1314,7 +1454,7 @@
       "label": "enterSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L168",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "src_main_enterselect",
       "community": 0,
@@ -1324,7 +1464,7 @@
       "label": "confirmSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L177",
+      "source_location": "L188",
       "_origin": "ast",
       "id": "src_main_confirmselect",
       "community": 0,
@@ -1787,7 +1927,7 @@
       "source_location": "L267",
       "_origin": "ast",
       "id": "src_monsters_roster",
-      "community": 0,
+      "community": 6,
       "norm_label": "roster"
     },
     {
@@ -1867,7 +2007,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_player",
-      "community": 0,
+      "community": 16,
       "norm_label": "player.js"
     },
     {
@@ -1877,7 +2017,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_player_playerinput",
-      "community": 0,
+      "community": 16,
       "norm_label": "playerinput"
     },
     {
@@ -1887,7 +2027,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_player_playerinput_constructor",
-      "community": 0,
+      "community": 16,
       "norm_label": ".constructor()"
     },
     {
@@ -1897,7 +2037,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_player_playerinput_consume",
-      "community": 0,
+      "community": 16,
       "norm_label": ".consume()"
     },
     {
@@ -1907,7 +2047,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_player_playerinput_pressbutton",
-      "community": 0,
+      "community": 16,
       "norm_label": ".pressbutton()"
     },
     {
@@ -1917,7 +2057,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_player_playerinput_releasebutton",
-      "community": 0,
+      "community": 16,
       "norm_label": ".releasebutton()"
     },
     {
@@ -1927,7 +2067,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_player_playerinput_setmoveaxis",
-      "community": 0,
+      "community": 16,
       "norm_label": ".setmoveaxis()"
     },
     {
@@ -1937,7 +2077,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_player_playerinput_intents",
-      "community": 0,
+      "community": 16,
       "norm_label": ".intents()"
     },
     {
@@ -1947,7 +2087,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_player_playerinput_clearedges",
-      "community": 0,
+      "community": 16,
       "norm_label": ".clearedges()"
     },
     {
@@ -2029,6 +2169,116 @@
       "id": "src_projectiles_projectilemanager_dispose",
       "community": 8,
       "norm_label": ".dispose()"
+    },
+    {
+      "label": "settings.js",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_settings",
+      "community": 15,
+      "norm_label": "settings.js"
+    },
+    {
+      "label": "DEFAULTS",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_settings_defaults",
+      "community": 15,
+      "norm_label": "defaults"
+    },
+    {
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_settings_load",
+      "community": 15,
+      "norm_label": "load()"
+    },
+    {
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_settings_save",
+      "community": 15,
+      "norm_label": "save()"
+    },
+    {
+      "label": "Settings",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_settings_settings",
+      "community": 15,
+      "norm_label": "settings"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_settings_settings_constructor",
+      "community": 15,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".apply()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_settings_settings_apply",
+      "community": 15,
+      "norm_label": ".apply()"
+    },
+    {
+      "label": ".set()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "src_settings_settings_set",
+      "community": 15,
+      "norm_label": ".set()"
+    },
+    {
+      "label": ".bindUI()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "src_settings_settings_bindui",
+      "community": 15,
+      "norm_label": ".bindui()"
+    },
+    {
+      "label": ".syncUI()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "src_settings_settings_syncui",
+      "community": 15,
+      "norm_label": ".syncui()"
+    },
+    {
+      "label": ".syncLabels()",
+      "file_type": "code",
+      "source_file": "src/settings.js",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "src_settings_settings_synclabels",
+      "community": 15,
+      "norm_label": ".synclabels()"
     },
     {
       "label": "touch.js",
@@ -2324,7 +2574,7 @@
       "label": "On a phone",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L56",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "readme_on_a_phone",
       "community": 10,
@@ -2334,7 +2584,7 @@
       "label": "Code layout",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L64",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "readme_code_layout",
       "community": 10,
@@ -2462,6 +2712,106 @@
       "confidence_score": 1.0,
       "source": "mcp_server",
       "target": "mcp_server_vault"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_background_color",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_display",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_orientation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_short_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_start_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_theme_color",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2857,6 +3207,16 @@
       "confidence_score": 1.0,
       "source": "src_audio_audiosys",
       "target": "src_audio_audiosys_roar"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_audio_audiosys",
+      "target": "src_audio_audiosys_setvolume",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3402,9 +3762,9 @@
       "source_file": "src/camera.js",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_camera_duelcamera",
-      "target": "src_camera_duelcamera_steer",
-      "confidence_score": 1.0
+      "target": "src_camera_duelcamera_steer"
     },
     {
       "relation": "method",
@@ -5084,6 +5444,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_main_opensettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
       "source_location": "L145",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5109,6 +5479,16 @@
       "confidence_score": 1.0,
       "source": "src_main",
       "target": "src_main_selection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_main_settings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5156,9 +5536,9 @@
       "source_file": "src/main.js",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_touch",
-      "confidence_score": 1.0
+      "target": "src_main_touch"
     },
     {
       "relation": "imports_from",
@@ -5275,11 +5655,33 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/main.js",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "src_main",
-      "target": "src_touch",
+      "target": "src_settings",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_settings_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main",
+      "target": "src_touch"
     },
     {
       "relation": "imports",
@@ -5288,9 +5690,9 @@
       "source_file": "src/main.js",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_touch_touchcontrols",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols"
     },
     {
       "relation": "imports_from",
@@ -7443,9 +7845,9 @@
       "source_file": "src/player.js",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_pressbutton",
-      "confidence_score": 1.0
+      "target": "src_player_playerinput_pressbutton"
     },
     {
       "relation": "method",
@@ -7453,9 +7855,9 @@
       "source_file": "src/player.js",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_releasebutton",
-      "confidence_score": 1.0
+      "target": "src_player_playerinput_releasebutton"
     },
     {
       "relation": "method",
@@ -7463,9 +7865,9 @@
       "source_file": "src/player.js",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_player_playerinput",
-      "target": "src_player_playerinput_setmoveaxis",
-      "confidence_score": 1.0
+      "target": "src_player_playerinput_setmoveaxis"
     },
     {
       "relation": "calls",
@@ -7683,12 +8085,200 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_settings",
+      "target": "src_settings_defaults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_settings",
+      "target": "src_settings_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_settings",
+      "target": "src_settings_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_settings",
+      "target": "src_settings_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_settings_settings_constructor",
+      "target": "src_settings_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_settings_settings_set",
+      "target": "src_settings_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_bindui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_set",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_synclabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "src_settings_settings",
+      "target": "src_settings_settings_syncui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_settings_settings_constructor",
+      "target": "src_settings_settings_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_settings_settings_constructor",
+      "target": "src_settings_settings_bindui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "src_settings_settings_set",
+      "target": "src_settings_settings_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_settings_settings_set",
+      "target": "src_settings_settings_synclabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_settings_settings_bindui",
+      "target": "src_settings_settings_syncui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/settings.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "src_settings_settings_syncui",
+      "target": "src_settings_settings_synclabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/touch.js",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch",
-      "target": "src_touch_touchcontrols",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols"
     },
     {
       "relation": "method",
@@ -7696,9 +8286,9 @@
       "source_file": "src/touch.js",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_bindbuttons",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindbuttons"
     },
     {
       "relation": "method",
@@ -7706,9 +8296,9 @@
       "source_file": "src/touch.js",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_bindlook",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindlook"
     },
     {
       "relation": "method",
@@ -7716,9 +8306,9 @@
       "source_file": "src/touch.js",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_bindstick",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindstick"
     },
     {
       "relation": "method",
@@ -7726,9 +8316,9 @@
       "source_file": "src/touch.js",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_constructor",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_constructor"
     },
     {
       "relation": "method",
@@ -7736,9 +8326,9 @@
       "source_file": "src/touch.js",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_resetstick",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_resetstick"
     },
     {
       "relation": "method",
@@ -7746,9 +8336,9 @@
       "source_file": "src/touch.js",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols",
-      "target": "src_touch_touchcontrols_setvisible",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_setvisible"
     },
     {
       "relation": "calls",
@@ -7757,9 +8347,9 @@
       "source_file": "src/touch.js",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols_constructor",
-      "target": "src_touch_touchcontrols_bindbuttons",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindbuttons"
     },
     {
       "relation": "calls",
@@ -7768,9 +8358,9 @@
       "source_file": "src/touch.js",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols_constructor",
-      "target": "src_touch_touchcontrols_bindlook",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindlook"
     },
     {
       "relation": "calls",
@@ -7779,9 +8369,9 @@
       "source_file": "src/touch.js",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols_constructor",
-      "target": "src_touch_touchcontrols_bindstick",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_bindstick"
     },
     {
       "relation": "calls",
@@ -7790,9 +8380,9 @@
       "source_file": "src/touch.js",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_touch_touchcontrols_setvisible",
-      "target": "src_touch_touchcontrols_resetstick",
-      "confidence_score": 1.0
+      "target": "src_touch_touchcontrols_resetstick"
     },
     {
       "relation": "contains",
@@ -8033,11 +8623,11 @@
       "source_file": "README.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_controls",
-      "target": "readme_on_a_phone",
-      "confidence_score": 1.0
+      "target": "readme_on_a_phone"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "95bf057bf9582340a039fdcd92248de951884c57"
+  "built_at_commit": "ba4edbc0359bf1d1009c50e73964a86628544352"
 }

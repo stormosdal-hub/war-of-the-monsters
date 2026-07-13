@@ -63,6 +63,9 @@ export class Monster {
 
   get center() { return this.pos.add(V3(0, this.height * 0.55, 0)); }
   get fwd() { return fwdOf(this.yaw); }
+  // Player-only tuning multipliers from the settings menu (AI is unaffected).
+  get speedMul() { return this.isPlayer && this.G.settings ? this.G.settings.data.moveSpeed : 1; }
+  get jumpMul() { return this.isPlayer && this.G.settings ? this.G.settings.data.jumpHeight : 1; }
   busy() { return ['attack', 'special', 'hitstun', 'launched', 'down', 'grab', 'grabbed', 'dodge', 'throw', 'dead'].includes(this.state); }
 
   // ============================== damage / health ==============================
@@ -210,7 +213,7 @@ export class Monster {
 
     // --- steering ---
     const accel = this.onGround ? 90 : 90 * AIR_CTRL;
-    const maxSpd = def.speed * (this.onGround ? 1 : 1.05);
+    const maxSpd = def.speed * this.speedMul * (this.onGround ? 1 : 1.05);
     this.vel.x = clamp(this.vel.x + mx * accel * dt, -maxSpd * 1.4, maxSpd * 1.4);
     this.vel.z = clamp(this.vel.z + mz * accel * dt, -maxSpd * 1.4, maxSpd * 1.4);
     if (this.onGround && mag < 0.05) {
@@ -227,13 +230,13 @@ export class Monster {
     // --- jump / glide ---
     if (i.jump) {
       if (this.onGround) {
-        this.vel.y = def.jump;
+        this.vel.y = def.jump * this.jumpMul;
         this.onGround = false;
         this.jumps = 1;
         this.G.audio.jump();
         this.G.effects.dust(this.pos.clone(), 3.5, 10);
       } else if (this.jumps < 2) {
-        this.vel.y = def.jump * 0.85;
+        this.vel.y = def.jump * 0.85 * this.jumpMul;
         this.jumps = 2;
         this.G.audio.jump();
       }
@@ -344,7 +347,7 @@ export class Monster {
     const { nx, nz } = this.climb;
     this.yaw = Math.atan2(-nx, -nz); // face the wall
 
-    const climbSpd = this.def.speed * 0.55;
+    const climbSpd = this.def.speed * 0.55 * this.speedMul;
     // raw axes when available (player): W=up, S=down, A/D=strafe.
     // Fallback (AI): project world intent onto the wall.
     let upIn, sideIn;
@@ -391,7 +394,7 @@ export class Monster {
       this.setState('air');
       this.onGround = false;
       this.jumps = 1;
-      this.vel.set(nx * 22, this.def.jump * 0.9, nz * 22);
+      this.vel.set(nx * 22, this.def.jump * 0.9 * this.jumpMul, nz * 22);
       this.G.audio.jump();
       return;
     }

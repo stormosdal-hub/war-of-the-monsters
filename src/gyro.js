@@ -1,26 +1,36 @@
-// Optional gyroscope steering for phones: tilt the device left/right ("roll") to
-// turn the character. Uses DeviceOrientationEvent — the phone's tilt sensor —
-// mapped to a *turn rate* (hold a tilt and you keep turning), so you can spin a
-// full 360°. iOS 13+ requires a permission prompt fired from a user gesture, so
-// enabling from the Settings toggle (a tap) is what unlocks it.
+// Optional gyroscope steering for phones. Tilt the device to aim:
+//   • left/right tilt ("roll")   → turn the character (yaw)
+//   • front/back tilt ("pitch")  → look up / down
+// Uses DeviceOrientationEvent — the phone's tilt sensor — mapped to a *rate*
+// (hold a tilt and you keep turning/tilting), so you can spin a full 360°.
+// iOS 13+ requires a permission prompt fired from a user gesture, so enabling
+// from the Settings toggle (a tap) is what unlocks it.
 //
-// Orientation math: gamma is left-right tilt in portrait; in landscape the
-// screen's left-right tilt lives in beta. Combining them with the current screen
-// angle yields one "screen tilt" value that works whichever way the phone is held.
-const DEADZONE = 4;     // degrees of slack around level before we start turning
-const FULL_TILT = 32;   // degrees of tilt that maps to the max turn rate
-const MAX_RATE = 2.4;   // radians/sec at full tilt, sensitivity 1
+// Orientation math: the raw beta/gamma tilt is rotated by the current screen
+// angle into two orthogonal screen axes, so left/right (yaw) and front/back
+// (pitch) stay separated whichever way the phone is held.
+import { clamp } from './util.js';
+
+const DEADZONE = 4;        // degrees of slack around level before we react
+const FULL_TILT = 32;      // degrees of tilt that maps to the max rate
+const MAX_RATE = 2.4;      // yaw radians/sec at full tilt, sensitivity 1
+const PITCH_RATE = 1.1;    // pitch radians/sec at full tilt (range is small, so gentler)
+const PITCH_MIN = -0.25, PITCH_MAX = 1.05; // must match camera.js pitch clamp
 
 export class GyroSteer {
   constructor(camera) {
     this.camera = camera;
     this.sens = 1;
-    this.invert = false;
+    this.invert = false;      // flip horizontal (yaw) direction
+    this.pitch = true;        // also tilt front/back to look up/down
+    this.pitchInvert = false; // flip vertical (pitch) direction
     this.wanted = false;      // user wants gyro on
     this.granted = false;     // permission granted (or not needed)
     this.listening = false;
-    this.tilt = 0;            // latest screen left-right tilt, degrees
-    this.baseline = 0;        // "level" reference captured on enable / fight start
+    this.tilt = 0;            // latest screen left-right tilt (yaw), degrees
+    this.tiltV = 0;           // latest screen front-back tilt (pitch), degrees
+    this.baseline = 0;        // "level" yaw reference captured on enable / fight start
+    this.baselineV = 0;       // "level" pitch reference
     this.needsRecenter = true;
     this._onOrient = this._onOrient.bind(this);
   }
@@ -77,23 +87,32 @@ export class GyroSteer {
   _onOrient(e) {
     if (e.gamma === null || e.beta === null) return;
     const ang = (((screen.orientation && screen.orientation.angle) || window.orientation || 0)) * Math.PI / 180;
-    // project device tilt onto the current screen's left-right axis
-    this.tilt = e.gamma * Math.cos(ang) + e.beta * Math.sin(ang);
-    if (this.needsRecenter) { this.baseline = this.tilt; this.needsRecenter = false; }
+    const c = Math.cos(ang), s = Math.sin(ang);
+    // decompose device tilt into the screen's two orthogonal axes
+    this.tilt = e.gamma * c + e.beta * s;   // left-right (yaw)
+    this.tiltV = e.beta * c - e.gamma * s;  // front-back (pitch)
+    if (this.needsRecenter) { this.baseline = this.tilt; this.baselineV = this.tiltV; this.needsRecenter = false; }
   }
 
   // Re-capture "level" — call when a fight starts / resumes so the player's
   // natural holding angle becomes neutral.
   recenter() { this.needsRecenter = true; }
 
-  // Called each fight frame: convert tilt beyond the deadzone into yaw.
+  // Tilt past the deadzone -> a rate; returns radians/sec at sensitivity 1.
+  _rate(d, maxRate) {
+    const mag = Math.abs(d) - DEADZONE;
+    if (mag <= 0) return 0;
+    return Math.min(mag / (FULL_TILT - DEADZONE), 1) * maxRate * this.sens * Math.sign(d);
+  }
+
+  // Called each fight frame: convert tilt beyond the deadzone into yaw + pitch.
   apply(dt) {
     if (!this.wanted || !this.granted || !this.listening) return;
-    const d = this.tilt - this.baseline;
-    const mag = Math.abs(d) - DEADZONE;
-    if (mag <= 0) return;
-    const norm = Math.min(mag / (FULL_TILT - DEADZONE), 1);
-    const rate = norm * MAX_RATE * this.sens * Math.sign(d) * (this.invert ? -1 : 1);
-    this.camera.camYaw += rate * dt;
+    const yaw = this._rate(this.tilt - this.baseline, MAX_RATE) * (this.invert ? -1 : 1);
+    this.camera.camYaw += yaw * dt;
+    if (this.pitch) {
+      const p = this._rate(this.tiltV - this.baselineV, PITCH_RATE) * (this.pitchInvert ? -1 : 1);
+      this.camera.camPitch = clamp(this.camera.camPitch + p * dt, PITCH_MIN, PITCH_MAX);
+    }
   }
 }

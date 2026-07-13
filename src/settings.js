@@ -8,6 +8,7 @@ const DEFAULTS = {
   sensitivity: 1, invertY: false, volume: 0.5,
   moveSpeed: 1, jumpHeight: 1,
   gyro: false, gyroSens: 1, gyroInvert: false,
+  gyroPitch: true, gyroPitchInvert: false,
 };
 
 function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } }
@@ -32,6 +33,8 @@ export class Settings {
     if (this.G.gyro) {
       this.G.gyro.sens = d.gyroSens;
       this.G.gyro.invert = d.gyroInvert;
+      this.G.gyro.pitch = d.gyroPitch;
+      this.G.gyro.pitchInvert = d.gyroPitchInvert;
       this.G.gyro.setEnabled(d.gyro, viaGesture);
     }
   }
@@ -49,6 +52,7 @@ export class Settings {
       sens: $('setSens'), invert: $('setInvert'), vol: $('setVol'),
       move: $('setMove'), jump: $('setJump'),
       gyro: $('setGyro'), gyroSens: $('setGyroSens'), gyroInvert: $('setGyroInvert'),
+      gyroPitch: $('setGyroPitch'), gyroPitchInvert: $('setGyroPitchInvert'),
     };
     this.labels = {
       sens: $('setSensVal'), vol: $('setVolVal'), move: $('setMoveVal'),
@@ -65,6 +69,8 @@ export class Settings {
     check(this.ui.invert, 'invertY');
     check(this.ui.gyro, 'gyro');
     check(this.ui.gyroInvert, 'gyroInvert');
+    check(this.ui.gyroPitch, 'gyroPitch');
+    check(this.ui.gyroPitchInvert, 'gyroPitchInvert');
     this.syncUI();
   }
 
@@ -80,6 +86,8 @@ export class Settings {
     this.ui.invert.checked = d.invertY;
     this.ui.gyro.checked = d.gyro;
     this.ui.gyroInvert.checked = d.gyroInvert;
+    this.ui.gyroPitch.checked = d.gyroPitch;
+    this.ui.gyroPitchInvert.checked = d.gyroPitchInvert;
     this.syncLabels();
   }
 

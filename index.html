@@ -248,15 +248,23 @@
       <input type="checkbox" id="setGyro" class="toggle">
     </label>
     <label class="setrow gyro-only">
+      <span class="setlabel">TILT TO LOOK ↕</span>
+      <input type="checkbox" id="setGyroPitch" class="toggle">
+    </label>
+    <label class="setrow gyro-only">
       <span class="setlabel">GYRO SENSITIVITY</span>
       <input type="range" id="setGyroSens" min="0.25" max="3" step="0.05">
       <span class="setval" id="setGyroSensVal">1.00×</span>
     </label>
     <label class="setrow gyro-only">
-      <span class="setlabel">GYRO INVERT</span>
+      <span class="setlabel">INVERT HORIZONTAL</span>
       <input type="checkbox" id="setGyroInvert" class="toggle">
     </label>
-    <div class="settings-note">Turn sensitivity covers mouse &amp; touch drag-to-aim. Gameplay tweaks affect your monster only. Gyro lets you tilt the phone left/right to turn.</div>
+    <label class="setrow gyro-only">
+      <span class="setlabel">INVERT VERTICAL</span>
+      <input type="checkbox" id="setGyroPitchInvert" class="toggle">
+    </label>
+    <div class="settings-note">Turn sensitivity covers mouse &amp; touch drag-to-aim. Gameplay tweaks affect your monster only. Gyro: tilt the phone left/right to turn, forward/back to look up &amp; down.</div>
   </div>
   <div class="menu-opts">
     <div class="opt" data-act="settings-back">BACK</div>

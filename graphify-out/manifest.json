@@ -90,13 +90,13 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783940640.6621876,
-    "ast_hash": "b15f99ed03cb17cf60d610d021a8444d",
+    "mtime": 1783942023.8877058,
+    "ast_hash": "53aabe95ce26172c2ba986276e542d71",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783940611.4531832,
-    "ast_hash": "e5b40d85cdfc2a796b2646f8688afdcd",
+    "mtime": 1783941885.1157813,
+    "ast_hash": "3229d63ce4066ac599ff156dc0914410",
     "semantic_hash": ""
   },
   "src/touch.js": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "src/settings.js": {
-    "mtime": 1783940279.9451935,
-    "ast_hash": "262924c18d270c0448a94b68eddcd890",
+    "mtime": 1783941870.1247892,
+    "ast_hash": "225fa201a1d0c31d789f55858b87a74d",
     "semantic_hash": ""
   },
   "icons/icon-180.png": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "src/gyro.js": {
-    "mtime": 1783940261.0922074,
-    "ast_hash": "8864a486b68e54dd2a97971b958391a7",
+    "mtime": 1783941844.0458033,
+    "ast_hash": "388ea13e65d35c72055264022ffa02f4",
     "semantic_hash": ""
   }
 }

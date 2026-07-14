@@ -1,0 +1,22 @@
+# Fly.io config for the COLOSSAL FURY relay server.
+# Deploy:  cd server && fly launch --no-deploy --copy-config --name <your-app>  (once)
+#          then  fly deploy
+# The app answers WebSockets over TLS at  wss://<your-app>.fly.dev
+app = "fury-relay"            # <-- change to your unique Fly app name
+primary_region = "arn"        # <-- pick a region near you (e.g. arn=Stockholm, iad=US-East)
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "suspend"   # scale to zero when idle (fast wake)
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"

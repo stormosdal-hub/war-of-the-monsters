@@ -1,0 +1,16 @@
+{
+  "name": "fury-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "COLOSSAL FURY multiplayer relay server (rooms + message relay)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.21.0"
+  }
+}

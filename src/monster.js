@@ -64,8 +64,9 @@ export class Monster {
   get center() { return this.pos.add(V3(0, this.height * 0.55, 0)); }
   get fwd() { return fwdOf(this.yaw); }
   // Player-only tuning multipliers from the settings menu (AI is unaffected).
-  get speedMul() { return this.isPlayer && this.G.settings ? this.G.settings.data.moveSpeed : 1; }
-  get jumpMul() { return this.isPlayer && this.G.settings ? this.G.settings.data.jumpHeight : 1; }
+  // Offline these tune the player only; online they're shared match rules for all.
+  get speedMul() { return (this.G.settings && (this.G.online || this.isPlayer)) ? this.G.settings.data.moveSpeed : 1; }
+  get jumpMul() { return (this.G.settings && (this.G.online || this.isPlayer)) ? this.G.settings.data.jumpHeight : 1; }
   busy() { return ['attack', 'special', 'hitstun', 'launched', 'down', 'grab', 'grabbed', 'dodge', 'throw', 'dead'].includes(this.state); }
 
   // Free-for-all targeting: everyone else still standing is fair game.

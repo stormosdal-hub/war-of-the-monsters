@@ -13,6 +13,13 @@ const DEFAULTS = {
 };
 const G_REF = 9.81; // m/s² at which the game keeps its original tuning (scale = 1)
 
+// Shared "match rule" settings — they apply to everyone in an online room and are
+// owned by the host. Everything else (sensitivity, invert, volume, gyro) is
+// personal to each player. These are gated behind a password so not just anyone
+// can change them. CHANGE THIS PASSWORD to your own before sharing the game.
+const GLOBAL_KEYS = ['moveSpeed', 'jumpHeight', 'gravity', 'throwSpeed', 'specialSpeed'];
+const SETTINGS_PASSWORD = 'colossal';
+
 function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } }
 function save(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch { /* private mode */ } }
 
@@ -20,6 +27,7 @@ export class Settings {
   constructor(G) {
     this.G = G;
     this.data = { ...DEFAULTS, ...load() };
+    this.unlocked = false;   // shared settings stay locked until the password is entered
     this.bindUI();
     this.apply(false); // boot: not a user gesture, so don't trigger a gyro permission prompt
   }
@@ -51,6 +59,50 @@ export class Settings {
     this.apply(true);
     save(this.data);
     this.syncLabels();
+    // an online host pushes shared match rules to the whole room
+    if (GLOBAL_KEYS.includes(key) && this.G.online && this.G.net && this.G.net.host) {
+      this.G.net.send({ t: 'settings', data: this._globals() });
+    }
+  }
+
+  _globals() { const o = {}; for (const k of GLOBAL_KEYS) o[k] = this.data[k]; return o; }
+
+  // A guest receives the host's shared rules and applies them.
+  applyRemoteGlobals(data) {
+    if (!data) return;
+    for (const k of GLOBAL_KEYS) if (k in data) this.data[k] = data[k];
+    this.apply(false);
+    this.syncUI();
+  }
+
+  tryUnlock() {
+    const val = (this.ui.pass && this.ui.pass.value) || '';
+    if (val === SETTINGS_PASSWORD) {
+      this.unlocked = true;
+      if (this.ui.pass) this.ui.pass.value = '';
+      this.G.audio.confirm();
+    } else if (this.ui.lockMsg) {
+      this.G.audio.ui();
+      this.ui.lockMsg.textContent = '🔒 WRONG PASSWORD';
+    }
+    this.refreshLock();
+  }
+
+  // Reflect who may edit the shared match rules: guests never can (host owns them);
+  // host/offline can once the password is entered.
+  refreshLock() {
+    if (!this.ui.shared) return;
+    const isGuest = this.G.online && this.G.net && !this.G.net.host;
+    const editable = !isGuest && this.unlocked;
+    this.ui.shared.classList.toggle('locked', !editable);
+    for (const el of [this.ui.move, this.ui.jump, this.ui.gravity, this.ui.throw, this.ui.special]) if (el) el.disabled = !editable;
+    if (this.ui.lock) this.ui.lock.classList.toggle('hostonly', isGuest);
+    if (this.ui.pass) this.ui.pass.style.display = isGuest ? 'none' : '';
+    if (this.ui.unlock) this.ui.unlock.style.display = (isGuest || editable) ? 'none' : '';
+    if (this.ui.lockMsg) {
+      this.ui.lockMsg.textContent = isGuest ? '🔒 HOST CONTROLS SHARED SETTINGS'
+        : editable ? '🔓 SHARED SETTINGS UNLOCKED' : '🔒 SHARED MATCH SETTINGS — ENTER PASSWORD';
+    }
   }
 
   bindUI() {
@@ -61,6 +113,7 @@ export class Settings {
       gravity: $('setGravity'), throw: $('setThrow'), special: $('setSpecial'),
       gyro: $('setGyro'), gyroSens: $('setGyroSens'), gyroInvert: $('setGyroInvert'),
       gyroPitch: $('setGyroPitch'), gyroPitchInvert: $('setGyroPitchInvert'),
+      lock: $('setLock'), pass: $('setPass'), unlock: $('setUnlock'), lockMsg: $('setLockMsg'), shared: $('sharedSettings'),
     };
     this.labels = {
       sens: $('setSensVal'), vol: $('setVolVal'), move: $('setMoveVal'),
@@ -83,6 +136,8 @@ export class Settings {
     check(this.ui.gyroInvert, 'gyroInvert');
     check(this.ui.gyroPitch, 'gyroPitch');
     check(this.ui.gyroPitchInvert, 'gyroPitchInvert');
+    if (this.ui.unlock) this.ui.unlock.addEventListener('click', () => this.tryUnlock());
+    if (this.ui.pass) this.ui.pass.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.stopPropagation(); this.tryUnlock(); } });
     this.syncUI();
   }
 
@@ -104,6 +159,7 @@ export class Settings {
     this.ui.gyroPitch.checked = d.gyroPitch;
     this.ui.gyroPitchInvert.checked = d.gyroPitchInvert;
     this.syncLabels();
+    this.refreshLock();
   }
 
   syncLabels() {

@@ -176,6 +176,7 @@ net.on('start', (m) => {
   G.netOrder = m.order;
   G.remoteInputs = {};
   startMatch(defList, slot, m.seed);
+  if (net.host) net.send({ t: 'settings', data: settings._globals() }); // seed guests with the room rules
 });
 
 // ---- live sync (Phase 3) ----
@@ -230,6 +231,10 @@ net.on('input', (m) => {                        // host stores each guest's inte
   if (!G.online || !net.host || !G.netOrder) return;
   const slot = G.netOrder.indexOf(m.from);
   if (slot >= 0 && slot !== G.playerSlot) G.remoteInputs[slot] = m.i;
+});
+net.on('settings', (m) => {                     // guest receives shared match rules
+  if (!G.online || net.host) return;
+  G.settings.applyRemoteGlobals(m.data);
 });
 
 $id('titleMP').addEventListener('click', (e) => { e.stopPropagation(); G.audio.ensure(); G.audio.ui(); openLobby(); });

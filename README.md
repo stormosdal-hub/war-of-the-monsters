@@ -61,6 +61,11 @@ less-floaty fall), **throw speed** for hurled props (cars/trees/monument), and
 **special speed** for energy-attack projectiles. Choices are saved on the device
 (localStorage) and reapplied next time. A center **crosshair** marks where you aim.
 
+The GAMEPLAY & PHYSICS rows are **shared match rules** locked behind a password
+(default `colossal` — change `SETTINGS_PASSWORD` in `src/settings.js`). Online,
+only the room **host** can change them and they apply to everyone; turn
+sensitivity, invert, volume and gyro always stay personal to each player.
+
 On phones there's also **gyro steering**: turn on *TILT TO TURN* and lean the phone
 left/right to rotate your monster, and *TILT TO LOOK* to tilt it forward/back to aim
 up/down. Both axes share one *gyro sensitivity* and each has its own invert (INVERT
@@ -86,6 +91,21 @@ your home screen** and launch it from there — a web app manifest + iOS meta ta
 make it open like a native app. (If you added it before this was in place, remove
 the old icon and re-add it so the new settings take effect.)
 
+## Multiplayer (online free-for-all)
+
+Up to four friends can brawl in one arena. The **game** is served from GitHub
+Pages as usual, but real-time play needs a small relay server (GitHub Pages
+can't host one). A ready-to-deploy Node relay lives in `server/` — see
+`server/README.md` for the one-command Fly.io deploy. Then, on the title screen:
+**▶ MULTIPLAYER**, paste your `wss://…` server address, and **HOST A GAME** (share
+the 4-letter room code) or **JOIN** with a friend's code. Pick monsters, the host
+starts, and everyone fights in the same city.
+
+The room **host** runs the authoritative simulation; other players stream their
+input up and see the shared battle — monsters, crumbling buildings, specials and
+pickups all synced. Shared match rules (gravity, speeds, jump) are host-owned and
+password-gated; each player keeps their own turn sensitivity.
+
 ## Code layout
 
 ```
@@ -101,6 +121,8 @@ src/camera.js       FPS-style follow camera (mouse/touch aim), building avoidanc
 src/touch.js        on-screen touch controls for phones/tablets
 src/settings.js     player settings (look/audio/gameplay/gyro) + localStorage
 src/gyro.js         optional gyroscope tilt steering — yaw + pitch (phones)
+src/net.js          online multiplayer transport (relay WebSocket client)
+src/netghost.js     guest-side ghosts for host-synced projectiles + pickups
 src/projectiles.js  specials + thrown props
 src/pickups.js      health/energy orbs
 src/effects.js      particles, debris chunks, screen shake

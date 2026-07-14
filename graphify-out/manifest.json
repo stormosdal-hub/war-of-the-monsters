@@ -55,13 +55,13 @@
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1783996317.3103383,
-    "ast_hash": "f5b189d2052aa640e20ce8add623ef00",
+    "mtime": 1783997017.3143659,
+    "ast_hash": "b4ac271e1d716ec5d7240331fc94e2c1",
     "semantic_hash": ""
   },
   "src/monster.js": {
-    "mtime": 1783995282.1950042,
-    "ast_hash": "7745037bdbcf27cc8edc8abba54772ca",
+    "mtime": 1783996967.1604705,
+    "ast_hash": "68b104af94a7c70dd23f149566e6fdec",
     "semantic_hash": ""
   },
   "src/monsters.js": {
@@ -90,13 +90,13 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783993136.0660086,
-    "ast_hash": "466294227ae1f77fa6b6eb8f7d2175ab",
+    "mtime": 1783997312.7258468,
+    "ast_hash": "ff6c77029f67528a129090241c6ba7a7",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783994376.9895616,
-    "ast_hash": "1dc872423456e5fe0c0aa94e6be50544",
+    "mtime": 1783996908.7906,
+    "ast_hash": "82d68211574be94d7541e407fbef2f78",
     "semantic_hash": ""
   },
   "src/touch.js": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "src/settings.js": {
-    "mtime": 1783944427.415279,
-    "ast_hash": "2001176622847a40761b833ec231ea3d",
+    "mtime": 1783996957.7094908,
+    "ast_hash": "519c4f59155246654341d1120b09ce8c",
     "semantic_hash": ""
   },
   "icons/icon-180.png": {

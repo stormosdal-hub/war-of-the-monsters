@@ -1,16 +1,16 @@
 # Graph Report - war-of-the-monsters  (2026-07-14)
 
 ## Corpus Check
-- 26 files · ~29,373 words
+- 27 files · ~30,237 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 333 nodes · 695 edges · 22 communities (12 shown, 10 thin omitted)
+- 344 nodes · 708 edges · 23 communities (13 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bc8a71bd`
+- Built from commit: `bad0a55e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,9 +37,10 @@
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Monster` - 37 edges
+1. `Monster` - 39 edges
 2. `V3()` - 34 edges
 3. `AudioSys` - 25 edges
 4. `rand()` - 20 edges
@@ -65,27 +66,27 @@
 ## Import Cycles
 - None detected.
 
-## Communities (22 total, 10 thin omitted)
+## Communities (23 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
-Nodes (36): screens, buildMonsterChips(), buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), endToVictory() (+28 more)
+Nodes (37): screens, applyNetPhase(), buildMonsterChips(), buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld() (+29 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.18
-Nodes (3): Monster, distXZ(), yawTo()
+Cohesion: 0.13
+Nodes (7): Monster, MOVES, angleLerp(), distXZ(), fwdOf(), smoothstep(), yawTo()
 
-### Community 4 - "Community 4"
-Cohesion: 0.17
-Nodes (4): City, makeWindowTexture(), Prop, C3()
+### Community 5 - "Community 5"
+Cohesion: 0.11
+Nodes (4): Building, Prop, Effects, V3()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.48
 Nodes (11): box(), buildKragmor(), buildMegaton(), buildRyzor(), buildVespera(), cyl(), finishRig(), mat() (+3 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.08
-Nodes (17): AIController, DuelCamera, Building, makeGroundTexture(), MOVES, PickupManager, angleLerp(), clamp() (+9 more)
+Cohesion: 0.11
+Nodes (14): AIController, City, makeGroundTexture(), makeWindowTexture(), PickupManager, C3(), clamp(), damp() (+6 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.29
@@ -115,23 +116,29 @@ Nodes (11): dependencies, ws, description, engines, node, main, name, private (+
 Cohesion: 0.31
 Nodes (8): broadcast(), leaveRoom(), rooms, roster(), send(), sendRoster(), { WebSocketServer }, wss
 
+### Community 22 - "Community 22"
+Cohesion: 0.40
+Nodes (4): COLOSSAL FURY — relay server, Deploy to Fly.io, Protocol (JSON per message, `t` = type), Run locally
+
 ## Knowledge Gaps
-- **52 isolated node(s):** `node`, `name`, `version`, `type`, `main` (+47 more)
+- **55 isolated node(s):** `node`, `name`, `version`, `type`, `main` (+50 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 8`?**
-  _High betweenness centrality (0.116) - this node is a cross-community bridge._
+- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 5`?**
+  _High betweenness centrality (0.120) - this node is a cross-community bridge._
 - **Why does `AudioSys` connect `Community 3` to `Community 0`?**
-  _High betweenness centrality (0.108) - this node is a cross-community bridge._
+  _High betweenness centrality (0.104) - this node is a cross-community bridge._
 - **Why does `Net` connect `Community 18` to `Community 0`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+  _High betweenness centrality (0.074) - this node is a cross-community bridge._
 - **What connects `node`, `name`, `version` to the rest of the system?**
-  _52 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _55 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07419712070874862 - nodes in this community are weakly interconnected._
-- **Should `Community 8` be split into smaller, more focused modules?**
-  _Cohesion score 0.08176100628930817 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0666049953746531 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.12956810631229235 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.11375661375661375 - nodes in this community are weakly interconnected._

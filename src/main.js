@@ -55,6 +55,8 @@ const G = {
   playerSlot: 0,    // which monster the local player controls (0 in single-player)
   net: null,        // relay transport when online
   online: false,    // true while a networked match is set up
+  netOrder: null,   // [clientId,...] mapping slot index -> player id (online)
+  remoteInputs: {}, // slot -> latest intent received from that guest (host side)
   onKO: null,
   // physics scales driven by Settings (1 = current tuning)
   gravityScale: 1, throwScale: 1, specialScale: 1,
@@ -160,7 +162,49 @@ net.on('start', (m) => {
     return ROSTER[p && ROSTER[p.monster] ? p.monster : 0];
   });
   G.online = true;
+  G.netOrder = m.order;
+  G.remoteInputs = {};
   startMatch(defList, slot);
+});
+
+// ---- live sync (Phase 3) ----
+const NET_STATE_DT = 1 / 15;   // host snapshot rate
+const NET_INPUT_DT = 1 / 30;   // guest input rate
+let netStateT = 0, netInputT = 0;
+
+const snapMon = (m) => {
+  const o = {
+    x: +m.pos.x.toFixed(2), y: +m.pos.y.toFixed(2), z: +m.pos.z.toFixed(2),
+    yaw: +m.yaw.toFixed(3), st: m.state, an: m.animName,
+    hp: Math.round(m.hp), en: Math.round(m.energy), al: m.alive ? 1 : 0, og: m.onGround ? 1 : 0,
+  };
+  if (m.state === 'attack' && m.move) o.mv = [m.move.windup, m.move.active, m.move.recover];
+  return o;
+};
+function broadcastState() { net.send({ t: 'state', mons: G.monsters.map(snapMon), ph: gameState }); }
+function clearIntentEdges(i) { if (i) { i.jump = i.light = i.heavy = i.grab = i.special = i.dodge = false; } }
+
+// guest: whenever the host says the match ended (or a KO landed), follow it
+function applyNetPhase(m) {
+  if (m.ph === 'victory') {
+    if (gameState !== 'victory') {
+      const wname = (G.monsters[m.winner] && G.monsters[m.winner].def.name) || '—';
+      endToVictory(wname, m.winner === G.playerSlot);
+    }
+  } else if (m.ph === 'ko' && gameState === 'fight') {
+    gameState = 'ko';
+  }
+}
+
+net.on('state', (m) => {                       // guest applies host snapshots
+  if (!G.online || net.host) return;
+  for (let i = 0; i < G.monsters.length && i < m.mons.length; i++) G.monsters[i].applyNet(m.mons[i]);
+  applyNetPhase(m);
+});
+net.on('input', (m) => {                        // host stores each guest's intents
+  if (!G.online || !net.host || !G.netOrder) return;
+  const slot = G.netOrder.indexOf(m.from);
+  if (slot >= 0 && slot !== G.playerSlot) G.remoteInputs[slot] = m.i;
 });
 
 $id('titleMP').addEventListener('click', (e) => { e.stopPropagation(); G.audio.ensure(); G.audio.ui(); openLobby(); });
@@ -275,6 +319,10 @@ function endToVictory(winnerName, playerWon) {
   document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : `${winnerName} REIGNS`;
   document.getElementById('victoryText').style.color = playerWon ? 'var(--marquee)' : 'var(--hot)';
   screens.show('victoryScreen');
+  if (G.online && net.host) {
+    const winner = G.monsters.findIndex((m) => m.alive);
+    net.send({ t: 'state', mons: G.monsters.map(snapMon), ph: 'victory', winner });
+  }
 }
 
 // ------------------------------------------------------------------ character select
@@ -347,7 +395,7 @@ document.querySelectorAll('.opt').forEach(opt => {
     G.audio.confirm();
     if (act === 'rematch') { if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot); }
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); enterSelect('p1'); }
-    else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
+    else if (act === 'title') { if (G.online) { net.bye(); net.close(); G.online = false; } disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
     else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); setReticle(true); screens.hideAll(); }
     else if (act === 'settings') openSettings();
     else if (act === 'settings-back') screens.show(settingsReturn);
@@ -418,29 +466,48 @@ scene.onBeforeRenderObservable.add(() => {
       input.clearEdges();
     }
   } else if (gameState === 'fight' || gameState === 'ko') {
-    for (let idx = 0; idx < G.monsters.length; idx++) {
-      const m = G.monsters[idx];
-      let intent = {};
-      if (gameState === 'fight' && m.alive) {
-        intent = idx === G.playerSlot ? input.intents(G.camera.camYaw) : G.ais[idx].intents(dt);
+    if (G.online && !net.host) {
+      // GUEST: stream input up, render everyone from the host's snapshots
+      if (gameState === 'fight') {
+        netInputT += dt;
+        if (netInputT >= NET_INPUT_DT) { netInputT = 0; net.send({ t: 'input', i: input.intents(G.camera.camYaw) }); }
       }
-      m.lastIntent = intent;
-      m.update(dt, intent);
-    }
-    G.city.update(dt, G);
-    G.projectiles.update(dt);
-    G.pickups.update(dt);
-    G.effects.update(dt, G.monsters);
-    if (gameState === 'fight') gyro.apply(dt); // tilt-to-turn feeds camYaw before the camera reads it
-    G.camera.update(dt, G);
-    G.hud.update();
+      for (const m of G.monsters) m.netRender(dt);
+      G.effects.update(dt, G.monsters);
+      if (gameState === 'fight') gyro.apply(dt);
+      G.camera.update(dt, G);
+      G.hud.update();
+    } else {
+      // HOST / single-player: authoritative simulation
+      for (let idx = 0; idx < G.monsters.length; idx++) {
+        const m = G.monsters[idx];
+        let intent = {};
+        if (gameState === 'fight' && m.alive) {
+          if (idx === G.playerSlot) intent = input.intents(G.camera.camYaw);
+          else if (G.online) intent = G.remoteInputs[idx] || {};   // remote human
+          else intent = G.ais[idx].intents(dt);                    // bot
+        }
+        m.lastIntent = intent;
+        m.update(dt, intent);
+        if (G.online && idx !== G.playerSlot) clearIntentEdges(G.remoteInputs[idx]); // one-shot edges
+      }
+      G.city.update(dt, G);
+      G.projectiles.update(dt);
+      G.pickups.update(dt);
+      G.effects.update(dt, G.monsters);
+      if (gameState === 'fight') gyro.apply(dt); // tilt-to-turn feeds camYaw before the camera reads it
+      G.camera.update(dt, G);
+      G.hud.update();
 
-    if (gameState === 'ko') {
-      koTimer += dt;
-      if (koTimer > 3) {
-        const winner = G.monsters.find((m) => m.alive);
-        const playerWon = G.monsters[G.playerSlot].alive;
-        endToVictory(winner ? winner.def.name : '—', playerWon);
+      if (G.online && net.host) { netStateT += dt; if (netStateT >= NET_STATE_DT) { netStateT = 0; broadcastState(); } }
+
+      if (gameState === 'ko') {
+        koTimer += dt;
+        if (koTimer > 3) {
+          const winner = G.monsters.find((m) => m.alive);
+          const playerWon = G.monsters[G.playerSlot].alive;
+          endToVictory(winner ? winner.def.name : '—', playerWon);
+        }
       }
     }
   } else if (gameState === 'victory' || gameState === 'paused') {

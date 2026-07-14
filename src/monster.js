@@ -802,6 +802,35 @@ export class Monster {
     this.root.rotation.set(pitch + deadRot, this.visYaw, 0);
   }
 
+  // ---- networking (guest side): drive a remote monster from host snapshots ----
+  // Snapshot fields are terse: x/y/z, yaw, st(ate), an(imName), hp, en(ergy),
+  // al(ive), og(onGround), mv=[windup,active,recover] while attacking.
+  applyNet(s) {
+    if (this.netTarget) { this.vel.x = (s.x - this.netTarget.x) * 15; this.vel.z = (s.z - this.netTarget.z) * 15; }
+    this.netTarget = { x: s.x, y: s.y, z: s.z };
+    this.yaw = s.yaw;
+    if (this.state !== s.st) { this.state = s.st; this.stateT = 0; }
+    this.animName = s.an;
+    this.hp = s.hp; this.energy = s.en;
+    this.alive = !!s.al; this.onGround = !!s.og;
+    this.move = s.mv ? { windup: s.mv[0], active: s.mv[1], recover: s.mv[2] } : null;
+  }
+
+  // Visual-only tick for guests: interpolate toward the latest snapshot and
+  // animate — no physics, combat or AI runs.
+  netRender(dt) {
+    const nt = this.netTarget;
+    if (nt) {
+      const k = Math.min(1, dt * 14);
+      this.pos.x += (nt.x - this.pos.x) * k;
+      this.pos.y += (nt.y - this.pos.y) * k;
+      this.pos.z += (nt.z - this.pos.z) * k;
+    }
+    this.stateT += dt; this.animT += dt;
+    this.updateAnimation(dt);
+    this.syncMesh(dt);
+  }
+
   dispose() {
     this.root.dispose(false, true);
   }

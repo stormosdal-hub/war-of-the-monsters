@@ -93,24 +93,29 @@ the old icon and re-add it so the new settings take effect.)
 
 ## Multiplayer (online free-for-all)
 
-Up to four friends can brawl in one arena. The **game** is served from GitHub
-Pages as usual, but real-time play needs a small relay server (GitHub Pages
-can't host one). A ready-to-deploy Node relay lives in `server/` — see
-`server/README.md` for the one-command Fly.io deploy. Then, on the title screen:
-**▶ MULTIPLAYER**, paste your `wss://…` server address, and **HOST A GAME** (share
-the 4-letter room code) or **JOIN** with a friend's code. Pick monsters, the host
-starts, and everyone fights in the same city.
+Up to four friends can brawl in one arena — and it runs **entirely on GitHub
+Pages with no server to deploy**. On the title screen: **▶ MULTIPLAYER**, then
+**HOST A GAME** (share the 4-letter room code) or **JOIN** with a friend's code.
+Pick monsters, the host starts, and everyone fights in the same city.
 
-The room **host** runs the authoritative simulation; other players stream their
-input up and see the shared battle — monsters, crumbling buildings, specials and
-pickups all synced. Shared match rules (gravity, speeds, jump) are host-owned and
-password-gated; each player keeps their own turn sensitivity.
+Players connect **peer-to-peer over WebRTC** (PeerJS). A free public broker is
+used only for the initial handshake — once connected, all game traffic flows
+directly between browsers. The room **host** runs the authoritative simulation;
+the others stream their input to it and see the shared battle — monsters,
+crumbling buildings, specials and pickups all synced. Shared match rules
+(gravity, speeds, jump) are host-owned and password-gated; each player keeps
+their own turn sensitivity.
+
+> `server/` holds an optional dedicated WebSocket relay (with a Fly.io deploy) —
+> an alternative to the public broker for larger/more reliable sessions. It is
+> **not** required or used by default.
 
 ## Code layout
 
 ```
 index.html          shell, HUD + menu overlays (pure HTML/CSS)
 lib/babylon.js      Babylon.js (vendored, offline)
+lib/peerjs.min.js   PeerJS (vendored) — WebRTC peer-to-peer for multiplayer
 src/main.js         boot, game states, match manager, debug handle (window.__CF)
 src/city.js         procedural destructible city, collision queries
 src/monsters.js     roster: stats + procedural mesh rigs
@@ -121,7 +126,7 @@ src/camera.js       FPS-style follow camera (mouse/touch aim), building avoidanc
 src/touch.js        on-screen touch controls for phones/tablets
 src/settings.js     player settings (look/audio/gameplay/gyro) + localStorage
 src/gyro.js         optional gyroscope tilt steering — yaw + pitch (phones)
-src/net.js          online multiplayer transport (relay WebSocket client)
+src/net.js          online multiplayer transport — WebRTC peer-to-peer (PeerJS)
 src/netghost.js     guest-side ghosts for host-synced projectiles + pickups
 src/projectiles.js  specials + thrown props
 src/pickups.js      health/energy orbs

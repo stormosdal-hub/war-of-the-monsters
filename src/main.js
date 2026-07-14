@@ -13,7 +13,7 @@ import { DuelCamera } from './camera.js';
 import { TouchControls } from './touch.js';
 import { GyroSteer } from './gyro.js';
 import { Settings } from './settings.js';
-import { Net, savedServerUrl, saveServerUrl } from './net.js';
+import { Net } from './net.js';
 import { GhostWorld } from './netghost.js';
 import { HUD, screens } from './hud.js';
 
@@ -101,10 +101,14 @@ const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '
 
 function openLobby() {
   gameState = 'lobby';
-  $id('lobbyServer').value = savedServerUrl();
   $id('lobbyName').value = (() => { try { return localStorage.getItem('cf-name') || 'MONSTER'; } catch { return 'MONSTER'; } })();
   showLobbyEntry();
   screens.show('lobbyScreen');
+}
+function playerName() {
+  const name = ($id('lobbyName').value.trim() || 'MONSTER').slice(0, 16);
+  try { localStorage.setItem('cf-name', name); } catch { /* private mode */ }
+  return name;
 }
 function leaveLobby() {
   net.bye(); net.close();
@@ -150,21 +154,19 @@ function renderRoster() {
   $id('roomMsg').style.color = '#8a7ba8';
 }
 
-async function lobbyConnect() {
-  const url = ($id('lobbyServer').value.trim()) || savedServerUrl();
-  saveServerUrl(url);
-  const name = ($id('lobbyName').value.trim() || 'MONSTER').slice(0, 16);
-  try { localStorage.setItem('cf-name', name); } catch { /* private mode */ }
-  if (!net.isOpen) { $id('lobbyMsg').textContent = 'Connecting…'; await net.connect(url); }
-  return name;
-}
-
 net.on('welcome', () => { if (gameState === 'lobby') showLobbyRoom(); });
 net.on('roster', () => { if (gameState === 'lobby') renderRoster(); });
 net.on('host', () => { if (gameState === 'lobby') renderRoster(); });
 net.on('peerleft', () => { if (gameState === 'lobby') renderRoster(); });
 net.on('error', (m) => { $id('lobbyMsg').textContent = m.msg || 'Server error'; });
-net.on('close', () => { if (gameState === 'lobby') { showLobbyEntry(); $id('lobbyMsg').textContent = 'Disconnected from server.'; } });
+net.on('close', () => {
+  if (gameState === 'lobby') { showLobbyEntry(); $id('lobbyMsg').textContent = 'Disconnected.'; }
+  else if (G.online) { // host left mid-match (no host migration in P2P) — bail out
+    G.online = false; net.close(); disposeWorld();
+    document.getElementById('hud').classList.add('hidden'); setReticle(false);
+    gameState = 'title'; screens.show('titleScreen');
+  }
+});
 net.on('start', (m) => {
   const slot = net.slotOf(m.order);
   if (slot < 0) return; // not in this match
@@ -240,8 +242,9 @@ net.on('settings', (m) => {                     // guest receives shared match r
 $id('titleMP').addEventListener('click', (e) => { e.stopPropagation(); G.audio.ensure(); G.audio.ui(); openLobby(); });
 $id('lobbyHost').addEventListener('click', async () => {
   if (lobbyBusy) return; lobbyBusy = true;
-  try { const name = await lobbyConnect(); net.create(name, myPick); }
-  catch { $id('lobbyMsg').textContent = 'Could not reach the server. Check the address.'; }
+  $id('lobbyMsg').textContent = 'Creating room…';
+  try { await net.create(playerName(), myPick); }
+  catch { $id('lobbyMsg').textContent = 'Could not reach the matchmaking broker.'; }
   lobbyBusy = false;
 });
 $id('lobbyJoin').addEventListener('click', async () => {
@@ -249,8 +252,9 @@ $id('lobbyJoin').addEventListener('click', async () => {
   const code = $id('lobbyCode').value.trim().toUpperCase();
   if (code.length !== 4) { $id('lobbyMsg').textContent = 'Enter the 4-letter room code.'; return; }
   lobbyBusy = true;
-  try { const name = await lobbyConnect(); net.join(code, name, myPick); }
-  catch { $id('lobbyMsg').textContent = 'Could not reach the server. Check the address.'; }
+  $id('lobbyMsg').textContent = 'Joining…';
+  try { await net.join(code, playerName(), myPick); }
+  catch { $id('lobbyMsg').textContent = 'Could not reach the matchmaking broker.'; }
   lobbyBusy = false;
 });
 $id('roomStart').addEventListener('click', () => { if (net.host) net.startMatch(); });

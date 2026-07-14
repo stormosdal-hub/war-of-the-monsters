@@ -118,6 +118,8 @@ export class Building {
     if (!this.alive) return false;
     const seg = this.segAt(hitY);
     if (!seg) return false;
+    // host relays the hit so guests can crumble the same building identically
+    if (G.online && G.net && G.net.host) this.city.dmgEvents.push({ i: this.idx, y: hitY, a: amount });
     seg.hp -= amount;
     const center = V3(this.x, clamp(hitY, seg.y0, seg.y1), this.z);
     if (seg.hp <= 0) {
@@ -143,8 +145,8 @@ export class Building {
       G.effects.spawnChunks(c, Math.min(10, 3 + Math.floor(s.w * s.d / 200)), 1.2, 3.4, 14 + i * 3, true);
       G.effects.dust(c, Math.max(s.w, s.d) * 0.55, 20);
       s.mesh.dispose();
-      // chance of a pickup falling out
-      if (Math.random() < 0.4) {
+      // chance of a pickup falling out (host is authoritative over pickups)
+      if ((!G.online || G.net.host) && Math.random() < 0.4) {
         G.pickups.spawn(V3(this.x + rand(-this.w / 2, this.w / 2), s.y0 + 2, this.z + rand(-this.d / 2, this.d / 2)), Math.random() < 0.5 ? 'health' : 'energy');
       }
     }
@@ -177,9 +179,11 @@ export class Building {
     rub.material = this.city.rubbleMat;
     rub.freezeWorldMatrix();
     this.rubble = rub;
-    // guaranteed pickups from a full collapse
-    G.pickups.spawn(V3(this.x + rand(-4, 4), 6, this.z + rand(-4, 4)), 'health');
-    if (Math.random() < 0.6) G.pickups.spawn(V3(this.x + rand(-6, 6), 6, this.z + rand(-6, 6)), 'energy');
+    // guaranteed pickups from a full collapse (host is authoritative over pickups)
+    if (!G.online || G.net.host) {
+      G.pickups.spawn(V3(this.x + rand(-4, 4), 6, this.z + rand(-4, 4)), 'health');
+      if (Math.random() < 0.6) G.pickups.spawn(V3(this.x + rand(-6, 6), 6, this.z + rand(-6, 6)), 'energy');
+    }
   }
 }
 
@@ -212,6 +216,7 @@ export class City {
     this.buildings = [];
     this.props = [];
     this.disposables = [];
+    this.dmgEvents = [];   // host: building-damage events to relay this snapshot
 
     this.rubbleMat = new BABYLON.StandardMaterial('rubbleMat', scene);
     this.rubbleMat.diffuseColor = C3(0.34, 0.32, 0.33);
@@ -345,6 +350,9 @@ export class City {
         }
       }
     }
+    // stable per-match index so guests can address the same building (needs a
+    // shared city seed — see buildWorld — so both sides build the same layout)
+    this.buildings.forEach((b, i) => { b.idx = i; });
   }
 
   splitLots(cx, cz, n) {

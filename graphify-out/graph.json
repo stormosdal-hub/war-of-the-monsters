@@ -527,7 +527,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ai",
-      "community": 8,
+      "community": 4,
       "norm_label": "ai.js"
     },
     {
@@ -827,7 +827,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_camera",
-      "community": 8,
+      "community": 4,
       "norm_label": "camera.js"
     },
     {
@@ -917,7 +917,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "src_camera_duelcamera_update",
-      "community": 8,
+      "community": 4,
       "norm_label": ".update()"
     },
     {
@@ -927,7 +927,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "src_camera_duelcamera_raycastcity",
-      "community": 8,
+      "community": 4,
       "norm_label": ".raycastcity()"
     },
     {
@@ -1034,7 +1034,7 @@
       "label": ".destroyFrom()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L134",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "src_city_building_destroyfrom",
       "community": 5,
@@ -1044,7 +1044,7 @@
       "label": ".collapse()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L161",
+      "source_location": "L163",
       "_origin": "ast",
       "id": "src_city_building_collapse",
       "community": 5,
@@ -1054,47 +1054,47 @@
       "label": "Prop",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L187",
+      "source_location": "L191",
       "_origin": "ast",
       "id": "src_city_prop",
-      "community": 5,
+      "community": 8,
       "norm_label": "prop"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L188",
+      "source_location": "L192",
       "_origin": "ast",
       "id": "src_city_prop_constructor",
-      "community": 5,
+      "community": 8,
       "norm_label": ".constructor()"
     },
     {
       "label": ".pos()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L193",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "src_city_prop_pos",
-      "community": 5,
+      "community": 8,
       "norm_label": ".pos()"
     },
     {
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L194",
+      "source_location": "L198",
       "_origin": "ast",
       "id": "src_city_prop_destroy",
-      "community": 5,
+      "community": 8,
       "norm_label": ".destroy()"
     },
     {
       "label": "City",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L208",
+      "source_location": "L212",
       "_origin": "ast",
       "id": "src_city_city",
       "community": 8,
@@ -1104,7 +1104,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L209",
+      "source_location": "L213",
       "_origin": "ast",
       "id": "src_city_city_constructor",
       "community": 8,
@@ -1114,7 +1114,7 @@
       "label": ".track()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L227",
+      "source_location": "L232",
       "_origin": "ast",
       "id": "src_city_city_track",
       "community": 8,
@@ -1124,7 +1124,7 @@
       "label": ".buildGround()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L229",
+      "source_location": "L234",
       "_origin": "ast",
       "id": "src_city_city_buildground",
       "community": 8,
@@ -1134,7 +1134,7 @@
       "label": ".buildSky()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L248",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "src_city_city_buildsky",
       "community": 8,
@@ -1144,7 +1144,7 @@
       "label": ".buildBoundary()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L272",
+      "source_location": "L277",
       "_origin": "ast",
       "id": "src_city_city_buildboundary",
       "community": 8,
@@ -1154,7 +1154,7 @@
       "label": ".buildBlocks()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L307",
+      "source_location": "L312",
       "_origin": "ast",
       "id": "src_city_city_buildblocks",
       "community": 8,
@@ -1164,7 +1164,7 @@
       "label": ".splitLots()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L350",
+      "source_location": "L358",
       "_origin": "ast",
       "id": "src_city_city_splitlots",
       "community": 8,
@@ -1174,7 +1174,7 @@
       "label": ".buildPark()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L369",
+      "source_location": "L377",
       "_origin": "ast",
       "id": "src_city_city_buildpark",
       "community": 8,
@@ -1184,7 +1184,7 @@
       "label": ".buildCars()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L412",
+      "source_location": "L420",
       "_origin": "ast",
       "id": "src_city_city_buildcars",
       "community": 8,
@@ -1194,7 +1194,7 @@
       "label": ".groundHeightAt()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L463",
+      "source_location": "L471",
       "_origin": "ast",
       "id": "src_city_city_groundheightat",
       "community": 5,
@@ -1204,7 +1204,7 @@
       "label": ".resolveCollision()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L477",
+      "source_location": "L485",
       "_origin": "ast",
       "id": "src_city_city_resolvecollision",
       "community": 8,
@@ -1214,17 +1214,17 @@
       "label": ".raycast()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L506",
+      "source_location": "L514",
       "_origin": "ast",
       "id": "src_city_city_raycast",
-      "community": 8,
+      "community": 4,
       "norm_label": ".raycast()"
     },
     {
       "label": ".nearestProp()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L516",
+      "source_location": "L524",
       "_origin": "ast",
       "id": "src_city_city_nearestprop",
       "community": 8,
@@ -1234,7 +1234,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L526",
+      "source_location": "L534",
       "_origin": "ast",
       "id": "src_city_city_update",
       "community": 8,
@@ -1244,7 +1244,7 @@
       "label": ".dispose()",
       "file_type": "code",
       "source_file": "src/city.js",
-      "source_location": "L539",
+      "source_location": "L547",
       "_origin": "ast",
       "id": "src_city_city_dispose",
       "community": 5,
@@ -1257,7 +1257,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_effects",
-      "community": 8,
+      "community": 4,
       "norm_label": "effects.js"
     },
     {
@@ -1367,7 +1367,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_gyro",
-      "community": 8,
+      "community": 4,
       "norm_label": "gyro.js"
     },
     {
@@ -1631,10 +1631,20 @@
       "norm_label": "main.js"
     },
     {
+      "label": "mulberry32()",
+      "file_type": "code",
+      "source_file": "src/main.js",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_main_mulberry32",
+      "community": 0,
+      "norm_label": "mulberry32()"
+    },
+    {
       "label": "canvas",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L19",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_canvas",
       "community": 0,
@@ -1644,7 +1654,7 @@
       "label": "engine",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L20",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_main_engine",
       "community": 0,
@@ -1654,7 +1664,7 @@
       "label": "scene",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L21",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "src_main_scene",
       "community": 0,
@@ -1664,7 +1674,7 @@
       "label": "hemi",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L31",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_hemi",
       "community": 0,
@@ -1674,7 +1684,7 @@
       "label": "sun",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L35",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "src_main_sun",
       "community": 0,
@@ -1684,7 +1694,7 @@
       "label": "glow",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L40",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "src_main_glow",
       "community": 0,
@@ -1694,7 +1704,7 @@
       "label": "G",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L44",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_g",
       "community": 0,
@@ -1704,7 +1714,7 @@
       "label": "input",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L64",
+      "source_location": "L75",
       "_origin": "ast",
       "id": "src_main_input",
       "community": 0,
@@ -1714,7 +1724,7 @@
       "label": "touch",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L65",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_touch",
       "community": 0,
@@ -1724,7 +1734,7 @@
       "label": "gyro",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L68",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "src_main_gyro",
       "community": 0,
@@ -1734,7 +1744,7 @@
       "label": "settings",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L70",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "src_main_settings",
       "community": 0,
@@ -1744,7 +1754,7 @@
       "label": "setReticle()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L73",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "src_main_setreticle",
       "community": 0,
@@ -1754,7 +1764,7 @@
       "label": "openSettings()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L77",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "src_main_opensettings",
       "community": 0,
@@ -1764,7 +1774,7 @@
       "label": "net",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L84",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "src_main_net",
       "community": 0,
@@ -1774,7 +1784,7 @@
       "label": "$id()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L88",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "src_main_id",
       "community": 0,
@@ -1784,7 +1794,7 @@
       "label": "escapeHtml()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L89",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "src_main_escapehtml",
       "community": 0,
@@ -1794,7 +1804,7 @@
       "label": "openLobby()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L91",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "src_main_openlobby",
       "community": 0,
@@ -1804,7 +1814,7 @@
       "label": "leaveLobby()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L98",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "src_main_leavelobby",
       "community": 0,
@@ -1814,7 +1824,7 @@
       "label": "showLobbyEntry()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L104",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "src_main_showlobbyentry",
       "community": 0,
@@ -1824,7 +1834,7 @@
       "label": "showLobbyRoom()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L109",
+      "source_location": "L120",
       "_origin": "ast",
       "id": "src_main_showlobbyroom",
       "community": 0,
@@ -1834,7 +1844,7 @@
       "label": "buildMonsterChips()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L115",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "src_main_buildmonsterchips",
       "community": 0,
@@ -1844,7 +1854,7 @@
       "label": "renderRoster()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L126",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "src_main_renderroster",
       "community": 0,
@@ -1854,7 +1864,7 @@
       "label": "lobbyConnect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L142",
+      "source_location": "L153",
       "_origin": "ast",
       "id": "src_main_lobbyconnect",
       "community": 0,
@@ -1864,7 +1874,7 @@
       "label": "snapMon()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L175",
+      "source_location": "L186",
       "_origin": "ast",
       "id": "src_main_snapmon",
       "community": 0,
@@ -1874,7 +1884,7 @@
       "label": "broadcastState()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L184",
+      "source_location": "L195",
       "_origin": "ast",
       "id": "src_main_broadcaststate",
       "community": 0,
@@ -1884,7 +1894,7 @@
       "label": "clearIntentEdges()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L185",
+      "source_location": "L208",
       "_origin": "ast",
       "id": "src_main_clearintentedges",
       "community": 0,
@@ -1894,7 +1904,7 @@
       "label": "applyNetPhase()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L188",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "src_main_applynetphase",
       "community": 0,
@@ -1904,7 +1914,7 @@
       "label": "SPAWNS",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L232",
+      "source_location": "L257",
       "_origin": "ast",
       "id": "src_main_spawns",
       "community": 0,
@@ -1914,7 +1924,7 @@
       "label": "selection",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L238",
+      "source_location": "L263",
       "_origin": "ast",
       "id": "src_main_selection",
       "community": 0,
@@ -1924,7 +1934,7 @@
       "label": "setupShadows()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L243",
+      "source_location": "L268",
       "_origin": "ast",
       "id": "src_main_setupshadows",
       "community": 0,
@@ -1934,7 +1944,7 @@
       "label": "buildWorld()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L252",
+      "source_location": "L277",
       "_origin": "ast",
       "id": "src_main_buildworld",
       "community": 0,
@@ -1944,7 +1954,7 @@
       "label": "disposeWorld()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L264",
+      "source_location": "L295",
       "_origin": "ast",
       "id": "src_main_disposeworld",
       "community": 0,
@@ -1954,7 +1964,7 @@
       "label": "startMatch()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L275",
+      "source_location": "L307",
       "_origin": "ast",
       "id": "src_main_startmatch",
       "community": 0,
@@ -1964,7 +1974,7 @@
       "label": "endToVictory()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L314",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "src_main_endtovictory",
       "community": 0,
@@ -1974,7 +1984,7 @@
       "label": "buildSelectUI()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L329",
+      "source_location": "L361",
       "_origin": "ast",
       "id": "src_main_buildselectui",
       "community": 0,
@@ -1984,7 +1994,7 @@
       "label": "refreshSelectFocus()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L346",
+      "source_location": "L378",
       "_origin": "ast",
       "id": "src_main_refreshselectfocus",
       "community": 0,
@@ -1994,7 +2004,7 @@
       "label": "showPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L352",
+      "source_location": "L384",
       "_origin": "ast",
       "id": "src_main_showpreview",
       "community": 0,
@@ -2004,7 +2014,7 @@
       "label": "clearPreview()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L359",
+      "source_location": "L391",
       "_origin": "ast",
       "id": "src_main_clearpreview",
       "community": 0,
@@ -2014,7 +2024,7 @@
       "label": "enterSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L363",
+      "source_location": "L395",
       "_origin": "ast",
       "id": "src_main_enterselect",
       "community": 0,
@@ -2024,7 +2034,7 @@
       "label": "confirmSelect()",
       "file_type": "code",
       "source_file": "src/main.js",
-      "source_location": "L372",
+      "source_location": "L404",
       "_origin": "ast",
       "id": "src_main_confirmselect",
       "community": 0,
@@ -2037,7 +2047,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_monster",
-      "community": 2,
+      "community": 4,
       "norm_label": "monster.js"
     },
     {
@@ -2047,7 +2057,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_monster_moves",
-      "community": 2,
+      "community": 4,
       "norm_label": "moves"
     },
     {
@@ -2087,7 +2097,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_monster_monster_fwd",
-      "community": 2,
+      "community": 4,
       "norm_label": ".fwd()"
     },
     {
@@ -2751,6 +2761,86 @@
       "norm_label": ".close()"
     },
     {
+      "label": "netghost.js",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_netghost",
+      "community": 17,
+      "norm_label": "netghost.js"
+    },
+    {
+      "label": "GhostWorld",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld",
+      "community": 17,
+      "norm_label": "ghostworld"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_constructor",
+      "community": 17,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": "._projMat()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_projmat",
+      "community": 17,
+      "norm_label": "._projmat()"
+    },
+    {
+      "label": "._orbMat()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_orbmat",
+      "community": 17,
+      "norm_label": "._orbmat()"
+    },
+    {
+      "label": ".syncProjectiles()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_syncprojectiles",
+      "community": 17,
+      "norm_label": ".syncprojectiles()"
+    },
+    {
+      "label": ".syncPickups()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_syncpickups",
+      "community": 17,
+      "norm_label": ".syncpickups()"
+    },
+    {
+      "label": ".clear()",
+      "file_type": "code",
+      "source_file": "src/netghost.js",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "src_netghost_ghostworld_clear",
+      "community": 17,
+      "norm_label": ".clear()"
+    },
+    {
       "label": "pickups.js",
       "file_type": "code",
       "source_file": "src/pickups.js",
@@ -2784,7 +2874,7 @@
       "label": ".addSpawnPoints()",
       "file_type": "code",
       "source_file": "src/pickups.js",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "src_pickups_pickupmanager_addspawnpoints",
       "community": 8,
@@ -2794,7 +2884,7 @@
       "label": ".spawn()",
       "file_type": "code",
       "source_file": "src/pickups.js",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "src_pickups_pickupmanager_spawn",
       "community": 8,
@@ -2804,7 +2894,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "src/pickups.js",
-      "source_location": "L38",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "src_pickups_pickupmanager_update",
       "community": 8,
@@ -2814,7 +2904,7 @@
       "label": ".dispose()",
       "file_type": "code",
       "source_file": "src/pickups.js",
-      "source_location": "L80",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "src_pickups_pickupmanager_dispose",
       "community": 8,
@@ -2917,7 +3007,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_projectiles",
-      "community": 8,
+      "community": 5,
       "norm_label": "projectiles.js"
     },
     {
@@ -2927,7 +3017,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager",
-      "community": 17,
+      "community": 5,
       "norm_label": "projectilemanager"
     },
     {
@@ -2937,57 +3027,57 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_constructor",
-      "community": 17,
+      "community": 5,
       "norm_label": ".constructor()"
     },
     {
       "label": ".spawn()",
       "file_type": "code",
       "source_file": "src/projectiles.js",
-      "source_location": "L12",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_spawn",
-      "community": 17,
+      "community": 5,
       "norm_label": ".spawn()"
     },
     {
       "label": ".spawnProp()",
       "file_type": "code",
       "source_file": "src/projectiles.js",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_spawnprop",
-      "community": 17,
+      "community": 5,
       "norm_label": ".spawnprop()"
     },
     {
       "label": ".impact()",
       "file_type": "code",
       "source_file": "src/projectiles.js",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_impact",
-      "community": 17,
+      "community": 5,
       "norm_label": ".impact()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "src/projectiles.js",
-      "source_location": "L60",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_update",
-      "community": 17,
+      "community": 5,
       "norm_label": ".update()"
     },
     {
       "label": ".dispose()",
       "file_type": "code",
       "source_file": "src/projectiles.js",
-      "source_location": "L123",
+      "source_location": "L124",
       "_origin": "ast",
       "id": "src_projectiles_projectilemanager_dispose",
-      "community": 17,
+      "community": 5,
       "norm_label": ".dispose()"
     },
     {
@@ -3187,7 +3277,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_util",
-      "community": 8,
+      "community": 4,
       "norm_label": "util.js"
     },
     {
@@ -3217,7 +3307,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_util_clamp",
-      "community": 8,
+      "community": 4,
       "norm_label": "clamp()"
     },
     {
@@ -3227,7 +3317,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_util_lerp",
-      "community": 8,
+      "community": 4,
       "norm_label": "lerp()"
     },
     {
@@ -3267,7 +3357,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_util_smoothstep",
-      "community": 2,
+      "community": 4,
       "norm_label": "smoothstep()"
     },
     {
@@ -3277,7 +3367,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_util_damp",
-      "community": 8,
+      "community": 4,
       "norm_label": "damp()"
     },
     {
@@ -3287,7 +3377,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_util_anglelerp",
-      "community": 2,
+      "community": 4,
       "norm_label": "anglelerp()"
     },
     {
@@ -3307,7 +3397,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_util_fwdof",
-      "community": 2,
+      "community": 4,
       "norm_label": "fwdof()"
     },
     {
@@ -3327,7 +3417,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_util_disttocapsule",
-      "community": 8,
+      "community": 5,
       "norm_label": "disttocapsule()"
     },
     {
@@ -3337,7 +3427,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_util_segmentvsaabb",
-      "community": 8,
+      "community": 4,
       "norm_label": "segmentvsaabb()"
     },
     {
@@ -6788,9 +6878,9 @@
       "source_file": "src/main.js",
       "source_location": "L188",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_applynetphase",
-      "confidence_score": 1.0
+      "target": "src_main_applynetphase"
     },
     {
       "relation": "contains",
@@ -6798,9 +6888,9 @@
       "source_file": "src/main.js",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_broadcaststate",
-      "confidence_score": 1.0
+      "target": "src_main_broadcaststate"
     },
     {
       "relation": "contains",
@@ -6848,9 +6938,9 @@
       "source_file": "src/main.js",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_clearintentedges",
-      "confidence_score": 1.0
+      "target": "src_main_clearintentedges"
     },
     {
       "relation": "contains",
@@ -7006,6 +7096,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_main_mulberry32",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
       "source_location": "L82",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7138,9 +7238,9 @@
       "source_file": "src/main.js",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_main_snapmon",
-      "confidence_score": 1.0
+      "target": "src_main_snapmon"
     },
     {
       "relation": "contains",
@@ -7269,6 +7369,28 @@
       "confidence_score": 1.0,
       "source": "src_main",
       "target": "src_net_saveserverurl"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_netghost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_netghost_ghostworld",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -7423,6 +7545,17 @@
       "confidence_score": 1.0,
       "source": "src_main",
       "target": "src_util_v3"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.js",
+      "source_location": "L282",
+      "weight": 1.0,
+      "source": "src_main_buildworld",
+      "target": "src_main_mulberry32",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7585,9 +7718,9 @@
       "source_file": "src/main.js",
       "source_location": "L192",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main_applynetphase",
-      "target": "src_main_endtovictory",
-      "confidence_score": 1.0
+      "target": "src_main_endtovictory"
     },
     {
       "relation": "calls",
@@ -7845,9 +7978,9 @@
       "source_file": "src/monster.js",
       "source_location": "L808",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_applynet",
-      "confidence_score": 1.0
+      "target": "src_monster_monster_applynet"
     },
     {
       "relation": "method",
@@ -7995,9 +8128,9 @@
       "source_file": "src/monster.js",
       "source_location": "L821",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_monster_monster",
-      "target": "src_monster_monster_netrender",
-      "confidence_score": 1.0
+      "target": "src_monster_monster_netrender"
     },
     {
       "relation": "method",
@@ -9141,9 +9274,9 @@
       "source_file": "src/monster.js",
       "source_location": "L830",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_monster_monster_netrender",
-      "target": "src_monster_monster_updateanimation",
-      "confidence_score": 1.0
+      "target": "src_monster_monster_updateanimation"
     },
     {
       "relation": "calls",
@@ -9163,9 +9296,9 @@
       "source_file": "src/monster.js",
       "source_location": "L831",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_monster_monster_netrender",
-      "target": "src_monster_monster_syncmesh",
-      "confidence_score": 1.0
+      "target": "src_monster_monster_syncmesh"
     },
     {
       "relation": "calls",
@@ -9873,6 +10006,142 @@
       "confidence_score": 1.0,
       "source": "src_net_net_startmatch",
       "target": "src_net_net_send"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_netghost",
+      "target": "src_netghost_ghostworld",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_netghost",
+      "target": "src_util",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_netghost",
+      "target": "src_util_c3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_clear",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_orbmat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_projmat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_syncpickups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld",
+      "target": "src_netghost_ghostworld_syncprojectiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/netghost.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld_projmat",
+      "target": "src_util_c3"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld_syncprojectiles",
+      "target": "src_netghost_ghostworld_projmat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/netghost.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld_orbmat",
+      "target": "src_util_c3"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/netghost.js",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "src_netghost_ghostworld_syncpickups",
+      "target": "src_netghost_ghostworld_orbmat",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10899,9 +11168,9 @@
       "source_file": "server/README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_readme",
-      "target": "server_readme_colossal_fury_relay_server",
-      "confidence_score": 1.0
+      "target": "server_readme_colossal_fury_relay_server"
     },
     {
       "relation": "contains",
@@ -10909,9 +11178,9 @@
       "source_file": "server/README.md",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_readme_colossal_fury_relay_server",
-      "target": "server_readme_deploy_to_fly_io",
-      "confidence_score": 1.0
+      "target": "server_readme_deploy_to_fly_io"
     },
     {
       "relation": "contains",
@@ -10919,9 +11188,9 @@
       "source_file": "server/README.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_readme_colossal_fury_relay_server",
-      "target": "server_readme_protocol_json_per_message_t_type",
-      "confidence_score": 1.0
+      "target": "server_readme_protocol_json_per_message_t_type"
     },
     {
       "relation": "contains",
@@ -10929,11 +11198,11 @@
       "source_file": "server/README.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_readme_colossal_fury_relay_server",
-      "target": "server_readme_run_locally",
-      "confidence_score": 1.0
+      "target": "server_readme_run_locally"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bad0a55e70bd002a6b0bddcbfefe0629e524e71c"
+  "built_at_commit": "0447d161893ff7ec8f7f5edc75cbe3230c42cc7e"
 }

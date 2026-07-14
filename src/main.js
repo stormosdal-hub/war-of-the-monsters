@@ -14,7 +14,18 @@ import { TouchControls } from './touch.js';
 import { GyroSteer } from './gyro.js';
 import { Settings } from './settings.js';
 import { Net, savedServerUrl, saveServerUrl } from './net.js';
+import { GhostWorld } from './netghost.js';
 import { HUD, screens } from './hud.js';
+
+// Small seeded PRNG so the host and guests build the identical procedural city.
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
 const canvas = document.getElementById('renderCanvas');
 const engine = new BABYLON.Engine(canvas, true, { stencil: false, doNotHandleContextLost: true });
@@ -164,7 +175,7 @@ net.on('start', (m) => {
   G.online = true;
   G.netOrder = m.order;
   G.remoteInputs = {};
-  startMatch(defList, slot);
+  startMatch(defList, slot, m.seed);
 });
 
 // ---- live sync (Phase 3) ----
@@ -181,7 +192,19 @@ const snapMon = (m) => {
   if (m.state === 'attack' && m.move) o.mv = [m.move.windup, m.move.active, m.move.recover];
   return o;
 };
-function broadcastState() { net.send({ t: 'state', mons: G.monsters.map(snapMon), ph: gameState }); }
+function broadcastState() {
+  const msg = { t: 'state', mons: G.monsters.map(snapMon), ph: gameState };
+  msg.projs = G.projectiles.list.map((p) => ({
+    id: p.id, x: +p.mesh.position.x.toFixed(1), y: +p.mesh.position.y.toFixed(1), z: +p.mesh.position.z.toFixed(1),
+    r: p.radius, c: p.color || [1, 0.55, 0.2],
+  }));
+  msg.orbs = G.pickups.list.map((it) => ({
+    id: it.id, x: +it.mesh.position.x.toFixed(1), y: +it.mesh.position.y.toFixed(1), z: +it.mesh.position.z.toFixed(1),
+    t: it.type === 'health' ? 1 : 0,
+  }));
+  if (G.city && G.city.dmgEvents.length) { msg.bd = G.city.dmgEvents; G.city.dmgEvents = []; }
+  net.send(msg);
+}
 function clearIntentEdges(i) { if (i) { i.jump = i.light = i.heavy = i.grab = i.special = i.dodge = false; } }
 
 // guest: whenever the host says the match ended (or a KO landed), follow it
@@ -199,6 +222,8 @@ function applyNetPhase(m) {
 net.on('state', (m) => {                       // guest applies host snapshots
   if (!G.online || net.host) return;
   for (let i = 0; i < G.monsters.length && i < m.mons.length; i++) G.monsters[i].applyNet(m.mons[i]);
+  if (m.bd && G.city) for (const e of m.bd) { const b = G.city.buildings[e.i]; if (b) b.applyDamage(e.a, e.y, G); }
+  if (G.ghost) { G.ghost.syncProjectiles(m.projs); G.ghost.syncPickups(m.orbs); }
   applyNetPhase(m);
 });
 net.on('input', (m) => {                        // host stores each guest's intents
@@ -249,15 +274,21 @@ function setupShadows() {
 }
 
 // ------------------------------------------------------------------ match lifecycle
-function buildWorld() {
+function buildWorld(seed = null) {
   disposeWorld();
+  // With a shared seed, host and guests generate the same city so building
+  // indices line up and destruction can be relayed and replayed faithfully.
+  let orig = null;
+  if (seed != null) { orig = Math.random; Math.random = mulberry32(seed >>> 0); }
   G.city = new City(scene, G);
+  if (orig) Math.random = orig;
   G.projectiles = new ProjectileManager(scene, G);
   G.pickups = new PickupManager(scene, G);
   G.pickups.addSpawnPoints([
     V3(0, 2, 0), V3(-140, 2, -140), V3(140, 2, 140), V3(-140, 2, 140), V3(140, 2, -140),
     V3(0, 2, -250), V3(0, 2, 250), V3(-250, 2, 0), V3(250, 2, 0),
   ]);
+  if (!G.ghost) G.ghost = new GhostWorld(scene);
   setupShadows();
 }
 
@@ -265,6 +296,7 @@ function disposeWorld() {
   if (G.city) { G.city.dispose(); G.city = null; }
   if (G.projectiles) { G.projectiles.dispose(); G.projectiles = null; }
   if (G.pickups) { G.pickups.dispose(); G.pickups = null; }
+  if (G.ghost) G.ghost.clear();
   for (const m of G.monsters) m.dispose();
   G.monsters.length = 0;
 }
@@ -272,10 +304,10 @@ function disposeWorld() {
 // defList maps 1:1 to arena slots; playerSlot is the monster the local human
 // controls. Every other slot is AI here (online play swaps some for remote humans).
 let lastMatch = null;
-function startMatch(defList, playerSlot = 0) {
+function startMatch(defList, playerSlot = 0, seed = null) {
   clearPreview();
-  buildWorld();
-  lastMatch = { defList, playerSlot };
+  buildWorld(seed);
+  lastMatch = { defList, playerSlot, seed };
   G.playerSlot = playerSlot;
   G.monsters = defList.map((def, idx) => {
     const s = SPAWNS[idx % SPAWNS.length];
@@ -393,7 +425,7 @@ document.querySelectorAll('.opt').forEach(opt => {
   opt.addEventListener('click', () => {
     const act = opt.dataset.act;
     G.audio.confirm();
-    if (act === 'rematch') { if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot); }
+    if (act === 'rematch') { if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot, lastMatch.seed); }
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); enterSelect('p1'); }
     else if (act === 'title') { if (G.online) { net.bye(); net.close(); G.online = false; } disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
     else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); setReticle(true); screens.hideAll(); }
@@ -432,7 +464,7 @@ window.addEventListener('keydown', (e) => {
     setReticle(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
-    if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot);
+    if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot, lastMatch.seed);
   } else if (gameState === 'lobby' && e.code === 'Escape') {
     leaveLobby();
   }

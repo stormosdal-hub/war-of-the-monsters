@@ -6,6 +6,7 @@ export class ProjectileManager {
     this.scene = scene;
     this.G = G;
     this.list = [];
+    this.nextId = 1;   // stable id so guests can ghost-render each projectile
   }
 
   // Energy-attack projectile.
@@ -16,7 +17,7 @@ export class ProjectileManager {
     m.diffuseColor = C3(0, 0, 0);
     mesh.material = m;
     mesh.position.copyFrom(pos);
-    this.list.push({ type: 'orb', mesh, vel: vel.clone(), owner, dmg, radius, aoe, gravity, hue, bDmg, life, prev: pos.clone() });
+    this.list.push({ id: this.nextId++, type: 'orb', mesh, vel: vel.clone(), owner, dmg, radius, aoe, gravity, hue, color, bDmg, life, prev: pos.clone() });
   }
 
   // A grabbed prop hurled by a monster.
@@ -25,7 +26,7 @@ export class ProjectileManager {
     const mesh = prop.mesh;
     mesh.setParent(null);
     mesh.position.copyFrom(pos);
-    this.list.push({ type: 'prop', prop, mesh, vel: vel.clone(), owner, dmg: prop.dmg, radius: 2.2, aoe: prop.explosive ? 7 : 3, gravity: -50 * this.G.gravityScale, hue: 'fire', bDmg: prop.dmg * 1.4, life: 5, prev: pos.clone(), spin: V3(Math.random() * 6 - 3, Math.random() * 6 - 3, Math.random() * 6 - 3) });
+    this.list.push({ id: this.nextId++, type: 'prop', prop, mesh, vel: vel.clone(), owner, dmg: prop.dmg, radius: 2.2, aoe: prop.explosive ? 7 : 3, gravity: -50 * this.G.gravityScale, hue: 'fire', bDmg: prop.dmg * 1.4, life: 5, prev: pos.clone(), spin: V3(Math.random() * 6 - 3, Math.random() * 6 - 3, Math.random() * 6 - 3) });
   }
 
   impact(p, at) {

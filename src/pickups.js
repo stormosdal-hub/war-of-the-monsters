@@ -10,6 +10,7 @@ export class PickupManager {
     this.list = [];
     this.spawnPoints = [];
     this.t = 0;
+    this.nextId = 1;   // stable id so guests can ghost-render each orb
 
     this.matHealth = new BABYLON.StandardMaterial('pkH', scene);
     this.matHealth.emissiveColor = C3(0.2, 0.95, 0.25);
@@ -30,7 +31,7 @@ export class PickupManager {
     const halo = BABYLON.MeshBuilder.CreateTorus('halo', { diameter: 3.4, thickness: 0.18, tessellation: 18 }, this.scene);
     halo.material = mesh.material;
     halo.parent = mesh;
-    const item = { mesh, type, baseY: Math.max(pos.y, 1.6), t: rand(6.28), point: permanentPoint, life: permanentPoint ? Infinity : 25 };
+    const item = { id: this.nextId++, mesh, type, baseY: Math.max(pos.y, 1.6), t: rand(6.28), point: permanentPoint, life: permanentPoint ? Infinity : 25 };
     this.list.push(item);
     return item;
   }

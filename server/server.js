@@ -107,7 +107,7 @@ wss.on('connection', (ws) => {
       }
       case 'pick': if (room) { client.monster = m.monster | 0; sendRoster(room); } break;
       case 'ready': if (room) { client.ready = !!m.ready; sendRoster(room); } break;
-      case 'start': if (room && room.hostId === client.id) broadcast(room, { t: 'start', order: [...room.clients.keys()] }); break;
+      case 'start': if (room && room.hostId === client.id) broadcast(room, { t: 'start', order: [...room.clients.keys()], seed: (Math.random() * 2147483647) | 0 }); break;
       case 'settings': if (room && room.hostId === client.id) broadcast(room, { t: 'settings', data: m.data }, client.id); break;
       case 'state': if (room && room.hostId === client.id) broadcast(room, m, client.id); break;      // host -> guests
       case 'input': if (room) send(room.clients.get(room.hostId)?.ws, { ...m, from: client.id }); break; // guest -> host

@@ -68,6 +68,18 @@ export class Monster {
   get jumpMul() { return this.isPlayer && this.G.settings ? this.G.settings.data.jumpHeight : 1; }
   busy() { return ['attack', 'special', 'hitstun', 'launched', 'down', 'grab', 'grabbed', 'dodge', 'throw', 'dead'].includes(this.state); }
 
+  // Free-for-all targeting: everyone else still standing is fair game.
+  enemies() { return this.G.monsters.filter(m => m !== this && m.alive); }
+  nearestEnemy() {
+    let best = null, bd = Infinity;
+    for (const m of this.G.monsters) {
+      if (m === this || !m.alive) continue;
+      const d = distXZ(this.pos, m.pos);
+      if (d < bd) { bd = d; best = m; }
+    }
+    return best;
+  }
+
   // ============================== damage / health ==============================
   applyDamage(dmg, { from = null, knock = null, hitstun = 0.35, launch = false, blocked = false } = {}) {
     if (!this.alive || this.iframes > 0) return 0;
@@ -143,6 +155,9 @@ export class Monster {
     if (this.state === 'grabbed') { this.syncMesh(dt); return; } // grabber drives us
 
     const i = intents || {};
+
+    // FFA: auto-facing and auto-aim always track the nearest living opponent.
+    this.target = this.nearestEnemy();
 
     // FPS-style mouse look: the character's facing is driven by the camera aim.
     // Snap yaw to it up front so melee/special/grab all fire where you point;
@@ -454,26 +469,25 @@ export class Monster {
     const hitPos = this.pos.add(this.fwd.scale(reach * 0.62)).add(V3(0, this.height * 0.55, 0));
     const r = mv.range * 0.62;
 
-    // enemy
-    const e = this.target;
-    if (e && e.alive && !this.moveHit.has(e) && e.iframes <= 0 && e.state !== 'grabbed') {
+    // enemies — one swing can catch everyone in reach (free-for-all)
+    for (const e of this.enemies()) {
+      if (this.moveHit.has(e) || e.iframes > 0 || e.state === 'grabbed') continue;
       const d = BABYLON.Vector3.Distance(hitPos, e.center);
-      if (d < r + e.radius) {
-        this.moveHit.add(e);
-        const dmg = mv.dmg * this.def.dmgMul;
-        const dir = e.pos.subtract(this.pos); dir.y = 0;
-        const n = dir.length() > 0.1 ? dir.normalize() : this.fwd;
-        const dealt = e.applyDamage(dmg, {
-          from: this,
-          knock: n.scale(mv.knock).add(V3(0, mv.up, 0)),
-          hitstun: mv.hitstun,
-          launch: !!mv.launcher,
-        });
-        if (dealt > 0) {
-          G.audio.hit(mv.sfx);
-          G.effects.hitSpark(e.center, mv.sfx);
-          G.effects.shake(mv.sfx ? 0.4 : 0.15);
-        }
+      if (d >= r + e.radius) continue;
+      this.moveHit.add(e);
+      const dmg = mv.dmg * this.def.dmgMul;
+      const dir = e.pos.subtract(this.pos); dir.y = 0;
+      const n = dir.length() > 0.1 ? dir.normalize() : this.fwd;
+      const dealt = e.applyDamage(dmg, {
+        from: this,
+        knock: n.scale(mv.knock).add(V3(0, mv.up, 0)),
+        hitstun: mv.hitstun,
+        launch: !!mv.launcher,
+      });
+      if (dealt > 0) {
+        G.audio.hit(mv.sfx);
+        G.effects.hitSpark(e.center, mv.sfx);
+        G.effects.shake(mv.sfx ? 0.4 : 0.15);
       }
     }
     // buildings
@@ -502,8 +516,8 @@ export class Monster {
     G.effects.dust(this.pos.clone(), 10, 30);
     G.effects.shake(0.9);
     G.audio.explosion(0.8);
-    const e = this.target;
-    if (e && e.alive && e.onGround !== false && distXZ(this.pos, e.pos) < mv.range + e.radius && Math.abs(e.pos.y - this.pos.y) < 6) {
+    for (const e of this.enemies()) {
+      if (e.onGround === false || distXZ(this.pos, e.pos) >= mv.range + e.radius || Math.abs(e.pos.y - this.pos.y) >= 6) continue;
       const dir = e.pos.subtract(this.pos); dir.y = 0;
       const n = dir.length() > 0.1 ? dir.normalize() : this.fwd;
       e.applyDamage(mv.dmg * this.def.dmgMul, { from: this, knock: n.scale(mv.knock).add(V3(0, mv.up, 0)), hitstun: mv.hitstun });
@@ -571,20 +585,24 @@ export class Monster {
       this.playAnim('lift');
       return;
     }
-    // 2) the enemy?
-    const e = this.target;
-    if (e && e.alive && e.state !== 'grabbed' && e.state !== 'down' && e.iframes <= 0 && distXZ(this.pos, e.pos) < this.radius + e.radius + 5.5 && Math.abs(e.pos.y - this.pos.y) < 5) {
-      const dot = BABYLON.Vector3.Dot(this.fwd, e.pos.subtract(this.pos).normalize());
-      if (dot > 0.3) {
-        this.grabVictim = e;
-        e.grabbedBy = this;
-        e.setState('grabbed');
-        e.climb = null;
-        this.setState('grab');
-        this.playAnim('lift');
-        G.audio.grab();
-        return;
-      }
+    // 2) an enemy in front? grab the closest grabbable one
+    let victim = null, vd = Infinity;
+    for (const e of this.enemies()) {
+      if (e.state === 'grabbed' || e.state === 'down' || e.iframes > 0) continue;
+      const d = distXZ(this.pos, e.pos);
+      if (d >= this.radius + e.radius + 5.5 || Math.abs(e.pos.y - this.pos.y) >= 5) continue;
+      if (BABYLON.Vector3.Dot(this.fwd, e.pos.subtract(this.pos).normalize()) <= 0.3) continue;
+      if (d < vd) { vd = d; victim = e; }
+    }
+    if (victim) {
+      this.grabVictim = victim;
+      victim.grabbedBy = this;
+      victim.setState('grabbed');
+      victim.climb = null;
+      this.setState('grab');
+      this.playAnim('lift');
+      G.audio.grab();
+      return;
     }
     // whiff
     this.playAnim('jabR');

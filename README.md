@@ -15,8 +15,11 @@ vendored in `lib/`, so it runs fully offline.)
 
 ## The game
 
-- **1v1 monster duels** against an AI opponent in **Meridian City — Downtown**: a
-  ~600×600 m destructible district (5×5 city blocks, central park, dusk skyline).
+- **Free-for-all brawls** — up to **4 kaiju at once** (you plus AI) in a
+  last-monster-standing melee in **Meridian City — Downtown**: a ~600×600 m
+  destructible district (5×5 city blocks, central park, dusk skyline). Every swing
+  can catch multiple rivals; a KO announces the fall and the fight rolls on until
+  one titan remains.
 - **4 original monsters**, each with distinct stats, silhouette, and a signature
   ranged special:
   | Monster | Archetype | Special |

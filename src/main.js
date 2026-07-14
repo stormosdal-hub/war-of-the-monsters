@@ -50,6 +50,7 @@ const G = {
   pickups: null,
   camera: new DuelCamera(scene, canvas),
   monsters: [],
+  ais: [],          // AI controllers, index-aligned to monsters (null for the local player)
   onKO: null,
   // physics scales driven by Settings (1 = current tuning)
   gravityScale: 1, throwScale: 1, specialScale: 1,
@@ -74,8 +75,15 @@ function openSettings() {
 }
 
 let gameState = 'title'; // title | select | vs | intro | fight | ko | victory | paused
-let ai = null;
-let selection = { p1: null, p2: null, focus: 0, phase: 'p1' };
+// Free-for-all: the player plus this many AI (or, later, remote humans).
+const FFA_TOTAL = 4;
+const SPAWNS = [
+  { pos: V3(-70, 0, -70), yaw: Math.PI * 0.25 },
+  { pos: V3(70, 0, 70), yaw: Math.PI * 1.25 },
+  { pos: V3(70, 0, -70), yaw: Math.PI * 0.75 },
+  { pos: V3(-70, 0, 70), yaw: Math.PI * 1.75 },
+];
+let selection = { p1: null, list: null, focus: 0, phase: 'p1' };
 let preview = null;
 let koTimer = 0;
 let shadowGen = null;
@@ -109,32 +117,40 @@ function disposeWorld() {
   G.monsters.length = 0;
 }
 
-function startMatch(defP, defE) {
+// defList[0] is the local player; the rest are AI (later, remote humans fill slots).
+function startMatch(defList) {
   clearPreview();
   buildWorld();
-  const p = new Monster(G, defP, V3(-70, 0, -70), Math.PI / 4, true);
-  const e = new Monster(G, defE, V3(70, 0, 70), Math.PI + Math.PI / 4, false);
-  p.target = e; e.target = p;
-  G.monsters = [p, e];
-  for (const mesh of p.meshes) shadowGen.addShadowCaster(mesh);
-  for (const mesh of e.meshes) shadowGen.addShadowCaster(mesh);
-  ai = new AIController(e, p, G, 1);
-  G.hud.bind(p, e);
+  G.monsters = defList.map((def, idx) => {
+    const s = SPAWNS[idx % SPAWNS.length];
+    const m = new Monster(G, def, s.pos.clone(), s.yaw, idx === 0);
+    for (const mesh of m.meshes) shadowGen.addShadowCaster(mesh);
+    return m;
+  });
+  // one AI per non-player slot, index-aligned; nearest-enemy targeting kicks in live
+  G.ais = G.monsters.map((m, idx) => (idx === 0 ? null : new AIController(m, G.monsters[0], G, 1)));
+  for (const m of G.monsters) m.target = m.nearestEnemy();
+  G.hud.bind(G.monsters);
 
-  G.onKO = (dead, killer) => {
-    if (gameState !== 'fight') return;
-    gameState = 'ko';
-    koTimer = 0;
-    G.hud.announce('K.O.!', 2.2);
+  // Free-for-all: a KO only ends the match once one fighter is left standing.
+  G.onKO = (dead) => {
+    if (gameState !== 'fight' && gameState !== 'ko') return;
+    const alive = G.monsters.filter((m) => m.alive);
+    G.hud.announce(dead.def.name + ' DOWN', 1.6);
+    if (alive.length <= 1 && gameState === 'fight') {
+      gameState = 'ko';
+      koTimer = 0;
+      setTimeout(() => { if (gameState === 'ko') G.hud.announce('K.O.!', 2.2); }, 450);
+    }
   };
 
   gameState = 'intro';
   introT = 0;
   screens.hideAll();
   document.getElementById('hud').classList.remove('hidden');
-  G.camera.startOrbit(p.pos.add(V3(0, 4, 0)));
-  G.audio.roar(defP.roarPitch);
-  G.hud.announce(defP.name + '  HAS RISEN', 2);
+  G.camera.startOrbit(G.monsters[0].pos.add(V3(0, 4, 0)));
+  G.audio.roar(defList[0].roarPitch);
+  G.hud.announce(defList[0].name + '  HAS RISEN', 2);
 }
 
 let introT = 0;
@@ -144,7 +160,7 @@ function endToVictory(winnerName, playerWon) {
   G.camera.setLook(false);
   touch.setVisible(false);
   setReticle(false);
-  document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : 'YOU ARE EXTINCT';
+  document.getElementById('victoryText').textContent = playerWon ? 'CITY CONQUERED' : `${winnerName} REIGNS`;
   document.getElementById('victoryText').style.color = playerWon ? 'var(--marquee)' : 'var(--hot)';
   screens.show('victoryScreen');
 }
@@ -196,19 +212,19 @@ function enterSelect(phase) {
 function confirmSelect() {
   G.audio.confirm();
   const def = ROSTER[selection.focus];
-  if (selection.phase === 'p1') {
-    selection.p1 = def;
-    enterSelect('p2');
-  } else {
-    selection.p2 = def;
-    gameState = 'vs';
-    document.getElementById('vsP1').textContent = selection.p1.name;
-    document.getElementById('vsP2').textContent = selection.p2.name;
-    screens.show('vsScreen');
-    G.audio.roar(selection.p1.roarPitch);
-    setTimeout(() => G.audio.roar(selection.p2.roarPitch), 500);
-    setTimeout(() => { if (gameState === 'vs') startMatch(selection.p1, selection.p2); }, 2200);
-  }
+  selection.p1 = def;
+  // Fill the rest of the free-for-all with random monsters (AI-controlled for now).
+  const bots = [];
+  for (let k = 1; k < FFA_TOTAL; k++) bots.push(ROSTER[Math.floor(Math.random() * ROSTER.length)]);
+  selection.list = [def, ...bots];
+
+  gameState = 'vs';
+  document.getElementById('vsP1').textContent = def.name;
+  document.getElementById('vsP2').textContent = bots.map((b) => b.name).join(' · ');
+  screens.show('vsScreen');
+  G.audio.roar(def.roarPitch);
+  setTimeout(() => G.audio.roar(bots[0].roarPitch), 500);
+  setTimeout(() => { if (gameState === 'vs') startMatch(selection.list); }, 2200);
 }
 
 // ------------------------------------------------------------------ menu wiring
@@ -216,7 +232,7 @@ document.querySelectorAll('.opt').forEach(opt => {
   opt.addEventListener('click', () => {
     const act = opt.dataset.act;
     G.audio.confirm();
-    if (act === 'rematch') startMatch(selection.p1, selection.p2);
+    if (act === 'rematch') startMatch(selection.list);
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
     else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); setReticle(true); screens.hideAll(); }
@@ -254,7 +270,7 @@ window.addEventListener('keydown', (e) => {
     setReticle(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
-    startMatch(selection.p1, selection.p2);
+    startMatch(selection.list);
   }
 });
 window.addEventListener('pointerdown', () => G.audio.ensure(), { once: true });
@@ -286,14 +302,15 @@ scene.onBeforeRenderObservable.add(() => {
       input.clearEdges();
     }
   } else if (gameState === 'fight' || gameState === 'ko') {
-    const [p, e] = G.monsters;
-    const pIntents = gameState === 'fight' && p.alive ? input.intents(G.camera.camYaw) : {};
-    p.lastIntent = pIntents;
-    const eIntents = gameState === 'fight' && e.alive ? ai.intents(dt) : {};
-    e.lastIntent = eIntents;
-
-    p.update(dt, pIntents);
-    e.update(dt, eIntents);
+    for (let idx = 0; idx < G.monsters.length; idx++) {
+      const m = G.monsters[idx];
+      let intent = {};
+      if (gameState === 'fight' && m.alive) {
+        intent = idx === 0 ? input.intents(G.camera.camYaw) : G.ais[idx].intents(dt);
+      }
+      m.lastIntent = intent;
+      m.update(dt, intent);
+    }
     G.city.update(dt, G);
     G.projectiles.update(dt);
     G.pickups.update(dt);
@@ -305,8 +322,9 @@ scene.onBeforeRenderObservable.add(() => {
     if (gameState === 'ko') {
       koTimer += dt;
       if (koTimer > 3) {
-        const playerWon = p.alive;
-        endToVictory(playerWon ? p.def.name : e.def.name, playerWon);
+        const winner = G.monsters.find((m) => m.alive);
+        const playerWon = G.monsters[0].alive;
+        endToVictory(winner ? winner.def.name : '—', playerWon);
       }
     }
   } else if (gameState === 'victory' || gameState === 'paused') {

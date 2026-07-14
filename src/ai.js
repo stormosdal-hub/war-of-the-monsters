@@ -18,6 +18,9 @@ export class AIController {
   }
 
   think() {
+    // FFA: fixate on whoever is closest right now
+    const ne = this.m.nearestEnemy();
+    if (ne) this.target = ne;
     // unstuck check: intending to move but going nowhere → hop (may latch & climb)
     const moved = BABYLON.Vector3.Distance(this.m.pos, this.lastPos);
     this.lastPos.copyFrom(this.m.pos);
@@ -64,9 +67,11 @@ export class AIController {
   }
 
   intents(dt) {
-    const m = this.m, e = this.target, G = this.G;
+    const m = this.m, G = this.G;
     const out = { mx: 0, mz: 0, jump: false, jumpHeld: false, light: false, heavy: false, grab: false, special: false, dodge: false, block: false };
-    if (!m.alive || !e.alive) return out;
+    if (!this.target || !this.target.alive) this.target = m.nearestEnemy();
+    const e = this.target;
+    if (!m.alive || !e) return out;
 
     this.thinkT -= dt;
     this.modeT += dt;

@@ -77,6 +77,14 @@
   .ebar{margin-top:5px;height:9px;border:2px solid #000;border-radius:4px;background:#101a2e;overflow:hidden;position:relative}
   .ebar .efill{position:absolute;inset:0;width:0;background:linear-gradient(180deg,#9fe8ff,#38a8ff 60%,#1450c9);transition:width .15s}
   .plate.p2 .ebar .efill{left:auto;right:0}
+  /* free-for-all opponents — compact bars stacked top-right */
+  #foes{position:absolute;top:18px;right:20px;width:min(30vw,320px);display:flex;flex-direction:column;gap:8px}
+  #foes .foe{transition:opacity .3s}
+  #foes .foe.dead{opacity:.32}
+  #foes .fname{font-size:.82rem;letter-spacing:.12em;color:#fff;text-shadow:2px 2px 0 #000;margin-bottom:3px;text-align:right}
+  #foes .bar{height:13px}
+  #foes .bar .fill,#foes .bar .trail{left:auto;right:0}
+  #foes .foe.dead .fname{text-decoration:line-through;color:#c98}
   #announce{position:absolute;top:34%;left:0;right:0;text-align:center;font-size:clamp(2.5rem,8vw,6rem);letter-spacing:.1em;color:var(--marquee);text-shadow:0 0 22px rgba(255,77,46,.7),5px 5px 0 var(--hot),9px 9px 0 #000;opacity:0;transform:scale(1.6) rotate(-3deg);transition:opacity .18s,transform .18s}
   #announce.show{opacity:1;transform:scale(1) rotate(-3deg)}
   #hint{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.18em;color:rgba(255,255,255,.55);text-shadow:1px 1px 0 #000}
@@ -192,11 +200,7 @@
     <div class="bar"><div class="trail" id="trail1"></div><div class="fill" id="hp1"></div></div>
     <div class="ebar"><div class="efill" id="en1"></div></div>
   </div>
-  <div class="plate p2">
-    <div class="pname" id="name2">—</div>
-    <div class="bar"><div class="trail" id="trail2"></div><div class="fill" id="hp2"></div></div>
-    <div class="ebar"><div class="efill" id="en2"></div></div>
-  </div>
+  <div id="foes"></div>
   <div id="announce"></div>
   <div id="hint">MOUSE TURN + AIM (CLICK TO CAPTURE, ESC TO RELEASE) · WASD MOVE (RELATIVE TO FACING) · SPACE JUMP (×2, HOLD NEAR WALL TO CLIMB) · J LIGHT · K HEAVY · L GRAB/THROW · I SPECIAL · SHIFT BLOCK / +DIR DODGE · P PAUSE</div>
 </div>

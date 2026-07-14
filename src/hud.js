@@ -16,13 +16,14 @@ export class HUD {
     this.announceT = null;
   }
 
-  // Free-for-all HUD: player[0] keeps the big plate; the rest get compact bars.
-  bind(list) {
-    this.player = list[0];
+  // Free-for-all HUD: the local player keeps the big plate; the rest get compact
+  // bars. playerSlot lets a networked player own a slot other than index 0.
+  bind(list, playerSlot = 0) {
+    this.player = list[playerSlot];
     this.el.name1.textContent = this.player.def.name;
     this.el.trail1.style.width = '100%';
     this.el.foes.innerHTML = '';
-    this.foeEls = list.slice(1).map((m) => {
+    this.foeEls = list.filter((_, i) => i !== playerSlot).map((m) => {
       const row = document.createElement('div');
       row.className = 'foe';
       row.innerHTML = `<div class="fname">${m.def.name}</div>` +
@@ -78,7 +79,7 @@ export class HUD {
 
 // Screen manager for the HTML menu overlays.
 export const screens = {
-  all: ['titleScreen', 'selectScreen', 'vsScreen', 'victoryScreen', 'pauseScreen', 'settingsScreen'],
+  all: ['titleScreen', 'lobbyScreen', 'selectScreen', 'vsScreen', 'victoryScreen', 'pauseScreen', 'settingsScreen'],
   show(id) {
     for (const s of this.all) document.getElementById(s).classList.toggle('hidden', s !== id);
   },

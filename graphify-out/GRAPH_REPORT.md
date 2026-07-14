@@ -1,16 +1,16 @@
 # Graph Report - war-of-the-monsters  (2026-07-14)
 
 ## Corpus Check
-- 23 files · ~27,322 words
+- 26 files · ~29,373 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 281 nodes · 616 edges · 18 communities (10 shown, 8 thin omitted)
+- 333 nodes · 695 edges · 22 communities (12 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9e4e8ce5`
+- Built from commit: `bc8a71bd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,6 +33,10 @@
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Monster` - 37 edges
@@ -41,10 +45,10 @@
 4. `rand()` - 20 edges
 5. `C3()` - 19 edges
 6. `clamp()` - 19 edges
-7. `City` - 17 edges
-8. `GyroSteer` - 15 edges
-9. `DuelCamera` - 11 edges
-10. `Effects` - 11 edges
+7. `Net` - 18 edges
+8. `City` - 17 edges
+9. `GyroSteer` - 15 edges
+10. `DuelCamera` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `buildWorld()` --calls--> `V3()`  [EXTRACTED]
@@ -61,27 +65,27 @@
 ## Import Cycles
 - None detected.
 
-## Communities (18 total, 8 thin omitted)
+## Communities (22 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
-Nodes (26): screens, buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), endToVictory(), engine (+18 more)
+Nodes (36): screens, buildMonsterChips(), buildWorld(), canvas, clearPreview(), confirmSelect(), disposeWorld(), endToVictory() (+28 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.18
+Nodes (3): Monster, distXZ(), yawTo()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.14
-Nodes (9): City, makeGroundTexture(), makeWindowTexture(), Prop, PickupManager, C3(), pick(), rand() (+1 more)
-
-### Community 5 - "Community 5"
-Cohesion: 0.15
-Nodes (3): Building, Effects, V3()
+Cohesion: 0.17
+Nodes (4): City, makeWindowTexture(), Prop, C3()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.48
 Nodes (11): box(), buildKragmor(), buildMegaton(), buildRyzor(), buildVespera(), cyl(), finishRig(), mat() (+3 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.12
-Nodes (11): AIController, DuelCamera, MOVES, angleLerp(), clamp(), damp(), distXZ(), fwdOf() (+3 more)
+Cohesion: 0.08
+Nodes (17): AIController, DuelCamera, Building, makeGroundTexture(), MOVES, PickupManager, angleLerp(), clamp() (+9 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.29
@@ -103,25 +107,31 @@ Nodes (4): __dirname, server, transport, VAULT
 Cohesion: 0.33
 Nodes (4): DEFAULTS, load(), save(), Settings
 
+### Community 19 - "Community 19"
+Cohesion: 0.17
+Nodes (11): dependencies, ws, description, engines, node, main, name, private (+3 more)
+
+### Community 20 - "Community 20"
+Cohesion: 0.31
+Nodes (8): broadcast(), leaveRoom(), rooms, roster(), send(), sendRoster(), { WebSocketServer }, wss
+
 ## Knowledge Gaps
-- **40 isolated node(s):** `node`, `name`, `version`, `type`, `main` (+35 more)
+- **52 isolated node(s):** `node`, `name`, `version`, `type`, `main` (+47 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 8`, `Community 5`?**
-  _High betweenness centrality (0.138) - this node is a cross-community bridge._
+- **Why does `Monster` connect `Community 2` to `Community 0`, `Community 8`?**
+  _High betweenness centrality (0.116) - this node is a cross-community bridge._
 - **Why does `AudioSys` connect `Community 3` to `Community 0`?**
-  _High betweenness centrality (0.134) - this node is a cross-community bridge._
-- **Why does `V3()` connect `Community 5` to `Community 0`, `Community 2`, `Community 4`, `Community 6`, `Community 8`, `Community 17`?**
-  _High betweenness centrality (0.096) - this node is a cross-community bridge._
+  _High betweenness centrality (0.108) - this node is a cross-community bridge._
+- **Why does `Net` connect `Community 18` to `Community 0`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **What connects `node`, `name`, `version` to the rest of the system?**
-  _40 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _52 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06747638326585695 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.13636363636363635 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07419712070874862 - nodes in this community are weakly interconnected._
 - **Should `Community 8` be split into smaller, more focused modules?**
-  _Cohesion score 0.12043010752688173 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08176100628930817 - nodes in this community are weakly interconnected._

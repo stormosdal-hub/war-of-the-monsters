@@ -161,6 +161,40 @@
     font-family:Georgia,serif;font-style:italic;letter-spacing:.22em;line-height:1.8}
   #rotateNote .glyph{font-size:3rem;margin-bottom:1rem;font-style:normal}
   @media (orientation:portrait){ body.is-touch #rotateNote{display:flex} }
+
+  /* ---------- multiplayer lobby ---------- */
+  .title-actions{display:flex;gap:14px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .title-mp{cursor:pointer;font-family:Arial,sans-serif;font-size:.8rem;letter-spacing:.16em;color:var(--marquee);
+    border:2px solid rgba(255,210,63,.5);border-radius:6px;padding:8px 16px;text-shadow:1px 1px 0 #000;transition:transform .1s,background .15s}
+  .title-mp:hover{background:rgba(255,210,63,.14);transform:translateY(-1px)}
+  .lobby{max-width:520px;width:92%;margin:0 auto;text-align:center}
+  .lobby-title{font-size:clamp(1.4rem,4vw,2.2rem);letter-spacing:.1em;color:var(--marquee);text-shadow:3px 3px 0 #000;margin-bottom:1.4rem}
+  .lfield{display:flex;align-items:center;gap:10px;margin:0 auto .7rem;max-width:440px;
+    font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.14em;color:#cbc3e3}
+  .lfield input{flex:1;background:#160c1f;border:2px solid #3a2450;border-radius:6px;color:#fff;
+    font-size:.9rem;letter-spacing:.08em;padding:8px 10px;font-family:Arial,sans-serif}
+  .lfield input:focus{outline:none;border-color:var(--marquee)}
+  .lobby-btns{display:flex;gap:12px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin:1.1rem 0}
+  .lobby-join{display:flex;gap:8px;align-items:stretch}
+  .lobby-join input{width:96px;text-transform:uppercase;text-align:center;background:#160c1f;border:2px solid #3a2450;
+    border-radius:6px;color:#fff;font-size:1.1rem;letter-spacing:.22em;font-family:Arial,sans-serif}
+  .lobby-join input:focus{outline:none;border-color:var(--marquee)}
+  .opt.ghost{opacity:.75;font-size:.8rem}
+  .lobby-msg{min-height:1.2em;font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.1em;color:#ff9b8a;margin:.4rem 0}
+  .room-code{font-family:Arial,sans-serif;font-size:.9rem;letter-spacing:.16em;color:#cbc3e3;margin-bottom:1rem}
+  .room-code b{color:var(--marquee);font-size:1.6rem;letter-spacing:.3em}
+  .room-pick-label{font-family:Arial,sans-serif;font-size:.64rem;letter-spacing:.18em;color:#8a7ba8;margin-bottom:.5rem}
+  .room-monsters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
+  .mchip{cursor:pointer;font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.1em;color:#cbc3e3;
+    border:2px solid #3a2450;border-radius:6px;padding:7px 12px;transition:all .12s;background:#160c1f}
+  .mchip:hover{border-color:#7a5aa0}
+  .mchip.sel{border-color:var(--marquee);color:#fff;background:rgba(255,210,63,.16)}
+  .room-roster{display:flex;flex-direction:column;gap:6px;max-width:440px;margin:0 auto 1rem}
+  .prow{display:flex;align-items:center;gap:10px;background:#160c1f;border:2px solid #2a1a3a;border-radius:6px;
+    padding:8px 12px;font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.06em;color:#fff}
+  .prow.me{border-color:var(--teal)}
+  .prow .pstar{color:var(--marquee)}
+  .prow .pmon{margin-left:auto;font-size:.66rem;letter-spacing:.1em;color:#9a8ab8}
 </style>
 </head>
 <body>
@@ -172,8 +206,43 @@
   <div class="title-burst">COLOSSAL<br>FURY</div>
   <div class="title-sub">A 1950s Creature-Feature Brawl · Meridian City</div>
   <div class="title-press">PRESS ENTER</div>
-  <div class="title-settings" id="titleSettings">⚙ SETTINGS</div>
+  <div class="title-actions">
+    <div class="title-mp" id="titleMP">▶ MULTIPLAYER</div>
+    <div class="title-settings" id="titleSettings">⚙ SETTINGS</div>
+  </div>
   <div class="title-foot">An original homage to the golden age of kaiju arena brawlers</div>
+</div>
+
+<div id="lobbyScreen" class="screen hidden">
+  <div class="lobby">
+    <h2 class="lobby-title">MULTIPLAYER — FREE-FOR-ALL</h2>
+
+    <div id="lobbyEntry">
+      <label class="lfield">SERVER<input id="lobbyServer" type="text" spellcheck="false" autocomplete="off"></label>
+      <label class="lfield">YOUR NAME<input id="lobbyName" type="text" maxlength="16" spellcheck="false" autocomplete="off"></label>
+      <div class="lobby-btns">
+        <div class="opt" id="lobbyHost">HOST A GAME</div>
+        <div class="lobby-join">
+          <input id="lobbyCode" type="text" maxlength="4" placeholder="CODE" spellcheck="false" autocomplete="off">
+          <div class="opt" id="lobbyJoin">JOIN</div>
+        </div>
+      </div>
+      <div class="lobby-msg" id="lobbyMsg"></div>
+      <div class="opt ghost" data-act="lobby-back">BACK</div>
+    </div>
+
+    <div id="lobbyRoom" class="hidden">
+      <div class="room-code">ROOM CODE · <b id="roomCode">----</b></div>
+      <div class="room-pick-label">YOUR MONSTER</div>
+      <div class="room-monsters" id="roomMonsters"></div>
+      <div class="room-roster" id="roomRoster"></div>
+      <div class="lobby-btns">
+        <div class="opt" id="roomStart">START MATCH</div>
+        <div class="opt ghost" id="roomLeave">LEAVE</div>
+      </div>
+      <div class="lobby-msg" id="roomMsg">Waiting for the host to start…</div>
+    </div>
+  </div>
 </div>
 
 <div id="selectScreen" class="screen hidden">

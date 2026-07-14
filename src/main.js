@@ -13,6 +13,7 @@ import { DuelCamera } from './camera.js';
 import { TouchControls } from './touch.js';
 import { GyroSteer } from './gyro.js';
 import { Settings } from './settings.js';
+import { Net, savedServerUrl, saveServerUrl } from './net.js';
 import { HUD, screens } from './hud.js';
 
 const canvas = document.getElementById('renderCanvas');
@@ -51,6 +52,9 @@ const G = {
   camera: new DuelCamera(scene, canvas),
   monsters: [],
   ais: [],          // AI controllers, index-aligned to monsters (null for the local player)
+  playerSlot: 0,    // which monster the local player controls (0 in single-player)
+  net: null,        // relay transport when online
+  online: false,    // true while a networked match is set up
   onKO: null,
   // physics scales driven by Settings (1 = current tuning)
   gravityScale: 1, throwScale: 1, specialScale: 1,
@@ -73,6 +77,110 @@ function openSettings() {
   settings.syncUI();
   screens.show('settingsScreen');
 }
+
+// ------------------------------------------------------------------ multiplayer lobby
+const net = new Net();
+G.net = net;
+let myPick = 0;          // monster this client picked in the lobby
+let lobbyBusy = false;
+const $id = (id) => document.getElementById(id);
+const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function openLobby() {
+  gameState = 'lobby';
+  $id('lobbyServer').value = savedServerUrl();
+  $id('lobbyName').value = (() => { try { return localStorage.getItem('cf-name') || 'MONSTER'; } catch { return 'MONSTER'; } })();
+  showLobbyEntry();
+  screens.show('lobbyScreen');
+}
+function leaveLobby() {
+  net.bye(); net.close();
+  G.online = false;
+  gameState = 'title';
+  screens.show('titleScreen');
+}
+function showLobbyEntry() {
+  $id('lobbyEntry').classList.remove('hidden');
+  $id('lobbyRoom').classList.add('hidden');
+  $id('lobbyMsg').textContent = '';
+}
+function showLobbyRoom() {
+  $id('lobbyEntry').classList.add('hidden');
+  $id('lobbyRoom').classList.remove('hidden');
+  buildMonsterChips();
+  renderRoster();
+}
+function buildMonsterChips() {
+  const wrap = $id('roomMonsters');
+  wrap.innerHTML = '';
+  ROSTER.forEach((def, idx) => {
+    const chip = document.createElement('div');
+    chip.className = 'mchip' + (idx === myPick ? ' sel' : '');
+    chip.textContent = def.name;
+    chip.addEventListener('click', () => { myPick = idx; net.pick(idx); buildMonsterChips(); });
+    wrap.appendChild(chip);
+  });
+}
+function renderRoster() {
+  const wrap = $id('roomRoster');
+  wrap.innerHTML = '';
+  for (const p of net.players) {
+    const row = document.createElement('div');
+    row.className = 'prow' + (p.id === net.id ? ' me' : '');
+    const mon = ROSTER[p.monster] ? ROSTER[p.monster].name : '—';
+    row.innerHTML = `<span>${p.host ? '<span class="pstar">★</span> ' : ''}${escapeHtml(p.name)}</span><span class="pmon">${mon}</span>`;
+    wrap.appendChild(row);
+  }
+  $id('roomCode').textContent = net.room || '----';
+  $id('roomStart').style.display = net.host ? '' : 'none';
+  $id('roomMsg').textContent = net.host ? 'Press START MATCH when everyone has joined.' : 'Waiting for the host to start…';
+  $id('roomMsg').style.color = '#8a7ba8';
+}
+
+async function lobbyConnect() {
+  const url = ($id('lobbyServer').value.trim()) || savedServerUrl();
+  saveServerUrl(url);
+  const name = ($id('lobbyName').value.trim() || 'MONSTER').slice(0, 16);
+  try { localStorage.setItem('cf-name', name); } catch { /* private mode */ }
+  if (!net.isOpen) { $id('lobbyMsg').textContent = 'Connecting…'; await net.connect(url); }
+  return name;
+}
+
+net.on('welcome', () => { if (gameState === 'lobby') showLobbyRoom(); });
+net.on('roster', () => { if (gameState === 'lobby') renderRoster(); });
+net.on('host', () => { if (gameState === 'lobby') renderRoster(); });
+net.on('peerleft', () => { if (gameState === 'lobby') renderRoster(); });
+net.on('error', (m) => { $id('lobbyMsg').textContent = m.msg || 'Server error'; });
+net.on('close', () => { if (gameState === 'lobby') { showLobbyEntry(); $id('lobbyMsg').textContent = 'Disconnected from server.'; } });
+net.on('start', (m) => {
+  const slot = net.slotOf(m.order);
+  if (slot < 0) return; // not in this match
+  const defList = m.order.map((id) => {
+    const p = net.players.find((pp) => pp.id === id);
+    return ROSTER[p && ROSTER[p.monster] ? p.monster : 0];
+  });
+  G.online = true;
+  startMatch(defList, slot);
+});
+
+$id('titleMP').addEventListener('click', (e) => { e.stopPropagation(); G.audio.ensure(); G.audio.ui(); openLobby(); });
+$id('lobbyHost').addEventListener('click', async () => {
+  if (lobbyBusy) return; lobbyBusy = true;
+  try { const name = await lobbyConnect(); net.create(name, myPick); }
+  catch { $id('lobbyMsg').textContent = 'Could not reach the server. Check the address.'; }
+  lobbyBusy = false;
+});
+$id('lobbyJoin').addEventListener('click', async () => {
+  if (lobbyBusy) return;
+  const code = $id('lobbyCode').value.trim().toUpperCase();
+  if (code.length !== 4) { $id('lobbyMsg').textContent = 'Enter the 4-letter room code.'; return; }
+  lobbyBusy = true;
+  try { const name = await lobbyConnect(); net.join(code, name, myPick); }
+  catch { $id('lobbyMsg').textContent = 'Could not reach the server. Check the address.'; }
+  lobbyBusy = false;
+});
+$id('roomStart').addEventListener('click', () => { if (net.host) net.startMatch(); });
+$id('roomLeave').addEventListener('click', () => { net.bye(); net.close(); showLobbyEntry(); });
 
 let gameState = 'title'; // title | select | vs | intro | fight | ko | victory | paused
 // Free-for-all: the player plus this many AI (or, later, remote humans).
@@ -117,20 +225,24 @@ function disposeWorld() {
   G.monsters.length = 0;
 }
 
-// defList[0] is the local player; the rest are AI (later, remote humans fill slots).
-function startMatch(defList) {
+// defList maps 1:1 to arena slots; playerSlot is the monster the local human
+// controls. Every other slot is AI here (online play swaps some for remote humans).
+let lastMatch = null;
+function startMatch(defList, playerSlot = 0) {
   clearPreview();
   buildWorld();
+  lastMatch = { defList, playerSlot };
+  G.playerSlot = playerSlot;
   G.monsters = defList.map((def, idx) => {
     const s = SPAWNS[idx % SPAWNS.length];
-    const m = new Monster(G, def, s.pos.clone(), s.yaw, idx === 0);
+    const m = new Monster(G, def, s.pos.clone(), s.yaw, idx === playerSlot);
     for (const mesh of m.meshes) shadowGen.addShadowCaster(mesh);
     return m;
   });
   // one AI per non-player slot, index-aligned; nearest-enemy targeting kicks in live
-  G.ais = G.monsters.map((m, idx) => (idx === 0 ? null : new AIController(m, G.monsters[0], G, 1)));
+  G.ais = G.monsters.map((m, idx) => (idx === playerSlot ? null : new AIController(m, G.monsters[playerSlot], G, 1)));
   for (const m of G.monsters) m.target = m.nearestEnemy();
-  G.hud.bind(G.monsters);
+  G.hud.bind(G.monsters, playerSlot);
 
   // Free-for-all: a KO only ends the match once one fighter is left standing.
   G.onKO = (dead) => {
@@ -148,9 +260,9 @@ function startMatch(defList) {
   introT = 0;
   screens.hideAll();
   document.getElementById('hud').classList.remove('hidden');
-  G.camera.startOrbit(G.monsters[0].pos.add(V3(0, 4, 0)));
-  G.audio.roar(defList[0].roarPitch);
-  G.hud.announce(defList[0].name + '  HAS RISEN', 2);
+  G.camera.startOrbit(G.monsters[playerSlot].pos.add(V3(0, 4, 0)));
+  G.audio.roar(defList[playerSlot].roarPitch);
+  G.hud.announce(defList[playerSlot].name + '  HAS RISEN', 2);
 }
 
 let introT = 0;
@@ -211,6 +323,7 @@ function enterSelect(phase) {
 
 function confirmSelect() {
   G.audio.confirm();
+  G.online = false;
   const def = ROSTER[selection.focus];
   selection.p1 = def;
   // Fill the rest of the free-for-all with random monsters (AI-controlled for now).
@@ -232,12 +345,13 @@ document.querySelectorAll('.opt').forEach(opt => {
   opt.addEventListener('click', () => {
     const act = opt.dataset.act;
     G.audio.confirm();
-    if (act === 'rematch') startMatch(selection.list);
+    if (act === 'rematch') { if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot); }
     else if (act === 'select') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); enterSelect('p1'); }
     else if (act === 'title') { disposeWorld(); document.getElementById('hud').classList.add('hidden'); setReticle(false); gameState = 'title'; screens.show('titleScreen'); }
     else if (act === 'resume') { gameState = 'fight'; G.camera.setLook(true); gyro.recenter(); touch.setVisible(true); setReticle(true); screens.hideAll(); }
     else if (act === 'settings') openSettings();
     else if (act === 'settings-back') screens.show(settingsReturn);
+    else if (act === 'lobby-back') leaveLobby();
   });
 });
 
@@ -270,7 +384,9 @@ window.addEventListener('keydown', (e) => {
     setReticle(true);
     screens.hideAll();
   } else if (gameState === 'victory' && e.code === 'Enter') {
-    startMatch(selection.list);
+    if (lastMatch) startMatch(lastMatch.defList, lastMatch.playerSlot);
+  } else if (gameState === 'lobby' && e.code === 'Escape') {
+    leaveLobby();
   }
 });
 window.addEventListener('pointerdown', () => G.audio.ensure(), { once: true });
@@ -294,7 +410,7 @@ scene.onBeforeRenderObservable.add(() => {
     G.camera.update(dt, G);
     if (introT > 2.6) {
       gameState = 'fight';
-      G.camera.enterFollow(G.monsters[0].yaw);
+      G.camera.enterFollow(G.monsters[G.playerSlot].yaw);
       gyro.recenter();
       touch.setVisible(true);
       setReticle(true);
@@ -306,7 +422,7 @@ scene.onBeforeRenderObservable.add(() => {
       const m = G.monsters[idx];
       let intent = {};
       if (gameState === 'fight' && m.alive) {
-        intent = idx === 0 ? input.intents(G.camera.camYaw) : G.ais[idx].intents(dt);
+        intent = idx === G.playerSlot ? input.intents(G.camera.camYaw) : G.ais[idx].intents(dt);
       }
       m.lastIntent = intent;
       m.update(dt, intent);
@@ -323,7 +439,7 @@ scene.onBeforeRenderObservable.add(() => {
       koTimer += dt;
       if (koTimer > 3) {
         const winner = G.monsters.find((m) => m.alive);
-        const playerWon = G.monsters[0].alive;
+        const playerWon = G.monsters[G.playerSlot].alive;
         endToVictory(winner ? winner.def.name : '—', playerWon);
       }
     }
